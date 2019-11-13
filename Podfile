@@ -3,6 +3,8 @@
 
 target 'BookingApp' do
  pod 'Kingfisher'
+pod "YoutubePlayer-in-WKWebView", "~> 0.3.0"
+
 
 
 end

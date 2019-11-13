@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,9 @@
 		18775EB2237802DA0031CFF0 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18775EB1237802DA0031CFF0 /* Constraints.swift */; };
 		18775EB423780A400031CFF0 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18775EB323780A400031CFF0 /* MovieViewModel.swift */; };
 		18775EB723780CDC0031CFF0 /* DataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18775EB623780CDC0031CFF0 /* DataServices.swift */; };
+		18A10A6F237C486800F2B8EC /* TrendingMoviesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A10A6D237C486800F2B8EC /* TrendingMoviesCell.swift */; };
+		18A10A70237C486800F2B8EC /* TrendingMoviesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A10A6E237C486800F2B8EC /* TrendingMoviesCell.xib */; };
+		18A10A72237C70FC00F2B8EC /* VideoDescriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A10A71237C70FC00F2B8EC /* VideoDescriptionVC.swift */; };
 		8B34BA8E68A3E0CD99526BF4 /* libPods-BookingApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98FAB65761A1556A0C9A00D1 /* libPods-BookingApp.a */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +68,9 @@
 		18775EB1237802DA0031CFF0 /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 		18775EB323780A400031CFF0 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 		18775EB623780CDC0031CFF0 /* DataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServices.swift; sourceTree = "<group>"; };
+		18A10A6D237C486800F2B8EC /* TrendingMoviesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMoviesCell.swift; sourceTree = "<group>"; };
+		18A10A6E237C486800F2B8EC /* TrendingMoviesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendingMoviesCell.xib; sourceTree = "<group>"; };
+		18A10A71237C70FC00F2B8EC /* VideoDescriptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDescriptionVC.swift; sourceTree = "<group>"; };
 		73112D113371777715F5F17C /* Pods-BookingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookingApp.release.xcconfig"; path = "Target Support Files/Pods-BookingApp/Pods-BookingApp.release.xcconfig"; sourceTree = "<group>"; };
 		98FAB65761A1556A0C9A00D1 /* libPods-BookingApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BookingApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -95,6 +101,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18337F64237C3A3E00AE8ACC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				18775EAB2377FE2A0031CFF0 /* HomeCell.xib */,
+				18775EAA2377FE2A0031CFF0 /* HomeCell.swift */,
+				18A10A6D237C486800F2B8EC /* TrendingMoviesCell.swift */,
+				18A10A6E237C486800F2B8EC /* TrendingMoviesCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		18775E612377CA400031CFF0 = {
 			isa = PBXGroup;
 			children = (
@@ -173,9 +190,9 @@
 		18775EA42377F58B0031CFF0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				18775EAA2377FE2A0031CFF0 /* HomeCell.swift */,
+				18337F64237C3A3E00AE8ACC /* Cell */,
 				18775EA52377FC790031CFF0 /* HomeVC.swift */,
-				18775EAB2377FE2A0031CFF0 /* HomeCell.xib */,
+				18A10A71237C70FC00F2B8EC /* VideoDescriptionVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -218,7 +235,6 @@
 				050B8BD20B0C00D8065E23EB /* Pods-BookingApp.debug.xcconfig */,
 				73112D113371777715F5F17C /* Pods-BookingApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -241,6 +257,7 @@
 				18775E662377CA400031CFF0 /* Sources */,
 				18775E672377CA400031CFF0 /* Frameworks */,
 				18775E682377CA400031CFF0 /* Resources */,
+				8095A8D276BFB2D83AA61175 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -339,6 +356,7 @@
 				18775E772377CA470031CFF0 /* Assets.xcassets in Resources */,
 				18775EAD2377FE2A0031CFF0 /* HomeCell.xib in Resources */,
 				18775E752377CA400031CFF0 /* Main.storyboard in Resources */,
+				18A10A70237C486800F2B8EC /* TrendingMoviesCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +377,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		8095A8D276BFB2D83AA61175 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BookingApp/Pods-BookingApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BookingApp/Pods-BookingApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BookingApp/Pods-BookingApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		80D1F80A22C81C9D389C1F45 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -391,12 +426,14 @@
 				18775EAC2377FE2A0031CFF0 /* HomeCell.swift in Sources */,
 				18775EB2237802DA0031CFF0 /* Constraints.swift in Sources */,
 				18775E6E2377CA400031CFF0 /* AppDelegate.swift in Sources */,
+				18A10A6F237C486800F2B8EC /* TrendingMoviesCell.swift in Sources */,
 				18775EB423780A400031CFF0 /* MovieViewModel.swift in Sources */,
 				18775EA92377FD6B0031CFF0 /* UPCarouselFlowLayout.swift in Sources */,
 				18775E702377CA400031CFF0 /* SceneDelegate.swift in Sources */,
 				18775EB723780CDC0031CFF0 /* DataServices.swift in Sources */,
 				18775EA22377CE3E0031CFF0 /* Movie.swift in Sources */,
 				18775EA62377FC790031CFF0 /* HomeVC.swift in Sources */,
+				18A10A72237C70FC00F2B8EC /* VideoDescriptionVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,4 +16,5 @@ struct Storyboard {
 struct Identifiers {
     
     static let HomeCell = "HomeCell"
+    static let TrendingMoviesCell = "TrendingMoviesCell"
 }
