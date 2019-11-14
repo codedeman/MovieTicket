@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q3o-GC-CmS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
@@ -16,22 +16,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I1M-PD-Ocg">
-                                <rect key="frame" x="0.0" y="44" width="414" height="172"/>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sFd-BS-ojz">
+                                <rect key="frame" x="0.0" y="44" width="414" height="128"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="I1M-PD-Ocg" firstAttribute="top" secondItem="Ncj-YA-UVO" secondAttribute="top" id="2Ev-Co-zd8"/>
-                            <constraint firstItem="Ncj-YA-UVO" firstAttribute="trailing" secondItem="I1M-PD-Ocg" secondAttribute="trailing" id="emB-jV-gTY"/>
-                            <constraint firstItem="Ncj-YA-UVO" firstAttribute="bottom" secondItem="I1M-PD-Ocg" secondAttribute="bottom" constant="646" id="fIa-SN-fYu"/>
-                            <constraint firstItem="I1M-PD-Ocg" firstAttribute="leading" secondItem="Ncj-YA-UVO" secondAttribute="leading" id="j8Y-CR-VFg"/>
+                            <constraint firstItem="sFd-BS-ojz" firstAttribute="top" secondItem="Ncj-YA-UVO" secondAttribute="top" id="AiU-oH-wzT"/>
+                            <constraint firstItem="Ncj-YA-UVO" firstAttribute="trailing" secondItem="sFd-BS-ojz" secondAttribute="trailing" id="CYO-gK-lHG"/>
+                            <constraint firstItem="Ncj-YA-UVO" firstAttribute="bottom" secondItem="sFd-BS-ojz" secondAttribute="bottom" constant="690" id="RUc-Xl-r8b"/>
+                            <constraint firstItem="sFd-BS-ojz" firstAttribute="leading" secondItem="Ncj-YA-UVO" secondAttribute="leading" id="ukA-ak-3KU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ncj-YA-UVO"/>
                     </view>
                     <connections>
-                        <outlet property="playerView" destination="I1M-PD-Ocg" id="njP-o0-Wcr"/>
+                        <outlet property="playerView" destination="sFd-BS-ojz" id="GQe-5n-DKV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j0k-Mi-8kR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

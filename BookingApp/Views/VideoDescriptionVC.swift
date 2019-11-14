@@ -8,25 +8,28 @@
 
 import UIKit
 
+import WebKit
+import AVKit
 
-class VideoDescriptionVC: UIViewController {
+class VideoDescriptionVC: UIViewController,WKUIDelegate {
 
-    @IBOutlet weak var playerView: UIWebView!
-    //    @IBOutlet weak var playerView: WKYTPlayerView!
+    @IBOutlet weak var playerView: WKWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
-                  if let videoURL:URL = URL(string:
-
-
-//          if let videoURL:URL = URL(string:
-//          "https://www.youtube.com/embed/695PN9xaEhs?playsinline=1") {
-//            let request:URLRequest = URLRequest(url: videoURL)
-//
-//            playerView.load(request, mimeType: request, textEncodingName: request, baseURL: request)
-//        }
-
-        // Do any additional setup after loading the view.
+        
+        let myURL = URL(string:"https://www.youtube.com/watch?v=oxy8udgWRmo")
+             let myRequest = URLRequest(url: myURL!)
+             playerView.load(myRequest)
     }
+    
+    override func loadView() {
+        let webConfiguration = WKWebViewConfiguration()
+        playerView = WKWebView(frame: .zero, configuration: webConfiguration)
+        playerView.uiDelegate = self
+        view = playerView
+    }
+    
+    
     
 
     /*
@@ -40,3 +43,5 @@ class VideoDescriptionVC: UIViewController {
     */
 
 }
+
+
