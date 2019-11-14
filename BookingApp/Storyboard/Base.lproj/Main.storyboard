@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q3o-GC-CmS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UNL-0c-mXX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
@@ -16,31 +16,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sFd-BS-ojz">
-                                <rect key="frame" x="0.0" y="44" width="414" height="128"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BYl-r6-nlg" customClass="YouTubePlayerView" customModule="YouTubePlayer">
+                                <rect key="frame" x="0.0" y="88" width="414" height="223"/>
+                                <color key="backgroundColor" red="0.14901960780000001" green="0.1176470588" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The King's Man" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p89-mo-jl1">
+                                <rect key="frame" x="20" y="319" width="186" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Director: Matthew Vaughn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lu2-hc-fj0">
+                                <rect key="frame" x="20" y="368" width="200" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lRa-cP-J3k">
+                                <rect key="frame" x="334" y="333" width="70" height="50"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="E9Z-gP-wkQ"/>
+                                </constraints>
+                                <state key="normal" title="Book Now">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="bookButton:" destination="Q3o-GC-CmS" eventType="touchUpInside" id="oVP-5z-6UG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="sFd-BS-ojz" firstAttribute="top" secondItem="Ncj-YA-UVO" secondAttribute="top" id="AiU-oH-wzT"/>
-                            <constraint firstItem="Ncj-YA-UVO" firstAttribute="trailing" secondItem="sFd-BS-ojz" secondAttribute="trailing" id="CYO-gK-lHG"/>
-                            <constraint firstItem="Ncj-YA-UVO" firstAttribute="bottom" secondItem="sFd-BS-ojz" secondAttribute="bottom" constant="690" id="RUc-Xl-r8b"/>
-                            <constraint firstItem="sFd-BS-ojz" firstAttribute="leading" secondItem="Ncj-YA-UVO" secondAttribute="leading" id="ukA-ak-3KU"/>
+                            <constraint firstItem="lRa-cP-J3k" firstAttribute="top" secondItem="Ncj-YA-UVO" secondAttribute="top" constant="245" id="8f7-hy-jYt"/>
+                            <constraint firstItem="BYl-r6-nlg" firstAttribute="top" secondItem="Ncj-YA-UVO" secondAttribute="top" id="9wf-ko-GxO"/>
+                            <constraint firstItem="Ncj-YA-UVO" firstAttribute="bottom" secondItem="BYl-r6-nlg" secondAttribute="bottom" constant="551" id="UNu-ZX-qRl"/>
+                            <constraint firstItem="Ncj-YA-UVO" firstAttribute="trailing" secondItem="BYl-r6-nlg" secondAttribute="trailing" id="iLU-sl-50Y"/>
+                            <constraint firstItem="Ncj-YA-UVO" firstAttribute="trailing" secondItem="lRa-cP-J3k" secondAttribute="trailing" constant="10" id="uLH-qT-kmi"/>
+                            <constraint firstItem="BYl-r6-nlg" firstAttribute="leading" secondItem="Ncj-YA-UVO" secondAttribute="leading" id="xga-fG-eRX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ncj-YA-UVO"/>
                     </view>
+                    <navigationItem key="navigationItem" id="xZ1-G9-fBH"/>
                     <connections>
-                        <outlet property="playerView" destination="sFd-BS-ojz" id="GQe-5n-DKV"/>
+                        <outlet property="bookBtn" destination="lRa-cP-J3k" id="kjd-RE-blv"/>
+                        <outlet property="movieName" destination="p89-mo-jl1" id="ilQ-3b-G9v"/>
+                        <outlet property="playerVideo" destination="BYl-r6-nlg" id="YAk-G0-J3X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j0k-Mi-8kR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-718.84057971014499" y="230.35714285714283"/>
+            <point key="canvasLocation" x="191.30434782608697" y="230.35714285714283"/>
         </scene>
         <!--HomeVC-->
         <scene sceneID="tne-QT-ifu">
@@ -167,7 +195,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-157.97101449275362" y="97.767857142857139"/>
+            <point key="canvasLocation" x="752.17391304347836" y="97.767857142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0jH-XJ-FIM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UNL-0c-mXX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fwf-Ah-8eh">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Q3o-GC-CmS" kind="relationship" relationship="rootViewController" id="5pA-v5-cu4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lxb-Gt-5Gm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-718.84057971014499" y="230.35714285714283"/>
         </scene>
     </scenes>
 </document>

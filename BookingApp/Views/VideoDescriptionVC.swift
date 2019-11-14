@@ -7,41 +7,57 @@
 //
 
 import UIKit
+import YouTubePlayer
 
-import WebKit
-import AVKit
+class VideoDescriptionVC: UIViewController {
 
-class VideoDescriptionVC: UIViewController,WKUIDelegate {
-
-    @IBOutlet weak var playerView: WKWebView!
+    @IBOutlet weak var bookBtn: UIButton(){
+    
+        
+    }!
+    
+    @IBOutlet weak var movieName: UILabel!
+    
+    @IBOutlet weak var playerVideo: YouTubePlayerView!
+    
+    
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+           super.init(coder: aDecoder)
+           
+       }
+       
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        guard let videoURL = URL(string: "https://www.youtube.com/watch?v=e82JHkkPw54") else { return }
         
-        let myURL = URL(string:"https://www.youtube.com/watch?v=oxy8udgWRmo")
-             let myRequest = URLRequest(url: myURL!)
-             playerView.load(myRequest)
+        playerVideo.loadVideoURL(videoURL)
+        
+//        let player = AVPlayer(url: videoURL!)
+//        let playerViewController = AVPlayerViewController()
+//        playerViewController.player = player
+//        self.present(playerViewController, animated: true) {
+//            playerViewController.player!.play()
+//        }
+        
+        
+
     }
     
-    override func loadView() {
-        let webConfiguration = WKWebViewConfiguration()
-        playerView = WKWebView(frame: .zero, configuration: webConfiguration)
-        playerView.uiDelegate = self
-        view = playerView
+    
+    
+    @IBAction func bookButtonWasPressed(_ sender: Any) {
+        
+        
     }
     
     
-    
+   
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+   
 }
+
 
 
