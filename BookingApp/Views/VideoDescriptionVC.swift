@@ -11,10 +11,13 @@ import YouTubePlayer
 
 class VideoDescriptionVC: UIViewController {
 
-    @IBOutlet weak var bookBtn: UIButton(){
-    
+    @IBOutlet weak var bookBtn: UIButton?{
+        didSet{
         
-    }!
+            self.bookBtn?.layer.cornerRadius = 20
+        }
+        
+    }
     
     @IBOutlet weak var movieName: UILabel!
     
@@ -23,27 +26,45 @@ class VideoDescriptionVC: UIViewController {
     
     
     
-    required init?(coder aDecoder: NSCoder) {
-           super.init(coder: aDecoder)
-           
-       }
+
        
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        guard let videoURL = URL(string: "https://www.youtube.com/watch?v=e82JHkkPw54") else { return }
         
-        playerVideo.loadVideoURL(videoURL)
-        
-//        let player = AVPlayer(url: videoURL!)
-//        let playerViewController = AVPlayerViewController()
-//        playerViewController.player = player
-//        self.present(playerViewController, animated: true) {
-//            playerViewController.player!.play()
-//        }
-        
+        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 44))
+        view.addSubview(navBar)
         
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        do{
+            
+            if let videoURl = try? URL(string: "https://www.youtube.com/watch?v=e82JHkkPw54"){
+                
+                
+                if videoURl != nil {
+                
+//                    playerVideo.loadVideoURL(videoURl)
+                
+                }
+            
+//                playerVideo.loadVideoURL(videoURl)
+            
+            }
+            
+        }catch{
+            
+            
+            print("erorr")
+        
+        
+        }
+        
+        
     }
     
     

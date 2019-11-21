@@ -1,22 +1,48 @@
 PODS:
-  - Kingfisher (5.9.0):
-    - Kingfisher/Core (= 5.9.0)
-  - Kingfisher/Core (5.9.0)
+  - Alamofire (5.0.0-rc.3)
+  - Kingfisher (5.10.0):
+    - Kingfisher/Core (= 5.10.0)
+  - Kingfisher/Core (5.10.0)
+  - RxCocoa (5.0.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.0.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.1)
+  - SnapKit (4.2.0)
+  - SwiftyJSON (5.0.0)
   - YouTubePlayer (0.4.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.0.0-rc.3)
   - Kingfisher
+  - RxCocoa (~> 5)
+  - RxSwift (~> 5)
+  - SnapKit (~> 4.0)
+  - SwiftyJSON
   - YouTubePlayer
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - Kingfisher
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - SnapKit
+    - SwiftyJSON
     - YouTubePlayer
 
 SPEC CHECKSUMS:
-  Kingfisher: ff98240aebb7302bdc4f1ecd701761030ce18b16
+  Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
+  Kingfisher: 0bf6eae7c2193f15719915fecb7c2c1c03855f3d
+  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
+  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
+  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   YouTubePlayer: 028451f6772f372d4759866db99824c676ac1473
 
-PODFILE CHECKSUM: 5eb42b3ee2bc0f376e5f8032da923f849babf8db
+PODFILE CHECKSUM: 4dcce901dafa4c702a0eb4c865e3fa3580941472
 
 COCOAPODS: 1.8.4

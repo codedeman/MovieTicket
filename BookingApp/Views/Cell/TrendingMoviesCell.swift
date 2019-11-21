@@ -17,39 +17,31 @@ class TrendingMoviesCell: UICollectionViewCell {
     
     func configureCell(movie:Movie)  {
         
-        loadImage(urlString: movie.image)
 //        let data = URL(string: movie.image)
 //         let placeholder = UIImage(named: "terminator")
-//                    
+//
 //        let options:KingfisherOptionsInfo = [KingfisherOptionsInfoItem.transition(.fade(0.1))]
 //        imageView?.kf.setImage(with: data,placeholder: placeholder)
         
     }
     
-    func loadImage(urlString:String)  {
-        
-        
-        if let cacheImage = imageCache.object(forKey: urlString as AnyObject) as? UIImage {
-            
-            self.imageView.image  = cacheImage
-        
-        }
-        guard let url = URL(string: urlString) else { return }
-        URLSession.shared.dataTask(with: url){(data,response,error) in
-            let image  = UIImage(data: data!)
-            self.imageCache.setObject(image!, forKey: urlString as AnyObject)
-            
-            DispatchQueue.main.async {
-            
-                self.imageView.image = image
-            }
-            
-            
-        }.resume()
-        
+    
+    
+    public var abum:Album!{
 
-        
+        didSet{
+            
+            
+            self.imageView.loadImage(fromURL: abum.image)
+            
+
+
+        }
+
+
     }
+    
+ 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

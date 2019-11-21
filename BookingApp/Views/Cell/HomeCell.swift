@@ -14,7 +14,13 @@ class HomeCell: UICollectionViewCell {
     var imageCache = NSCache<AnyObject, AnyObject>()
 
 
-    @IBOutlet weak var movieImage: UIImageView!
+    @IBOutlet weak var movieImage: UIImageView!{
+        didSet{
+            self.movieImage.layer.cornerRadius = 10
+        
+        }
+    
+    }
     
     @IBOutlet weak var orderNumber: UILabel!
     func configureCell(movie:Movie){
