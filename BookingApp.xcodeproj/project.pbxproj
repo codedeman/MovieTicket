@@ -31,6 +31,9 @@
 		18A10A72237C70FC00F2B8EC /* VideoDescriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A10A71237C70FC00F2B8EC /* VideoDescriptionVC.swift */; };
 		18DD6EE7238687E50050CA47 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD6EE6238687E50050CA47 /* GradientView.swift */; };
 		18DD6EE923868B400050CA47 /* CornerRadiusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD6EE823868B400050CA47 /* CornerRadiusView.swift */; };
+		18DD6EEB23879B350050CA47 /* customUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD6EEA23879B350050CA47 /* customUITextField.swift */; };
+		18DD6EEF2387A3F20050CA47 /* SeatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD6EEE2387A3F20050CA47 /* SeatVC.swift */; };
+		18DD6EF12387A94D0050CA47 /* SeatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD6EF02387A94D0050CA47 /* SeatCell.swift */; };
 		8B34BA8E68A3E0CD99526BF4 /* libPods-BookingApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98FAB65761A1556A0C9A00D1 /* libPods-BookingApp.a */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +86,9 @@
 		18A10A71237C70FC00F2B8EC /* VideoDescriptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDescriptionVC.swift; sourceTree = "<group>"; };
 		18DD6EE6238687E50050CA47 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		18DD6EE823868B400050CA47 /* CornerRadiusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusView.swift; sourceTree = "<group>"; };
+		18DD6EEA23879B350050CA47 /* customUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customUITextField.swift; sourceTree = "<group>"; };
+		18DD6EEE2387A3F20050CA47 /* SeatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatVC.swift; sourceTree = "<group>"; };
+		18DD6EF02387A94D0050CA47 /* SeatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatCell.swift; sourceTree = "<group>"; };
 		73112D113371777715F5F17C /* Pods-BookingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookingApp.release.xcconfig"; path = "Target Support Files/Pods-BookingApp/Pods-BookingApp.release.xcconfig"; sourceTree = "<group>"; };
 		98FAB65761A1556A0C9A00D1 /* libPods-BookingApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BookingApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -116,10 +122,10 @@
 		18337F64237C3A3E00AE8ACC /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				18775EAB2377FE2A0031CFF0 /* HomeCell.xib */,
+				18DD6EEC2387A07E0050CA47 /* xib */,
 				18775EAA2377FE2A0031CFF0 /* HomeCell.swift */,
 				18A10A6D237C486800F2B8EC /* TrendingMoviesCell.swift */,
-				18A10A6E237C486800F2B8EC /* TrendingMoviesCell.xib */,
+				18DD6EF02387A94D0050CA47 /* SeatCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -204,10 +210,8 @@
 		18775EA42377F58B0031CFF0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				18DD6EED2387A09F0050CA47 /* Controller */,
 				18337F64237C3A3E00AE8ACC /* Cell */,
-				18775EA52377FC790031CFF0 /* HomeVC.swift */,
-				18A10A71237C70FC00F2B8EC /* VideoDescriptionVC.swift */,
-				180E44D12386447100A44192 /* LoginVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -235,6 +239,7 @@
 				180E448F2384E3AD00A44192 /* Extension.swift */,
 				18DD6EE6238687E50050CA47 /* GradientView.swift */,
 				18DD6EE823868B400050CA47 /* CornerRadiusView.swift */,
+				18DD6EEA23879B350050CA47 /* customUITextField.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -245,6 +250,26 @@
 				18775EB623780CDC0031CFF0 /* DataServices.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		18DD6EEC2387A07E0050CA47 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				18775EAB2377FE2A0031CFF0 /* HomeCell.xib */,
+				18A10A6E237C486800F2B8EC /* TrendingMoviesCell.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		18DD6EED2387A09F0050CA47 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				18775EA52377FC790031CFF0 /* HomeVC.swift */,
+				18A10A71237C70FC00F2B8EC /* VideoDescriptionVC.swift */,
+				180E44D12386447100A44192 /* LoginVC.swift */,
+				18DD6EEE2387A3F20050CA47 /* SeatVC.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		8BDEE342665B8B102676E2F7 /* Pods */ = {
@@ -451,8 +476,11 @@
 				18DD6EE7238687E50050CA47 /* GradientView.swift in Sources */,
 				18775EB423780A400031CFF0 /* MovieViewModel.swift in Sources */,
 				18775EA92377FD6B0031CFF0 /* UPCarouselFlowLayout.swift in Sources */,
+				18DD6EEF2387A3F20050CA47 /* SeatVC.swift in Sources */,
 				18775E702377CA400031CFF0 /* SceneDelegate.swift in Sources */,
 				180E44902384E3AD00A44192 /* Extension.swift in Sources */,
+				18DD6EEB23879B350050CA47 /* customUITextField.swift in Sources */,
+				18DD6EF12387A94D0050CA47 /* SeatCell.swift in Sources */,
 				18775EB723780CDC0031CFF0 /* DataServices.swift in Sources */,
 				18775EA22377CE3E0031CFF0 /* Movie.swift in Sources */,
 				18775EA62377FC790031CFF0 /* HomeVC.swift in Sources */,
