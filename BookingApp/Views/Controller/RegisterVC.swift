@@ -31,6 +31,8 @@ class RegisterVC: UIViewController {
         let avatar = UIImageView()
     
         avatar.image = UIImage(named: "terminator.jpg")
+        
+        avatar.frame.size = CGSize(width: 100, height: 100)
         return avatar
     
         
@@ -41,7 +43,8 @@ class RegisterVC: UIViewController {
         let username = UILabel()
         
         username.text = "User name"
-        username.tintColor = .gray
+//        username.tintColor = .gray
+        username.textColor = .gray
         return username
         
     }()
@@ -49,7 +52,7 @@ class RegisterVC: UIViewController {
         
         let password = UILabel()
         password.translatesAutoresizingMaskIntoConstraints = false
-        password.tintColor = .gray
+        password.textColor = .gray
         password.text = "Pass word"
         return password
         
@@ -95,7 +98,7 @@ class RegisterVC: UIViewController {
         
         let confirm = UILabel()
         confirm.translatesAutoresizingMaskIntoConstraints = false
-        confirm.tintColor = .gray
+        confirm.textColor = .gray
         confirm.text = "Confirm passworld"
         return confirm
         
@@ -160,7 +163,21 @@ class RegisterVC: UIViewController {
         
 //        view.cicileView()
         
-        view.frame.size = CGSize(width: 20, height: 100)
+        view.frame.size = CGSize(width: 350, height: 350)
+        
+        
+        return view
+        
+    }()
+    
+    let pinkView:UIView = {
+    
+        var view = UIView()
+        view.backgroundColor = #colorLiteral(red: 0.937254902, green: 0.3607843137, blue: 0.5176470588, alpha: 1)
+        
+        //        view.cicileView()
+        
+        view.frame.size = CGSize(width: 400, height: 400)
         
         
         return view
@@ -184,6 +201,7 @@ class RegisterVC: UIViewController {
         
         
         registerButton.addTarget(self, action: #selector(register), for: .touchUpInside)
+        
         
 //        containView.addSubview(titleLabel)
 //        containView.addSubview(avatarImage)
@@ -212,16 +230,33 @@ class RegisterVC: UIViewController {
         
         containView.addSubview(acountLabel)
         containView.addSubview(acountButton)
-//        containView.addSubview(orangeView)
-//        orangeView.cicileView()
-//        
-//        orangeView.snp.makeConstraints { (make) in
-//            
-//            make.top.equalTo(containView).offset(50)
-//            make.leading.equalTo(containView).offset(0)
-//            make.trailing.equalTo(containView).offset(-200)
-//            make.height.equalTo(100)
-//        }
+        containView.addSubview(orangeView)
+        containView.addSubview(pinkView)
+        orangeView.cicileView()
+        pinkView.cicileView()
+        
+        
+        
+        orangeView.snp.makeConstraints { (make) in
+            
+            make.top.equalTo(containView).offset(-200)
+            make.leading.equalTo(containView).offset(-50)
+//            make.trailing.equalTo(containView).offset(-300)
+            make.height.equalTo(350)
+            make.width.equalTo(350)
+        }
+        
+        pinkView.snp.makeConstraints { (make) in
+            
+            make.top.equalTo(containView).offset(-150)
+            make.trailing.equalTo(containView).offset(150)
+            make.height.equalTo(400)
+            make.width.equalTo(400)
+        }
+        
+        
+        
+        
         
         containView.snp.makeConstraints { (make) in
             
@@ -232,8 +267,8 @@ class RegisterVC: UIViewController {
         }
         
         titleLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(containView).offset(100)
-            make.leading.equalTo(containView).offset(50)
+            make.bottom.equalTo(pinkView).inset(400)
+            make.leading.equalTo(pinkView).offset(50)
             make.trailing.equalTo(containView).offset(-50)
             make.height.equalTo(30)
             
@@ -242,7 +277,7 @@ class RegisterVC: UIViewController {
 //        
         avatarImage.snp.makeConstraints { (make) in
 
-            make.top.equalTo(titleLabel).offset(100)
+            make.top.equalTo(containView).offset(300)
             make.centerX.equalTo(containView)
 
             make.size.equalTo(CGSize(width: 100, height: 100))
@@ -262,13 +297,13 @@ class RegisterVC: UIViewController {
         }
         
         usernameField.snp.makeConstraints { (make) in
-                  
-                  
-                  make.top.equalTo(usernameLabel).offset(50)
-                  make.leading.equalTo(usernameLabel).offset(0)
-                  make.trailing.equalTo(containView).offset(-30)
-                  make.height.equalTo(30)
-                  
+            
+            
+            make.top.equalTo(usernameLabel).offset(30)
+            make.leading.equalTo(usernameLabel).offset(0)
+            make.trailing.equalTo(containView).offset(-30)
+            make.height.equalTo(30)
+            
         }
         
         
