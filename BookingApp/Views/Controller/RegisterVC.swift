@@ -71,7 +71,7 @@ class RegisterVC: UIViewController {
             let usename = UITextField()
             usename.placeholder = "@gmail.com"
             usename.borderStyle = .none
-        
+//        usename.backgroundColor = .
     
             //        usename.background = UIColor.white
             return usename
@@ -90,35 +90,110 @@ class RegisterVC: UIViewController {
         }()
     
     
-    var confirmPassWorld:UITextField = {
+    var confirmLabel:UILabel = {
     
         
-        var  pasword = UITextField()
-        pasword.placeholder = "123456"
-        pasword.borderStyle = .none
-        pasword.isSecureTextEntry = true
-        
-        return pasword
-        
+        let confirm = UILabel()
+        confirm.translatesAutoresizingMaskIntoConstraints = false
+        confirm.tintColor = .gray
+        confirm.text = "Confirm passworld"
+        return confirm
         
     }()
     
+    var confirmField:UITextField = {
+        
+        
+        var  confirm = UITextField()
+        //        pasword = customUITextField()
+        confirm.placeholder = "123456"
+//        confirm.borderStyle = .roundedRect
+        confirm.isSecureTextEntry = true
+        
+        //        usename.background = UIColor.white
+        return confirm
+        
+    }()
+    
+//    let al
+    
+    
+    let registerButton:UIButton = {
+        
+       
+        
+        let register = UIButton()
+        register.backgroundColor = #colorLiteral(red: 0.8039215686, green: 0.2274509804, blue: 0.231372549, alpha: 1)
+        register.tintColor = .white
+        register.layer.cornerRadius = 10
+        register.setTitle("Register", for: .normal)
+        return register
+        
+    }()
+    
+    let acountButton:UIButton = {
+    
+    
+        let acount = UIButton()
+        
+        acount.setTitle("Sign in", for: .normal)
+//        acount.tintColor = .black
+        acount.setTitleColor(#colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1), for: .normal)
+        return acount
+    }()
+    
+    let acountLabel:UILabel = {
+    
+    
+        let acount = UILabel()
+        acount.textColor = .gray
+        acount.text = "Alredy have an acount?"
+        return acount
+    
+    }()
+    
+    let orangeView:UIView = {
+    
+    
+        var view = UIView()
+        view.backgroundColor = #colorLiteral(red: 0.9960784314, green: 0.662745098, blue: 0.4823529412, alpha: 1)
+        
+//        view.cicileView()
+        
+        view.frame.size = CGSize(width: 20, height: 100)
+        
+        
+        return view
+        
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
 //        self.view.backgroundColor = .white
         setupRegisterForm()
-        avatarImage.cỉcleImage()
+//        avatarImage.cỉcleImage()
         
         usernameField.setup()
         
+        avatarImage.layer.borderWidth = 1
+        avatarImage.layer.masksToBounds = false
+        avatarImage.layer.borderColor = UIColor.black.cgColor
+        avatarImage.layer.cornerRadius = avatarImage.frame.height/2
+        avatarImage.clipsToBounds = true
         
+        
+        registerButton.addTarget(self, action: #selector(register), for: .touchUpInside)
         
 //        containView.addSubview(titleLabel)
 //        containView.addSubview(avatarImage)
 
         // Do any additional setup after loading the view.
+    }
+    @objc func register(){
+        
+        
+        
     }
     
     func setupRegisterForm()  {
@@ -129,6 +204,24 @@ class RegisterVC: UIViewController {
         
         containView.addSubview(usernameLabel)
         containView.addSubview(usernameField)
+        containView.addSubview(passwordLabel)
+        containView.addSubview(passwordField)
+        containView.addSubview(confirmLabel)
+        containView.addSubview(confirmField)
+        containView.addSubview(registerButton)
+        
+        containView.addSubview(acountLabel)
+        containView.addSubview(acountButton)
+//        containView.addSubview(orangeView)
+//        orangeView.cicileView()
+//        
+//        orangeView.snp.makeConstraints { (make) in
+//            
+//            make.top.equalTo(containView).offset(50)
+//            make.leading.equalTo(containView).offset(0)
+//            make.trailing.equalTo(containView).offset(-200)
+//            make.height.equalTo(100)
+//        }
         
         containView.snp.makeConstraints { (make) in
             
@@ -138,9 +231,8 @@ class RegisterVC: UIViewController {
             make.bottom.equalTo(view).inset(0)
         }
         
-        
         titleLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(containView).offset(50)
+            make.top.equalTo(containView).offset(100)
             make.leading.equalTo(containView).offset(50)
             make.trailing.equalTo(containView).offset(-50)
             make.height.equalTo(30)
@@ -153,7 +245,7 @@ class RegisterVC: UIViewController {
             make.top.equalTo(titleLabel).offset(100)
             make.centerX.equalTo(containView)
 
-            make.size.equalTo(CGSize(width: 200, height: 200))
+            make.size.equalTo(CGSize(width: 100, height: 100))
 
         }
         
@@ -161,22 +253,95 @@ class RegisterVC: UIViewController {
         usernameLabel.snp.makeConstraints { (make) in
             
             
-            make.top.equalTo(avatarImage).offset(50)
+            make.bottom.equalTo(avatarImage).offset(30)
             make.leading.equalTo(containView).offset(30)
             make.trailing.equalTo(containView).offset(-30)
-            make.height.equalTo(30)
+//            make.height.equalTo(30)
+            
             
         }
         
         usernameField.snp.makeConstraints { (make) in
                   
                   
-                  make.top.equalTo(usernameField).offset(10)
-                  make.leading.equalTo(usernameField).offset(30)
+                  make.top.equalTo(usernameLabel).offset(50)
+                  make.leading.equalTo(usernameLabel).offset(0)
                   make.trailing.equalTo(containView).offset(-30)
                   make.height.equalTo(30)
                   
-              }
+        }
+        
+        
+        passwordLabel.snp.makeConstraints { (make) in
+            
+            
+            make.top.equalTo(usernameField).offset(30)
+            make.leading.equalTo(containView).offset(30)
+            make.trailing.equalTo(containView).offset(-30)
+            make.height.equalTo(30)
+            
+        }
+        
+        passwordField.snp.makeConstraints { (make) in
+            
+            make.top.equalTo(passwordLabel).offset(30)
+            make.leading.equalTo(passwordLabel).offset(0)
+            make.trailing.equalTo(containView).offset(-30)
+            make.height.equalTo(30)
+            
+        }
+        
+        
+        confirmLabel.snp.makeConstraints { (make) in
+            
+            
+            make.top.equalTo(passwordField).offset(30)
+            make.leading.equalTo(passwordField).offset(0)
+            make.trailing.equalTo(containView).offset(-30)
+            make.height.equalTo(30)
+            
+        }
+        
+        confirmField.snp.makeConstraints { (make) in
+            
+            
+            make.top.equalTo(confirmLabel).offset(30)
+            make.leading.equalTo(confirmLabel).offset(0)
+            make.trailing.equalTo(containView).offset(-30)
+            make.height.equalTo(30)
+            
+        }
+        
+        registerButton.snp.makeConstraints { (make) in
+            
+            make.top.equalTo(confirmField).offset(50)
+            make.leading.equalTo(containView).offset(30)
+            make.trailing.equalTo(containView).offset(-30)
+            make.height.equalTo(50)
+            
+        }
+        
+        acountLabel.snp.makeConstraints { (make) in
+            
+            
+            make.top.equalTo(registerButton).offset(50)
+            make.leading.equalTo(containView).offset(80)
+//            make.trailing.equalTo(containView).offset(-0)
+            make.height.equalTo(50)
+            
+            
+            
+        }
+        acountButton.snp.makeConstraints { (make) in
+            make.top.equalTo(registerButton).offset(50)
+            make.leading.equalTo(registerButton).offset(230)
+            make.height.equalTo(50)
+
+
+            
+        }
+        
+        
         
         
     }
