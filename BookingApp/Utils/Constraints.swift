@@ -10,8 +10,12 @@ import Foundation
 
 import UIKit
 
-let URL_BASE = "https://api.github.com/search/users?q=kevin"
+let URL_BASE = "https://movie-tickets-vinid.herokuapp.com"
 
+let LIST_URL = URL_BASE+"/api/movies"
+let URL2 = "http://www.json-generator.com/api/json/get/clcVhGGZgy?indent=2"
+
+typealias MovieResponseCompletion = ([ListMovie]?) -> Void
 
 
 //let BEARER_HEADER = [

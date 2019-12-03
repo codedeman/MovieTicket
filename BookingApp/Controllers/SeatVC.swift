@@ -75,11 +75,11 @@ extension SeatVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollectio
         if seatLayout[classTitle[indexPath.section]]![indexPath.row] == 0 {
             cell.seat.image = nil
         }else if seatLayout[classTitle[indexPath.section]]![indexPath.row] == 1 {
-            cell.seat.image = #imageLiteral(resourceName: "icons8-sofa_filled-1")
+            cell.seat.image = #imageLiteral(resourceName: "square2")
         }else if seatLayout[classTitle[indexPath.section]]![indexPath.row] == 2 {
-            cell.seat.image = #imageLiteral(resourceName: "icons8-sofa_filled")
+            cell.seat.image = #imageLiteral(resourceName: "square2")
         }else{
-            cell.seat.image = #imageLiteral(resourceName: "popcorn-1")
+            cell.seat.image = #imageLiteral(resourceName: "icons8-square-24.png")
         }
         return cell
     }
@@ -91,7 +91,6 @@ extension SeatVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollectio
     
     
    
-//
     
     
     

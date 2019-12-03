@@ -10,6 +10,8 @@ target 'BookingApp' do
   pod 'Alamofire', '~> 5.0.0-rc.3'
   pod 'SwiftyJSON'
   pod 'SnapKit', '~> 4.0'
+pod 'ObjectMapper', '~> 3.4'
+
 
 
 end

@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+class Theaters:Codable{
+    
+    var timestamp:String
+    var status:Int
+    var message:String
+//    init(timestamp:String,status:String,message:String) {
+//        
+//    }
+}

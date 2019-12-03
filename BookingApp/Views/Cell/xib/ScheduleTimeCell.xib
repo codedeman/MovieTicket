@@ -19,19 +19,16 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ha0-S6-CRc">
                         <rect key="frame" x="0.0" y="0.0" width="200" height="179"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Pc-2x-Mkn">
-                                <rect key="frame" x="20" y="20" width="71" height="30"/>
-                                <state key="normal" title="1:30">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zli-5r-40M">
+                                <rect key="frame" x="23" y="89" width="169" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.25098039220000001" green="0.20784313730000001" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="9Pc-2x-Mkn" firstAttribute="top" secondItem="ha0-S6-CRc" secondAttribute="top" constant="20" id="241-W4-cyf"/>
-                            <constraint firstAttribute="trailing" secondItem="9Pc-2x-Mkn" secondAttribute="trailing" constant="109" id="E8m-Gx-8Mk"/>
-                            <constraint firstItem="9Pc-2x-Mkn" firstAttribute="leading" secondItem="ha0-S6-CRc" secondAttribute="leading" constant="20" id="lo0-qo-Cuy"/>
-                        </constraints>
                     </view>
                 </subviews>
             </view>
@@ -44,9 +41,11 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="200" height="179"/>
             <connections>
-                <outlet property="showTime" destination="9Pc-2x-Mkn" id="zL1-Ky-YkG"/>
+                <outlet property="backgroundShowTime" destination="ha0-S6-CRc" id="ysu-eP-CAf"/>
+                <outlet property="backgroundView" destination="ha0-S6-CRc" id="bLk-19-soA"/>
+                <outlet property="showTimeLabel" destination="Zli-5r-40M" id="yLx-NS-pHj"/>
             </connections>
-            <point key="canvasLocation" x="29" y="105"/>
+            <point key="canvasLocation" x="28.985507246376812" y="104.79910714285714"/>
         </collectionViewCell>
     </objects>
 </document>

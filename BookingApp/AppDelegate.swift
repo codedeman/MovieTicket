@@ -20,14 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             
         }else{
-            window = UIWindow(frame: UIScreen.main.bounds)
-            let loginVC = LoginVC()
-            
-            let navigation = UINavigationController(rootViewController: loginVC)
-            
-            window?.rootViewController = navigation
-            window?.makeKeyAndVisible()
-            
+//            window = UIWindow(frame: UIScreen.main.bounds)
+//            let loginVC = LoginVC()
+//            
+//            let navigation = UINavigationController(rootViewController: loginVC)
+//            
+//            window?.rootViewController = navigation
+//            window?.makeKeyAndVisible()
+//            
             
             
         }

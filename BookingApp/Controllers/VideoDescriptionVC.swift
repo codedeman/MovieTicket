@@ -9,8 +9,15 @@
 import UIKit
 import YouTubePlayer
 
+enum MyTheme {
+    case light
+    case dark
+}
+
+
 class VideoDescriptionVC: UIViewController {
-    let TAGS = ["Tech", "Design", "Humor", "Travel", "Music", "Writing", "Social Media", "Life", "Education", "Edtech", "Education Reform", "Photography", "Startup", "Poetry", "Women In Tech", "Female Founders", "Business", "Fiction", "Love", "Food", "Sports"]
+    
+    
     
     @IBOutlet weak var scheduleCollectionView: UICollectionView!
     
@@ -19,13 +26,13 @@ class VideoDescriptionVC: UIViewController {
     @IBOutlet weak var nameofDirector: UILabel!
     @IBOutlet weak var descriptionMoive: UILabel?
     @IBOutlet weak var activityData: UIActivityIndicatorView!
-    @IBOutlet weak var bookBtn: UIButton?{
-        didSet{
-        
-            self.bookBtn?.layer.cornerRadius = 20
-        }
-        
-    }
+    @IBOutlet weak var bookBtn: UIButton?
+    
+    let calenderView: CalenderView = {
+        let v=CalenderView(theme: MyTheme.dark)
+        v.translatesAutoresizingMaskIntoConstraints=false
+        return v
+    }()
     
     @IBOutlet weak var movieName: UILabel!
     
@@ -34,69 +41,58 @@ class VideoDescriptionVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        activityData.startAnimating()
         
+        MovieApi.shared.getMovies { (user) in
+            
+            for index in user{
+                
+                print("best of \(index.name)")
+            }
+            
+        }
+//        print("bababa \(ListMovie.)")
+        self.activityData.startAnimating()
+
+        loadVideo()
+        view.addSubview(calenderView)
+        calenderView.topAnchor.constraint(equalTo: descriptionMoive!.topAnchor, constant: 200).isActive=true
+        calenderView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -12).isActive=true
+        calenderView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 12).isActive=true
+        calenderView.heightAnchor.constraint(equalToConstant: 200).isActive=true
         self.view.backgroundColor = #colorLiteral(red: 0.1490196078, green: 0.1176470588, blue: 0.1764705882, alpha: 1)
-        
-//            descriptionMoive = UILabel()
         descriptionMoive?.textColor = .white
-        
     
         let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 44))
         view.addSubview(navBar)
         nameOfMovieLabel.textColor = .white
         nameofDirector.textColor = .white
         
-        scheduleCollectionView.register(UINib(nibName:
-            "ScheduleCell", bundle: nil), forCellWithReuseIdentifier: "ScheduleCell")
-        
-        let floawLayout = UPCarouselFlowLayout()
-                           floawLayout.itemSize = CGSize(width: UIScreen.main.bounds.size.width - 60.0, height: (scheduleCollectionView?.frame.size.height)!)
-                           floawLayout.scrollDirection = .horizontal
-                           floawLayout.sideItemScale = 0.8
-                           floawLayout.sideItemAlpha = 1.0
-                           floawLayout.spacingMode = .fixed(spacing: 5.0)
-                           scheduleCollectionView?.collectionViewLayout = floawLayout
-        
-//                    self.activityData.startAnimating()
-                       do{
-                           
-                           
-                           DispatchQueue.global(qos: .background).async {
-                           
-                               guard let videoURl = try? URL(string: "https://www.youtube.com/watch?v=e82JHkkPw54") else {return}
-                               
-                               self.activityData.startAnimating()
-                               DispatchQueue.main.async {
-                        
-            
-                                   self.playerVideo.loadVideoURL(videoURl)
-                                   self.activityData.stopAnimating()
-                               }
-                           }
-                           
-                           
-                           
-                           
-                       }catch{
-                           
-                           
-                           print("erorr")
-                           
-                       }
-                       
-        
-        
         
 
     }
     
+    func loadVideo()
+    {
+        do{
+            DispatchQueue.global(qos: .background).async {
+                guard let videoURl = try? URL(string: "https://www.youtube.com/watch?v=e82JHkkPw54") else {return}
+                DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+                    self.playerVideo.loadVideoURL(videoURl)
+                    self.activityData.stopAnimating()
+                }
+            }
+        }catch{
+            
+            print("erorr")
+            
+        }
+                              
+    
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
                
-        
-        
         
     }
     
@@ -117,55 +113,4 @@ class VideoDescriptionVC: UIViewController {
 
    
 }
-
-extension VideoDescriptionVC:UICollectionViewDelegate,UICollectionViewDataSource{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        if collectionView == scheduleCollectionView {
-
-            return TAGS.count
-        }
-        return TAGS.count
-//        return TAGS.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ScheduleCell", for: indexPath) as? ScheduleCell else {return ScheduleCell()}
-            let tag = TAGS[indexPath.row]
-        
-            cell.dateLabel.text = tag
-        
-
-            return cell
-        
-
-        
-        
-        
-        
-        
-    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        
-//           guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ScheduleTimeCell", for: indexPath) as? ScheduleCell else {return ScheduleCell() }
-//        guard let tableViewCell = cell as? TableViewCell else { return }
-
-//        guard collectionViewCell = cell as? ScheduleCell else { return ScheduleCell()}
-        
-//        cell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.row)
-        
-
-           
-           
-       }
-    
-    
-    
-    
-}
-
 

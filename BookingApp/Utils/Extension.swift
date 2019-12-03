@@ -10,6 +10,15 @@ import Foundation
 
 import UIKit
 public extension UIImageView {
+    
+    func cỉcleImage()  {
+        
+        self.layer.borderWidth = 1
+        self.layer.masksToBounds = false
+        self.layer.borderColor = UIColor.gray.cgColor
+        self.layer.cornerRadius = self.frame.height/2
+        self.clipsToBounds = true
+    }
     func loadImage(fromURL url: String) {
         guard let imageURL = URL(string: url) else {
             return
@@ -44,4 +53,18 @@ public extension UIImageView {
         },
                           completion: nil)
     }
+}
+
+extension UIView{
+
+    func cicileView()  {
+        
+        self.layer.cornerRadius = self.frame.size.width/2
+
+        
+        self.clipsToBounds = true
+        
+        
+    }
+   
 }

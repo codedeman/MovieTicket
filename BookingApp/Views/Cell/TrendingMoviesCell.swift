@@ -27,19 +27,7 @@ class TrendingMoviesCell: UICollectionViewCell {
     
     
     
-    public var abum:Album!{
-
-        didSet{
-            
-            
-            self.imageView.loadImage(fromURL: abum.image)
-            
-
-
-        }
-
-
-    }
+   
     
  
     override func awakeFromNib() {

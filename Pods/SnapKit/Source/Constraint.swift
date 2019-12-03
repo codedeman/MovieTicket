@@ -231,10 +231,10 @@ public final class Constraint {
         return self
     }
 
-    @available(*, deprecated:3.0, message:"Use update(offset: ConstraintOffsetTarget) instead.")
+    @available(*, deprecated, message:"Use update(offset: ConstraintOffsetTarget) instead.")
     public func updateOffset(amount: ConstraintOffsetTarget) -> Void { self.update(offset: amount) }
 
-    @available(*, deprecated:3.0, message:"Use update(inset: ConstraintInsetTarget) instead.")
+    @available(*, deprecated, message:"Use update(inset: ConstraintInsetTarget) instead.")
     public func updateInsets(amount: ConstraintInsetTarget) -> Void { self.update(inset: amount) }
 
     @available(*, deprecated:3.0, message:"Use update(priority: ConstraintPriorityTarget) instead.")

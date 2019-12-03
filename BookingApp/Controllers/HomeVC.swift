@@ -12,13 +12,9 @@ import RxSwift
 
 class HomeVC: UIViewController {
 
-    var movieViewModel =  MovieViewModel()
-    
-    var homeviewModel = HomeViewModel()
     
 
     
-    public var albums:BehaviorRelay<[Album]> = BehaviorRelay(value: [])
     private let disposeBag = DisposeBag()
 
 
@@ -29,7 +25,6 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         
 //        setupCollectionView()
-        homeviewModel.requestData()
         setupBindings()
         
     }
@@ -64,23 +59,23 @@ class HomeVC: UIViewController {
         favoriteCollection.register(UINib(nibName: "TrendingMoviesCell", bundle: nil), forCellWithReuseIdentifier: "TrendingMoviesCell")
         
                 
-        homeviewModel.albums.bind(to: favoriteCollection.rx.items(cellIdentifier: "TrendingMoviesCell", cellType: TrendingMoviesCell.self)){ (index,album,cell) in
-            cell.imageView.loadImage(fromURL: album.image)
-
-        }.disposed(by: disposeBag)
+//        homeviewModel.albums.bind(to: favoriteCollection.rx.items(cellIdentifier: "TrendingMoviesCell", cellType: TrendingMoviesCell.self)){ (index,album,cell) in
+//            cell.imageView.loadImage(fromURL: album.image)
+//
+//        }.disposed(by: disposeBag)
+//
+//        favoriteCollection.rx.modelSelected(Album.self).subscribe(onNext: { (album) in
+//
+//            print("album \(album.image)")
+//        }).disposed(by: disposeBag)
+//
         
-        favoriteCollection.rx.modelSelected(Album.self).subscribe(onNext: { (album) in
-            
-            print("album \(album.image)")
-        }).disposed(by: disposeBag)
         
-        
-        
-        homeviewModel.albums.bind(to: movieCollectionView.rx.items(cellIdentifier: "HomeCell", cellType: HomeCell.self)) {(index,album,cell) in
-            
-            cell.movieImage.image = UIImage(systemName: album.image)
-            
-        }
+//        homeviewModel.albums.bind(to: movieCollectionView.rx.items(cellIdentifier: "HomeCell", cellType: HomeCell.self)) {(index,album,cell) in
+//
+//            cell.movieImage.image = UIImage(systemName: album.image)
+//
+//        }
  
         
     }

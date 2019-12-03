@@ -11,6 +11,7 @@
 		180E44D22386447100A44192 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180E44D12386447100A44192 /* LoginVC.swift */; };
 		181308B42383F35A00BE4F79 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181308B32383F35A00BE4F79 /* Album.swift */; };
 		181308B62383F63900BE4F79 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181308B52383F63900BE4F79 /* HomeViewModel.swift */; };
+		181F42CF2396507D00621AC8 /* Theaters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F42CE2396507D00621AC8 /* Theaters.swift */; };
 		18775E6E2377CA400031CFF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18775E6D2377CA400031CFF0 /* AppDelegate.swift */; };
 		18775E702377CA400031CFF0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18775E6F2377CA400031CFF0 /* SceneDelegate.swift */; };
 		18775E752377CA400031CFF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18775E732377CA400031CFF0 /* Main.storyboard */; };
@@ -34,6 +35,17 @@
 		18DD6EEB23879B350050CA47 /* customUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD6EEA23879B350050CA47 /* customUITextField.swift */; };
 		18DD6EEF2387A3F20050CA47 /* SeatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD6EEE2387A3F20050CA47 /* SeatVC.swift */; };
 		18DD6EF12387A94D0050CA47 /* SeatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD6EF02387A94D0050CA47 /* SeatCell.swift */; };
+		18DD6EF62388DB0F0050CA47 /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD6EF42388DB0F0050CA47 /* ScheduleCell.swift */; };
+		18DD6EF72388DB0F0050CA47 /* ScheduleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DD6EF52388DB0F0050CA47 /* ScheduleCell.xib */; };
+		18DD6EF9238919EC0050CA47 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD6EF8238919EC0050CA47 /* ViewController.swift */; };
+		18DD6EFC238963880050CA47 /* ScheduleTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD6EFA238963880050CA47 /* ScheduleTimeCell.swift */; };
+		18DD6EFD238963880050CA47 /* ScheduleTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DD6EFB238963880050CA47 /* ScheduleTimeCell.xib */; };
+		18DD6EFF238A8E400050CA47 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18DD6EFE238A8E3F0050CA47 /* Authentication.storyboard */; };
+		18DD6F01238A8EB50050CA47 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD6F00238A8EB50050CA47 /* RegisterVC.swift */; };
+		18FAC3862395E07F0099C1FF /* WeekdaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FAC3852395E07F0099C1FF /* WeekdaysView.swift */; };
+		18FAC3882395E3680099C1FF /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FAC3872395E3670099C1FF /* CalenderView.swift */; };
+		18FAC38A2395E5010099C1FF /* MothView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FAC3892395E5010099C1FF /* MothView.swift */; };
+		18FAC38C23960A230099C1FF /* MoviesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FAC38B23960A230099C1FF /* MoviesApi.swift */; };
 		8B34BA8E68A3E0CD99526BF4 /* libPods-BookingApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98FAB65761A1556A0C9A00D1 /* libPods-BookingApp.a */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +72,7 @@
 		180E44D12386447100A44192 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		181308B32383F35A00BE4F79 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		181308B52383F63900BE4F79 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		181F42CE2396507D00621AC8 /* Theaters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theaters.swift; sourceTree = "<group>"; };
 		18775E6A2377CA400031CFF0 /* BookingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18775E6D2377CA400031CFF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18775E6F2377CA400031CFF0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +102,17 @@
 		18DD6EEA23879B350050CA47 /* customUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customUITextField.swift; sourceTree = "<group>"; };
 		18DD6EEE2387A3F20050CA47 /* SeatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatVC.swift; sourceTree = "<group>"; };
 		18DD6EF02387A94D0050CA47 /* SeatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatCell.swift; sourceTree = "<group>"; };
+		18DD6EF42388DB0F0050CA47 /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
+		18DD6EF52388DB0F0050CA47 /* ScheduleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleCell.xib; sourceTree = "<group>"; };
+		18DD6EF8238919EC0050CA47 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		18DD6EFA238963880050CA47 /* ScheduleTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTimeCell.swift; sourceTree = "<group>"; };
+		18DD6EFB238963880050CA47 /* ScheduleTimeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleTimeCell.xib; sourceTree = "<group>"; };
+		18DD6EFE238A8E3F0050CA47 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
+		18DD6F00238A8EB50050CA47 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		18FAC3852395E07F0099C1FF /* WeekdaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdaysView.swift; sourceTree = "<group>"; };
+		18FAC3872395E3670099C1FF /* CalenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderView.swift; sourceTree = "<group>"; };
+		18FAC3892395E5010099C1FF /* MothView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MothView.swift; sourceTree = "<group>"; };
+		18FAC38B23960A230099C1FF /* MoviesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesApi.swift; sourceTree = "<group>"; };
 		73112D113371777715F5F17C /* Pods-BookingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookingApp.release.xcconfig"; path = "Target Support Files/Pods-BookingApp/Pods-BookingApp.release.xcconfig"; sourceTree = "<group>"; };
 		98FAB65761A1556A0C9A00D1 /* libPods-BookingApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BookingApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -122,10 +146,12 @@
 		18337F64237C3A3E00AE8ACC /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				18DD6EEC2387A07E0050CA47 /* xib */,
+				18DD6EFA238963880050CA47 /* ScheduleTimeCell.swift */,
 				18775EAA2377FE2A0031CFF0 /* HomeCell.swift */,
 				18A10A6D237C486800F2B8EC /* TrendingMoviesCell.swift */,
 				18DD6EF02387A94D0050CA47 /* SeatCell.swift */,
+				18DD6EF42388DB0F0050CA47 /* ScheduleCell.swift */,
+				18DD6EEC2387A07E0050CA47 /* xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -155,6 +181,7 @@
 		18775E6C2377CA400031CFF0 /* BookingApp */ = {
 			isa = PBXGroup;
 			children = (
+				18FAC3802394F19C0099C1FF /* Controllers */,
 				18775EB523780CC60031CFF0 /* Services */,
 				18775EAF2378023F0031CFF0 /* Utils */,
 				18775EAE237800110031CFF0 /* Storyboard */,
@@ -194,6 +221,7 @@
 			children = (
 				18775EA12377CE3E0031CFF0 /* Movie.swift */,
 				181308B32383F35A00BE4F79 /* Album.swift */,
+				181F42CE2396507D00621AC8 /* Theaters.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -212,6 +240,9 @@
 			children = (
 				18DD6EED2387A09F0050CA47 /* Controller */,
 				18337F64237C3A3E00AE8ACC /* Cell */,
+				18FAC3852395E07F0099C1FF /* WeekdaysView.swift */,
+				18FAC3872395E3670099C1FF /* CalenderView.swift */,
+				18FAC3892395E5010099C1FF /* MothView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -228,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				18775E732377CA400031CFF0 /* Main.storyboard */,
+				18DD6EFE238A8E3F0050CA47 /* Authentication.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -248,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				18775EB623780CDC0031CFF0 /* DataServices.swift */,
+				18FAC38B23960A230099C1FF /* MoviesApi.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -255,7 +288,9 @@
 		18DD6EEC2387A07E0050CA47 /* xib */ = {
 			isa = PBXGroup;
 			children = (
+				18DD6EFB238963880050CA47 /* ScheduleTimeCell.xib */,
 				18775EAB2377FE2A0031CFF0 /* HomeCell.xib */,
+				18DD6EF52388DB0F0050CA47 /* ScheduleCell.xib */,
 				18A10A6E237C486800F2B8EC /* TrendingMoviesCell.xib */,
 			);
 			path = xib;
@@ -264,12 +299,21 @@
 		18DD6EED2387A09F0050CA47 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				18DD6EF8238919EC0050CA47 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		18FAC3802394F19C0099C1FF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				18775EA52377FC790031CFF0 /* HomeVC.swift */,
 				18A10A71237C70FC00F2B8EC /* VideoDescriptionVC.swift */,
 				180E44D12386447100A44192 /* LoginVC.swift */,
 				18DD6EEE2387A3F20050CA47 /* SeatVC.swift */,
+				18DD6F00238A8EB50050CA47 /* RegisterVC.swift */,
 			);
-			path = Controller;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		8BDEE342665B8B102676E2F7 /* Pods */ = {
@@ -395,8 +439,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18DD6EFF238A8E400050CA47 /* Authentication.storyboard in Resources */,
 				18775E7A2377CA470031CFF0 /* LaunchScreen.storyboard in Resources */,
 				18775E772377CA470031CFF0 /* Assets.xcassets in Resources */,
+				18DD6EF72388DB0F0050CA47 /* ScheduleCell.xib in Resources */,
+				18DD6EFD238963880050CA47 /* ScheduleTimeCell.xib in Resources */,
 				18775EAD2377FE2A0031CFF0 /* HomeCell.xib in Resources */,
 				18775E752377CA400031CFF0 /* Main.storyboard in Resources */,
 				18A10A70237C486800F2B8EC /* TrendingMoviesCell.xib in Resources */,
@@ -469,23 +516,32 @@
 				181308B42383F35A00BE4F79 /* Album.swift in Sources */,
 				18775EAC2377FE2A0031CFF0 /* HomeCell.swift in Sources */,
 				18775EB2237802DA0031CFF0 /* Constraints.swift in Sources */,
+				18FAC38A2395E5010099C1FF /* MothView.swift in Sources */,
 				18775E6E2377CA400031CFF0 /* AppDelegate.swift in Sources */,
+				18DD6EFC238963880050CA47 /* ScheduleTimeCell.swift in Sources */,
+				18DD6EF9238919EC0050CA47 /* ViewController.swift in Sources */,
+				18FAC38C23960A230099C1FF /* MoviesApi.swift in Sources */,
 				18A10A6F237C486800F2B8EC /* TrendingMoviesCell.swift in Sources */,
 				181308B62383F63900BE4F79 /* HomeViewModel.swift in Sources */,
 				18DD6EE923868B400050CA47 /* CornerRadiusView.swift in Sources */,
+				18DD6F01238A8EB50050CA47 /* RegisterVC.swift in Sources */,
+				18FAC3882395E3680099C1FF /* CalenderView.swift in Sources */,
 				18DD6EE7238687E50050CA47 /* GradientView.swift in Sources */,
 				18775EB423780A400031CFF0 /* MovieViewModel.swift in Sources */,
 				18775EA92377FD6B0031CFF0 /* UPCarouselFlowLayout.swift in Sources */,
+				18DD6EF62388DB0F0050CA47 /* ScheduleCell.swift in Sources */,
 				18DD6EEF2387A3F20050CA47 /* SeatVC.swift in Sources */,
 				18775E702377CA400031CFF0 /* SceneDelegate.swift in Sources */,
 				180E44902384E3AD00A44192 /* Extension.swift in Sources */,
 				18DD6EEB23879B350050CA47 /* customUITextField.swift in Sources */,
+				18FAC3862395E07F0099C1FF /* WeekdaysView.swift in Sources */,
 				18DD6EF12387A94D0050CA47 /* SeatCell.swift in Sources */,
 				18775EB723780CDC0031CFF0 /* DataServices.swift in Sources */,
 				18775EA22377CE3E0031CFF0 /* Movie.swift in Sources */,
 				18775EA62377FC790031CFF0 /* HomeVC.swift in Sources */,
 				18A10A72237C70FC00F2B8EC /* VideoDescriptionVC.swift in Sources */,
 				180E44D22386447100A44192 /* LoginVC.swift in Sources */,
+				181F42CF2396507D00621AC8 /* Theaters.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

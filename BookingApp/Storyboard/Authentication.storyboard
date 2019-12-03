@@ -1,7 +1,65 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cGt-jD-ewr">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--LoginVC-->
+        <scene sceneID="zo7-Cv-H2s">
+            <objects>
+                <viewController id="L6r-0M-XWO" customClass="LoginVC" customModule="BookingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ach-HP-leL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6WT-H4-MmW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3X6-Fo-SCl" customClass="CornerRadious" customModule="BookingApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="3X6-Fo-SCl" firstAttribute="leading" secondItem="6WT-H4-MmW" secondAttribute="leading" id="04F-dg-czi"/>
+                                    <constraint firstAttribute="bottom" secondItem="3X6-Fo-SCl" secondAttribute="bottom" id="Pgb-6c-CCd"/>
+                                    <constraint firstAttribute="trailing" secondItem="3X6-Fo-SCl" secondAttribute="trailing" id="Ui1-M0-mxp"/>
+                                    <constraint firstItem="3X6-Fo-SCl" firstAttribute="top" secondItem="6WT-H4-MmW" secondAttribute="top" id="wdv-ia-gQw"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="qhe-q4-QEC" firstAttribute="trailing" secondItem="6WT-H4-MmW" secondAttribute="trailing" id="1Jz-yf-mxm"/>
+                            <constraint firstItem="6WT-H4-MmW" firstAttribute="top" secondItem="qhe-q4-QEC" secondAttribute="top" id="L5m-mi-jSx"/>
+                            <constraint firstItem="6WT-H4-MmW" firstAttribute="leading" secondItem="qhe-q4-QEC" secondAttribute="leading" id="N2a-ji-3Al"/>
+                            <constraint firstItem="qhe-q4-QEC" firstAttribute="bottom" secondItem="6WT-H4-MmW" secondAttribute="bottom" id="icL-9o-tzl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qhe-q4-QEC"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Mh-Pl-BV0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1830" y="-153"/>
+        </scene>
+        <!--RegisterVC-->
+        <scene sceneID="a0S-fV-qWh">
+            <objects>
+                <viewController id="cGt-jD-ewr" customClass="RegisterVC" customModule="BookingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="36s-7j-y7V">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="VTr-1p-cfv"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YbP-Kp-wvz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1100" y="-339.50892857142856"/>
+        </scene>
+    </scenes>
 </document>

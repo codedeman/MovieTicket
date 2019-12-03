@@ -8,28 +8,31 @@
 
 import Foundation
 
-class Album {
-    public var name:String = ""
-    public var date:String = ""
-    public var image:String = ""
+class  User: Codable {
+    var id: String
+    var name: String
+    var about: String
     
-    
-    init(object:Any) {
-        if let dic:Dictionary<String,Any> = object as? Dictionary<String,Any>{
-
-            guard let name = dic["login"] as? String else {return}
-            self.name = name
-            
-            if let image = dic["avatar_url"] as? String  {
-                self.image = image
-            }else{
-                
-                self.image = "jocker-1.jpg"
-
-            }
-        }
-        
+    init(id: String, name: String, about: String) {
+        self.id = id
+        self.name = name
+        self.about = about
     }
+}
+
+class ResultObject: Codable {
+    var resultCount: Int = 0
+    var results = [User]()
     
+    static func parseData(_ data: Data) -> [User] {
+        do {
+            let  decoder = JSONDecoder()
+            let  resultObject = try decoder.decode(ResultObject.self, from: data)
+            return resultObject.results
+        } catch {
+            print("JSON Error: \(error)")
+            return []
+        }
+    }
     
 }
