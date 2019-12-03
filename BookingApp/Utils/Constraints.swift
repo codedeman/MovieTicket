@@ -15,7 +15,7 @@ let URL_BASE = "https://movie-tickets-vinid.herokuapp.com"
 let LIST_URL = URL_BASE+"/api/movies"
 let URL2 = "http://www.json-generator.com/api/json/get/clcVhGGZgy?indent=2"
 
-typealias MovieResponseCompletion = ([ListMovie]?) -> Void
+typealias MovieResponseCompletion = ([Movie]?) -> Void
 
 
 //let BEARER_HEADER = [

@@ -13,27 +13,26 @@ class MovieApi{
 
     static let shared = MovieApi()
 //
-    func getMovies(completion:@escaping (_ list:[Movie])->()){
+    func getMovies(completion:@escaping MovieResponseCompletion){
 
 //        let movie
-        guard let url = URL(string: LIST_URL) else {return}
-        AF.request(url).responseJSON { (response) in
+//        guard let url = URL(string: LIST_URL) else {return}
+        AF.request(LIST_URL).responseJSON { (response) in
 
             if let error = response.error{
             
-                debugPrint("error \(error)")
+                debugPrint(error.localizedDescription)
+                completion(nil)
+                
             }
-            guard let data = response.data else {return}
-            let json = try? JSON(data: data).object
+            guard let data = response.data else {return completion(nil) }
             
-            guard let jsonItems = json as? [String:Any] else {return}
-            
-            if let item = Mapp
-            
-            
-            
+                
+                let movie = ListMovie.parseData(data)
+                completion(movie)
+           
 
-
+            
 
         }
 
@@ -42,7 +41,7 @@ class MovieApi{
     
 //    func getAllFeedMessages(handler: @escaping (_ messages: [Message]) -> ()) {
 
-    func getMovies(completion: @escaping(_ user:[User]) ->()){
+    func getAllMovies(completion: @escaping(_ user:[User]) ->()){
         var userArr = [User]()
         AF.request(URL2).response { (reponse) in
             

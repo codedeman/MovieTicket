@@ -17,11 +17,13 @@ class TrendingMoviesCell: UICollectionViewCell {
     
     func configureCell(movie:Movie)  {
         
-//        let data = URL(string: movie.image)
-//         let placeholder = UIImage(named: "terminator")
-//
-//        let options:KingfisherOptionsInfo = [KingfisherOptionsInfoItem.transition(.fade(0.1))]
-//        imageView?.kf.setImage(with: data,placeholder: placeholder)
+        
+        
+        let data = URL(string: movie.image)
+         let placeholder = UIImage(named: "terminator")
+
+        let options:KingfisherOptionsInfo = [KingfisherOptionsInfoItem.transition(.fade(0.1))]
+        imageView?.kf.setImage(with: data,placeholder: placeholder)
         
     }
     

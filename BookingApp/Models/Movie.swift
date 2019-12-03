@@ -7,58 +7,9 @@
 //
 
 import Foundation
-//import ObjectMapper
-//
-//class ListMovie:Mappable{
-//
-//    var movie:[Movie]?
-//
-//    required init?(map: Map) {
-//
-//    }
-//    func mapping(map: Map) {
-//
-//        movie <- map["movies"]
-//    }
-//
-//
-//}
-//
-//class Movie: Mappable {
-//    required init?(map: Map) {
-//
-//    }
-//
-//    var title:String = ""
-//    var slug:String = ""
-//    var director:String = ""
-//    var cast:String = ""
-//    var description:String = ""
-//    var image:String = ""
-//    var trailer:String = ""
-//    var durationMin:String = ""
-//    var premiereAt:String = ""
-//
-//
-//    func mapping(map: Map) {
-//
-//        title <- map["title"]
-//        slug <- map["slug"]
-//        director <- map["director"]
-//        cast <- map["cast"]
-//        description <- map["description"]
-//        image <- map["image"]
-//        trailer <- map["trailer"]
-//        durationMin <- map["durationMin"]
-//
-//
-//    }
-//
-//
-//}
 
 class Movie:Codable {
-
+    let id:Int
     let title:String
     let slug:String
     let director:String
@@ -66,10 +17,50 @@ class Movie:Codable {
     let description:String
     let image:String
     let trailer:String
-
-    let durationMin:String
+    let durationMin:Int
     let premiereAt:String
+    let imdbScore:Float
+
+    init(id:Int,title:String,
+         slug:String,
+         director:String,
+         cast:String,
+         description:String,
+         image:String,
+         trailer:String,durationMin:Int,premiereAt:String,imdbScore:Float) {
+        
+        self.id = id
+        self.title = title
+        self.slug = slug
+        self.director = director
+        self.cast = cast
+        self.description = description
+        self.image = image
+        self.trailer = trailer
+        self.durationMin = durationMin
+        self.premiereAt = premiereAt
+        self.imdbScore = imdbScore
+        
+    }
 
 }
+
+class ListMovie: Codable {
+    
+    var movies = [Movie]()
+    var total: Int = 0
+
+    static func parseData(_ data: Data) -> [Movie] {
+         do {
+             let  decoder = JSONDecoder()
+             let  resultObject = try decoder.decode(ListMovie.self, from: data)
+            return resultObject.movies
+         } catch {
+             print("JSON Error: \(error)")
+             return []
+         }
+     }
+}
+
 
 
