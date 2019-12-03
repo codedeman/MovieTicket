@@ -10,9 +10,21 @@ import UIKit
 
 class ScheduleTimeCell: UICollectionViewCell {
 
+    @IBOutlet weak var backgroundShowTime: UIView!
+    @IBOutlet weak var showTimeLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        showTimeLabel.textColor = .white
+        backgroundShowTime.layer.cornerRadius = 10
+        showTimeLabel.backgroundColor = .white
+        backgroundShowTime.backgroundColor =  .white
+
+        
+        
+        
+        
     }
 
 }

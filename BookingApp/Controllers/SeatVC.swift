@@ -12,6 +12,19 @@ class SeatVC: UIViewController{
 
     @IBOutlet weak var seatCollectionView: UICollectionView!
     @IBOutlet weak var seatLabel: UILabel!
+    
+    
+    @IBOutlet weak var checkoutButton: UIButton? = {
+    
+        let button = UIButton()
+        
+        button.backgroundColor = #colorLiteral(red: 0.8235294118, green: 0.3098039216, blue: 0.3294117647, alpha: 1)
+        button.tintColor = .white
+        
+        return button
+        
+        
+    }()
     var classTitle = ["Platinum","Gold","Silver"]
 
     var seatLayout = ["Platinum":[1,1,1,1,1,1,1,2,2,1,1,1,],"Gold":[2,1,1,1,1,1,1,2,2,2,2,1,2,2,1,1,1,1,1,2,2,1,1,2,2,1,1,1,1,1,1,2,2,2,2,1],"Silver":[1,1,1,1,1,1,1,2,2,1,1,1,1,1,1,1,1,1,1,2,2,1,1,1,1,1,1,1,1,1,1,2,2,1,1,1,0,1,1,1,2,1,1,1,1,2,2,0,0,1,2,2,2,2,1,1,1,2,1,0,0,2,2,1,1,1,2,2,2,2,2,0]]
@@ -24,6 +37,9 @@ class SeatVC: UIViewController{
         seatCollectionView.delegate = self
         seatCollectionView.dataSource = self
         seatCollectionView.backgroundColor   = #colorLiteral(red: 0.1990531087, green: 0.1608822048, blue: 0.2323940694, alpha: 1)
+        
+        checkoutButton?.tintColor = .white
+        checkoutButton?.backgroundColor = #colorLiteral(red: 0.8235294118, green: 0.3098039216, blue: 0.3294117647, alpha: 1)
     }
     
    
@@ -59,9 +75,9 @@ extension SeatVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollectio
         if seatLayout[classTitle[indexPath.section]]![indexPath.row] == 0 {
             cell.seat.image = nil
         }else if seatLayout[classTitle[indexPath.section]]![indexPath.row] == 1 {
-            cell.seat.image = #imageLiteral(resourceName: "popcorn-1")
-        }else if seatLayout[classTitle[indexPath.section]]![indexPath.row] == 2 {
             cell.seat.image = #imageLiteral(resourceName: "icons8-sofa_filled-1")
+        }else if seatLayout[classTitle[indexPath.section]]![indexPath.row] == 2 {
+            cell.seat.image = #imageLiteral(resourceName: "icons8-sofa_filled")
         }else{
             cell.seat.image = #imageLiteral(resourceName: "popcorn-1")
         }

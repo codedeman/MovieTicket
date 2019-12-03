@@ -17,7 +17,7 @@ class VideoDescriptionVC: UIViewController {
     @IBOutlet weak var nameOfMovieLabel: UILabel!
     
     @IBOutlet weak var nameofDirector: UILabel!
-    @IBOutlet weak var descriptionMoive: UILabel!
+    @IBOutlet weak var descriptionMoive: UILabel?
     @IBOutlet weak var activityData: UIActivityIndicatorView!
     @IBOutlet weak var bookBtn: UIButton?{
         didSet{
@@ -37,10 +37,11 @@ class VideoDescriptionVC: UIViewController {
         activityData.startAnimating()
         
         self.view.backgroundColor = #colorLiteral(red: 0.1490196078, green: 0.1176470588, blue: 0.1764705882, alpha: 1)
-        descriptionMoive.textColor = .white
         
+//            descriptionMoive = UILabel()
+        descriptionMoive?.textColor = .white
         
-        
+    
         let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 44))
         view.addSubview(navBar)
         nameOfMovieLabel.textColor = .white
@@ -57,6 +58,34 @@ class VideoDescriptionVC: UIViewController {
                            floawLayout.spacingMode = .fixed(spacing: 5.0)
                            scheduleCollectionView?.collectionViewLayout = floawLayout
         
+//                    self.activityData.startAnimating()
+                       do{
+                           
+                           
+                           DispatchQueue.global(qos: .background).async {
+                           
+                               guard let videoURl = try? URL(string: "https://www.youtube.com/watch?v=e82JHkkPw54") else {return}
+                               
+                               self.activityData.startAnimating()
+                               DispatchQueue.main.async {
+                        
+            
+                                   self.playerVideo.loadVideoURL(videoURl)
+                                   self.activityData.stopAnimating()
+                               }
+                           }
+                           
+                           
+                           
+                           
+                       }catch{
+                           
+                           
+                           print("erorr")
+                           
+                       }
+                       
+        
         
         
 
@@ -65,38 +94,7 @@ class VideoDescriptionVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.activityData.startAnimating()
-        
-        
-        
-            do{
-                
-                
-                DispatchQueue.global(qos: .background).async {
-                    
-                    //                        self.activityData.startAnimating()
-                    
-                    
-                    guard  let videoURl = try? URL(string: "https://www.youtube.com/watch?v=e82JHkkPw54") else {return}
-                    
-                    
-                    DispatchQueue.main.async {
-                        
-                        self.playerVideo.loadVideoURL(videoURl)
-                        self.activityData.stopAnimating()
-                    }
-                }
-                
-                
-                
-                
-            }catch{
-                
-                
-                print("erorr")
-                
-            }
-            
+               
         
         
         

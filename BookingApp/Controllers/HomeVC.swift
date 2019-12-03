@@ -57,6 +57,8 @@ class HomeVC: UIViewController {
                     floawLayout.sideItemAlpha = 1.0
                     floawLayout.spacingMode = .fixed(spacing: 5.0)
                     movieCollectionView?.collectionViewLayout = floawLayout
+        
+        
         movieCollectionView.register(UINib(nibName:"HomeCell" , bundle: nil), forCellWithReuseIdentifier: "HomeCell")
 
         favoriteCollection.register(UINib(nibName: "TrendingMoviesCell", bundle: nil), forCellWithReuseIdentifier: "TrendingMoviesCell")

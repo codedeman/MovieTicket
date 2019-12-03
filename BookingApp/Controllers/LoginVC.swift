@@ -17,7 +17,6 @@ class LoginVC: UIViewController {
         
         let username = UILabel()
         username.translatesAutoresizingMaskIntoConstraints = false
-        
         username.text = "User name"
         username.tintColor = .white
         return username
@@ -36,7 +35,7 @@ class LoginVC: UIViewController {
         
         let usename = UITextField()
         usename.placeholder = "@gmail.com"
-        usename.borderStyle = .bezel
+        usename.borderStyle = .none
         //        usename.background = UIColor.white
         return usename
         
@@ -44,9 +43,10 @@ class LoginVC: UIViewController {
     let passwordField:UITextField = {
         
         var  pasword = UITextField()
-        pasword = customUITextField()
+//        pasword = customUITextField()
         pasword.placeholder = "123456"
-        pasword.borderStyle = .line
+        pasword.borderStyle = .none
+        pasword.isSecureTextEntry = true
         
         //        usename.background = UIColor.white
         return pasword
@@ -98,8 +98,19 @@ class LoginVC: UIViewController {
         return login
     }()
     
-    
-    
+    let registerButton:UIButton = {
+
+        let register = UIButton()
+//        register.backgroundColor = .blue
+        register.tintColor = .blue
+        
+        register.setTitle("Don't have an acount? Sign Up", for: .normal)
+        return register
+
+
+    }()
+
+//
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -112,13 +123,36 @@ class LoginVC: UIViewController {
         containerView.addSubview(passwordLabel)
         containerView.addSubview(passwordField)
         setupToHideKeyboardOnTapOnView()
+        containerView.addSubview(registerButton)
         layoutLoginForm()
         
+        loginButton.addTarget(self, action: #selector(loginButtonWasPressed), for: .allTouchEvents)
         
         
         
+
+        
+//        usernameField.setup()
         
         
+//        usernameField = customUITextField()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        usernameField.setup()
+        passwordField.setup()
+
+        
+    }
+    
+    @objc func loginButtonWasPressed(){
+        
+        let homeVC = HomeVC()
+        
+        present(homeVC, animated: true) {
+            
+        }
         
     }
     
@@ -187,6 +221,15 @@ class LoginVC: UIViewController {
             make.top.equalTo(passwordField).offset(50)
             make.leading.equalTo(usernameField)
             make.trailing.equalTo(containerView).offset(-50)
+            make.height.equalTo(40)
+            
+        }
+        
+        registerButton.snp.makeConstraints { (make) in
+            
+            make.top.equalTo(loginButton).offset(50)
+            make.leading.equalTo(containerView).offset(30)
+            make.trailing.equalTo(containerView).offset(-30)
             make.height.equalTo(40)
             
         }
