@@ -125,6 +125,8 @@ class LoginVC: UIViewController {
         setupToHideKeyboardOnTapOnView()
         containerView.addSubview(registerButton)
         layoutLoginForm()
+        usernameField.text = "gnortpro@gmail.com"
+//        passwordField.text = "abcxyz12"
         
         loginButton.addTarget(self, action: #selector(loginButtonWasPressed), for: .allTouchEvents)
         
@@ -148,10 +150,18 @@ class LoginVC: UIViewController {
     
     @objc func loginButtonWasPressed(){
         
-        let homeVC = HomeVC()
-        
-        present(homeVC, animated: true) {
+//
+        guard let email = usernameField.text , usernameField.text != ""  else {return}
+        guard let password =  passwordField.text, passwordField.text != "" else {return}
+        AuthService.instance.loginUser(email: email , password: password) { (sucess) in
             
+            if sucess{
+                
+                print("Dan nhap thanh cong")
+            }else{
+                
+                print("Dang nhap that bai")
+            }
         }
         
     }

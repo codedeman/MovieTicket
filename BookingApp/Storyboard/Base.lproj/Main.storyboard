@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q3o-GC-CmS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
@@ -455,6 +455,7 @@
                     <connections>
                         <outlet property="favoriteCollection" destination="ZZc-AJ-04y" id="vvB-8O-HLN"/>
                         <outlet property="movieCollectionView" destination="nLD-VV-t3w" id="uBA-vf-EKA"/>
+                        <outlet property="nowShowingButton" destination="S8c-U7-1qZ" id="VaI-dk-Qjq"/>
                         <segue destination="Q3o-GC-CmS" kind="push" identifier="toDetailMovie" id="5Jj-n7-SBg"/>
                     </connections>
                 </viewController>

@@ -14,6 +14,7 @@ class HomeVC: UIViewController {
 
     
 
+    @IBOutlet weak var nowShowingButton: UIButton!
     
     private let disposeBag = DisposeBag()
 
@@ -32,9 +33,19 @@ class HomeVC: UIViewController {
             self.favoriteCollection.reloadData()
             
         }
+        test()
         
         
     }
+    
+    func test() {
+        
+        nowShowingButton.rx.tap.asDriver().throttle(2).drive(onNext: { (text) in
+            print("what the hell \(text)")
+        }, onCompleted: nil).disposed(by: disposeBag)
+    }
+    
+    
     
     func setupCollectionView(){
         

@@ -30,6 +30,7 @@
 		18A10A6F237C486800F2B8EC /* TrendingMoviesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A10A6D237C486800F2B8EC /* TrendingMoviesCell.swift */; };
 		18A10A70237C486800F2B8EC /* TrendingMoviesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A10A6E237C486800F2B8EC /* TrendingMoviesCell.xib */; };
 		18A10A72237C70FC00F2B8EC /* VideoDescriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A10A71237C70FC00F2B8EC /* VideoDescriptionVC.swift */; };
+		18D10E57239752DE00EF5A53 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D10E56239752DE00EF5A53 /* AuthService.swift */; };
 		18DD6EE7238687E50050CA47 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD6EE6238687E50050CA47 /* GradientView.swift */; };
 		18DD6EE923868B400050CA47 /* CornerRadiusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD6EE823868B400050CA47 /* CornerRadiusView.swift */; };
 		18DD6EEB23879B350050CA47 /* customUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD6EEA23879B350050CA47 /* customUITextField.swift */; };
@@ -97,6 +98,7 @@
 		18A10A6D237C486800F2B8EC /* TrendingMoviesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMoviesCell.swift; sourceTree = "<group>"; };
 		18A10A6E237C486800F2B8EC /* TrendingMoviesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendingMoviesCell.xib; sourceTree = "<group>"; };
 		18A10A71237C70FC00F2B8EC /* VideoDescriptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDescriptionVC.swift; sourceTree = "<group>"; };
+		18D10E56239752DE00EF5A53 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		18DD6EE6238687E50050CA47 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		18DD6EE823868B400050CA47 /* CornerRadiusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusView.swift; sourceTree = "<group>"; };
 		18DD6EEA23879B350050CA47 /* customUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customUITextField.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 			children = (
 				18775EB623780CDC0031CFF0 /* DataServices.swift */,
 				18FAC38B23960A230099C1FF /* MoviesApi.swift */,
+				18D10E56239752DE00EF5A53 /* AuthService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 				18775EA22377CE3E0031CFF0 /* Movie.swift in Sources */,
 				18775EA62377FC790031CFF0 /* HomeVC.swift in Sources */,
 				18A10A72237C70FC00F2B8EC /* VideoDescriptionVC.swift in Sources */,
+				18D10E57239752DE00EF5A53 /* AuthService.swift in Sources */,
 				180E44D22386447100A44192 /* LoginVC.swift in Sources */,
 				181F42CF2396507D00621AC8 /* Theaters.swift in Sources */,
 			);
