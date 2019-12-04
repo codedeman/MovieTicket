@@ -1,8 +1,8 @@
 PODS:
   - Alamofire (5.0.0-rc.3)
-  - Kingfisher (5.10.0):
-    - Kingfisher/Core (= 5.10.0)
-  - Kingfisher/Core (5.10.0)
+  - Kingfisher (5.11.0):
+    - Kingfisher/Core (= 5.11.0)
+  - Kingfisher/Core (5.11.0)
   - ObjectMapper (3.5.1)
   - RxCocoa (5.0.1):
     - RxRelay (~> 5)
@@ -10,6 +10,7 @@ PODS:
   - RxRelay (5.0.1):
     - RxSwift (~> 5)
   - RxSwift (5.0.1)
+  - SlideMenuControllerSwift (4.0.0)
   - SnapKit (4.2.0)
   - SwiftyJSON (5.0.0)
   - YouTubePlayer (0.4.0)
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - ObjectMapper (~> 3.4)
   - RxCocoa (~> 5)
   - RxSwift (~> 5)
+  - SlideMenuControllerSwift
   - SnapKit (~> 4.0)
   - SwiftyJSON
   - YouTubePlayer
@@ -32,21 +34,23 @@ SPEC REPOS:
     - RxCocoa
     - RxRelay
     - RxSwift
+    - SlideMenuControllerSwift
     - SnapKit
     - SwiftyJSON
     - YouTubePlayer
 
 SPEC CHECKSUMS:
   Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
-  Kingfisher: 0bf6eae7c2193f15719915fecb7c2c1c03855f3d
+  Kingfisher: 4569606189149e19c7d9439f47e885d0679b7a90
   ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
   RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
   RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  SlideMenuControllerSwift: 021d6318201c53d4d4d3710517d43d6c556c7dd0
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   YouTubePlayer: 028451f6772f372d4759866db99824c676ac1473
 
-PODFILE CHECKSUM: fb63a9bb74dee81da70f5b9a8b192791155b8676
+PODFILE CHECKSUM: fa7de69d68500d8b0c0f1373ef72a2cdd1a4f0ec
 
 COCOAPODS: 1.8.4

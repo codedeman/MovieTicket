@@ -7,13 +7,28 @@
 //
 
 import Foundation
+import SwiftyJSON
 
-class Theaters:Codable{
+struct Theaters:Codable{
     
-    var timestamp:String
-    var status:Int
-    var message:String
-//    init(timestamp:String,status:String,message:String) {
-//        
+    var coordinate:String
+    var id:Int
+    var latitude:Float
+    var longitude:Float
+    var slug:String
+    var title:String
+    
+    
+    
+//    enum CodingKeys : String, CodingKey {
+//        case id
+//        case title
+//        case slug
+//        case longitude
+//        case latitude
+//        case coordinate
 //    }
+
 }
+
+

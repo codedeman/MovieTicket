@@ -129,15 +129,7 @@ class LoginVC: UIViewController {
 //        passwordField.text = "abcxyz12"
         
         loginButton.addTarget(self, action: #selector(loginButtonWasPressed), for: .allTouchEvents)
-        
-        
-        
-
-        
-//        usernameField.setup()
-        
-        
-//        usernameField = customUITextField()
+       
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -157,7 +149,11 @@ class LoginVC: UIViewController {
             
             if sucess{
                 
-                print("Dan nhap thanh cong")
+                TheaterApi.shared.getTheater { (theater) in
+                    
+                    print("theater  \(theater?.id)")
+                }
+                
             }else{
                 
                 print("Dang nhap that bai")

@@ -12,8 +12,6 @@ import RxSwift
 
 class HomeVC: UIViewController {
 
-    
-
     @IBOutlet weak var nowShowingButton: UIButton!
     
     private let disposeBag = DisposeBag()
@@ -70,11 +68,8 @@ class HomeVC: UIViewController {
     func setupBindings()  {
         
         
-  
-        
     }
     
-
     
 
 }
@@ -121,13 +116,12 @@ extension HomeVC:UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
 //
-//        let moviedescription = VideoDescriptionVC()
 //
-        let storyboard  =  UIStoryboard(name: "toDetailMovie", bundle: nil)
+        let storyboard  =  UIStoryboard(name: "Main", bundle: nil)
 //
 //
-        let movieDescription = storyboard.instantiateViewController(identifier: "toDetailMovie")
-        
+        let movieDescription = storyboard.instantiateViewController(identifier: "toMovieDescription")
+//
         present(movieDescription, animated: true, completion: nil)
         
 //        performSegue(withIdentifier:"toDetailMovie" , sender: nil)

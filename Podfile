@@ -12,6 +12,7 @@ target 'BookingApp' do
   pod 'SnapKit', '~> 4.0'
 pod 'ObjectMapper', '~> 3.4'
 
+pod 'SlideMenuControllerSwift'
 
 
 end

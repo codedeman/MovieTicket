@@ -38,13 +38,10 @@ class AuthService{
     func loginUser(email:String,password:String, completion: @escaping CompletionHandler) {
         let lowerCaseEmail =  email.lowercased()
         let body:[String:Any] = [
-            
             "email" : lowerCaseEmail,
             "password": password
         ]
-        print("body \(body)")
         
-           
         
         AF.request(URL_LOGIN,method: .post,parameters: body,encoding: JSONEncoding.default).responseJSON { (repsonse) in
             
