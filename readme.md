@@ -11,7 +11,7 @@ Developer :Kevin pham
 
 **General**
 <br>
-<img src="https://github.com/codedeman/MovieTicket/blob/dev/images/moviebooking.jpg"  width=40% />
+<img src="https://github.com/codedeman/MovieTicket/blob/dev/images/moviebooking.jpg"  width=80% />
 <br>
 
 **Home**
