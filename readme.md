@@ -1,10 +1,13 @@
-#Bookde App 
+## Bookde App 
 ## Feature 
--Movie booking app online 
--User open application->choose  film-> select location,and schedule ->seat selection->buy ticket
+<br>
+- Movie booking app online 
+<br>
+<br>
+- User open application->choose  film-> select location,and schedule ->seat selection->buy ticket
+<br>
 ## Platform
 - IOS
-
 **General**
 <br>
 <img src="https://github.com/codedeman/MovieTicket/blob/dev/images/moviebooking.jpg"  width=80% />
@@ -26,5 +29,5 @@
 <br>
 <img src="https://github.com/codedeman/MovieTicket/blob/dev/images/screen2.png"  width=40% />
 <br>
-#Bookde App 
-Developer :Kevin pham 
+## Bookde App 
+- Developer :Kevin pham 
