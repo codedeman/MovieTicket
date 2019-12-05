@@ -151,7 +151,10 @@ class LoginVC: UIViewController {
                 
                 TheaterApi.shared.getTheater { (theater) in
                     
-                    print("theater  \(theater?.id)")
+//                    MovieApi.shared.getMovies { (<#[Movie]?#>) in
+//                        <#code#>
+//                    }
+                    
                 }
                 
             }else{

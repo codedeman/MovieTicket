@@ -10,30 +10,48 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class HomeVC: UIViewController {
 
-    @IBOutlet weak var nowShowingButton: UIButton!
+protocol SendDetail {
     
-    private let disposeBag = DisposeBag()
+    func sendData(id:Int,title:String,
+    slug:String,
+    director:String,
+    cast:String,
+    description:String,
+    image:String,
+    trailer:String,durationMin:Int,premiereAt:String,imdbScore:Float)
+}
 
+class HomeVC: UIViewController {
+    
+    var delegate: SendDetail?
+    @IBOutlet weak var nowShowingButton: UIButton!
+    private let disposeBag = DisposeBag()
     var movieModel = [Movie]()
     @IBOutlet weak var movieCollectionView: UICollectionView!
     
     @IBOutlet weak var favoriteCollection: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCollectionView()
+//        navigationController.hi
         
+      
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setToolbarHidden(true, animated:animated)
+        
+        setupCollectionView()
+
         MovieApi.shared.getMovies { (movie) in
-            
             self.movieModel = movie!
             self.movieCollectionView.reloadData()
             self.favoriteCollection.reloadData()
-            
         }
-        test()
-        
-        
+
     }
     
     func test() {
@@ -43,10 +61,7 @@ class HomeVC: UIViewController {
         }, onCompleted: nil).disposed(by: disposeBag)
     }
     
-    
-    
     func setupCollectionView(){
-        
         movieCollectionView.delegate = self
         movieCollectionView.dataSource = self
         favoriteCollection.delegate = self
@@ -115,17 +130,34 @@ extension HomeVC:UICollectionViewDelegate,UICollectionViewDataSource{
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-//
-//
-        let storyboard  =  UIStoryboard(name: "Main", bundle: nil)
-//
-//
-        let movieDescription = storyboard.instantiateViewController(identifier: "toMovieDescription")
-//
-        present(movieDescription, animated: true, completion: nil)
         
-//        performSegue(withIdentifier:"toDetailMovie" , sender: nil)
-
+        if  let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCell", for: indexPath) as? HomeCell {
+            
+            let movie = movieModel[indexPath.row]
+            
+//            delegate?.sendData(id: movie.id, title: movie.title, slug: movie.slug, director: movie.director, cast: movie.cast, description: movie.description, image: movie.image, trailer: movie.trailer, durationMin: movie.durationMin, premiereAt: movie.premiereAt, imdbScore: movie.imdbScore)
+            
+            let storyboard  =  UIStoryboard(name: "Main", bundle: nil)
+//            if let movieDescription = storyboard.instantiateViewController(identifier: "toMovieDescription") as? VideoDescriptionVC {
+//                
+//                movieDescription.id = movie.id
+//                
+//            }
+//                let mainVC = storyboard.instantiateViewController(identifier: "toMovieDescription")
+            let mainVC = VideoViewController()
+                let slideVC =  ProfileVC()
+                 let slideMenuController  = SlideMenuController(mainViewController: mainVC, rightMenuViewController: slideVC)
+                navigationController?.pushViewController(slideMenuController, animated: true)
+                
+                print("trailler:\(movie.trailer)")
+                
+            
+            
+        }
+        
+        
+        
+ 
 
       }
 

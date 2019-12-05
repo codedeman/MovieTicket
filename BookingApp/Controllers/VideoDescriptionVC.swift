@@ -14,30 +14,38 @@ enum MyTheme {
     case dark
 }
 
-
-class VideoDescriptionVC: UIViewController{
+class VideoDescriptionVC: UIViewController,SendDetail {
+    func sendData(id: Int, title: String, slug: String, director: String, cast: String, description: String, image: String, trailer: String, durationMin: Int, premiereAt: String, imdbScore: Float) {
+        print("bababa \(id)")
+    }
     
-  
+    
     @IBOutlet weak var nameOfMovieLabel: UILabel!
     
     @IBOutlet weak var nameofDirector: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel?
     @IBOutlet weak var activityData: UIActivityIndicatorView!
     @IBOutlet weak var bookBtn: UIButton?
-    
-    
     @IBOutlet weak var premiereAtLabel: UILabel!
     @IBOutlet weak var runtimeLabel: UILabel!
+    var id:Int = 0
     let calenderView: CalenderView = {
         let v=CalenderView(theme: MyTheme.dark)
         v.translatesAutoresizingMaskIntoConstraints=false
         return v
     }()
     
-    @IBAction func backBtnWasPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
     
+    
+//    func initMovies(movie:Movie)
+    
+    @IBAction func backBtnWasPressed(_ sender: Any) {
+        
+        let home = HomeVC()
+        home.delegate = self
+        
+        navigationController?.popViewController(animated: true)
+    }
     
     
     
@@ -46,21 +54,12 @@ class VideoDescriptionVC: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let mainVC = VideoDescriptionVC()
-        //            let slideVC =
-        let sliceVC = ProfileVC()
-        let slideMenuController = SlideMenuController(mainViewController: mainVC, rightMenuViewController: sliceVC)
-       
-        
-        
-//        menuButtonWasPressed.ad
-//        menuButtonWasPressed.target = self.revealViewController()
-////        menuButtonWasPressed.action = Selector(("revealToggle:"))
-//        menuButtonWasPressed.action = "revealToggle:"
-//        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-            
-        self.activityData.startAnimating()
+//        self.setupSlideMenuItem()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(openMenu))
 
+        print("Video description")
+        title = "Video Description"
+        self.activityData.startAnimating()
         TheaterApi.shared.getTheater { (theater) in
             
             print("theater  \(String(describing: theater?.coordinate))")
@@ -92,12 +91,19 @@ class VideoDescriptionVC: UIViewController{
 
     }
     
+    @objc func openMenu(){
+        self.slideMenuController()?.openRight()
+    }
+    
     func setupView(movie:Movie)  {
         nameOfMovieLabel.text  = movie.title
-        nameofDirector.text = movie.director
+//        nameofDirector.text = movie.director
         descriptionLabel?.text = movie.description
         premiereAtLabel.text = movie.premiereAt
         runtimeLabel.text = String(movie.durationMin)
+        
+        let originurl = "https://www.youtube.com/watch?v"
+        
         loadVideo()
         
     }
@@ -105,25 +111,7 @@ class VideoDescriptionVC: UIViewController{
     @IBAction func menuButtonWasPressed(_ sender: Any) {
         
         
-//        let profile = ProfileVC()
-//        profile.modalPresentationStyle = .overCurrentContext
-//        present(profile, animated: true, completion: nil)
-        
-//        present(slideMenuController, animated: true, completion: nil)
-
-        
-
-//        if self.slideMenuController() != nil {
-//
-//            print("what the fuck")
-//        }
-//        self.slideMenuController()?.openRight()
-//        SlideMenuOptions.contentViewScale = 0.50
-////
-////        let mainVC = VideoDescriptionVC()
-////         //            let slideVC =
-////         let sliceVC = ProfileVC()
-//         let slideMenuController = SlideMenuController(mainViewController: VideoDescriptionVC(), rightMenuViewController: ProfileVC())
+        self.slideMenuController()?.openRight()
         
 
     }
@@ -152,8 +140,10 @@ class VideoDescriptionVC: UIViewController{
     @IBAction func bookButtonWasPressed(_ sender: Any) {
         
         
-        let seatVC = SeatVC()
-        present(seatVC, animated: true) {
+        let scheduleVC = ScheduleVC()
+        
+        present(scheduleVC, animated: true) {
+            
             
         }
         

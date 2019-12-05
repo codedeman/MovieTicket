@@ -15,8 +15,6 @@ class MovieApi{
 //
     func getMovies(completion:@escaping MovieResponseCompletion){
 
-//        let movie
-//        guard let url = URL(string: LIST_URL) else {return}
         AF.request(LIST_URL).responseJSON { (response) in
 
             if let error = response.error{

@@ -14,11 +14,9 @@ class AuditoriumApi{
 
     static let shared = AuditoriumApi()
 //
-    func getMovies(completion:@escaping MovieResponseCompletion){
+    func getMovies(id:Int,completion: @escaping AuditoriumsreponseComletion){
 
-//        let movie
-//        guard let url = URL(string: LIST_URL) else {return}
-        AF.request(LIST_URL).responseJSON { (response) in
+        AF.request(LIST_URL+"\(id)"+URL_AUDITORIUM).responseJSON { (response) in
 
             if let error = response.error{
             
@@ -27,16 +25,25 @@ class AuditoriumApi{
                 
             }
             guard let data = response.data else {return completion(nil) }
-            
                 
-                let movie = ListMovie.parseData(data)
-                completion(movie)
-           
-
+                let jsonDecoder = JSONDecoder()
+                
+                do {
+                    let auditorium = try jsonDecoder.decode(ResultAuditorium.self, from: data)
+                    
+                    completion(auditorium.auditoriums)
+                } catch {
+                    debugPrint(error.localizedDescription)
+                    completion(nil)
+                }
+            
+            
         }
 
-
     }
+    
+    
+
 
 }
     

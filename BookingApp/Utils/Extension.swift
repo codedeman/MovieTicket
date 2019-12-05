@@ -68,3 +68,19 @@ extension UIView{
     }
    
 }
+
+
+//extension UIViewController {
+//    func setupSlideMenuItem() {
+////        self.addLeftBarButtonWithImage(UIImage(named: "ic_menu")!)
+//        self.addRightBarButtonWithImage(UIImage(named: "menu")!)
+//        self.slideMenuController()?.removeLeftGestures()
+//        self.slideMenuController()?.addLeftGestures()
+//    }
+//
+//    func removeSlideMenuItem(){
+//        self.navigationItem.leftBarButtonItem = nil
+//        self.slideMenuController()?.removeLeftGestures()
+//    }
+//}
+

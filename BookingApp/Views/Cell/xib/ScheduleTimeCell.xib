@@ -19,16 +19,22 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ha0-S6-CRc">
                         <rect key="frame" x="0.0" y="0.0" width="200" height="179"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zli-5r-40M">
-                                <rect key="frame" x="23" y="89" width="169" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zli-5r-40M">
+                                <rect key="frame" x="0.0" y="79.5" width="200" height="20"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="fSY-uj-ZWL"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.25098039220000001" green="0.20784313730000001" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Zli-5r-40M" firstAttribute="centerY" secondItem="ha0-S6-CRc" secondAttribute="centerY" id="dXH-WK-uA7"/>
+                            <constraint firstItem="Zli-5r-40M" firstAttribute="centerX" secondItem="ha0-S6-CRc" secondAttribute="centerX" id="qgT-9K-0U0"/>
+                        </constraints>
                     </view>
                 </subviews>
             </view>
