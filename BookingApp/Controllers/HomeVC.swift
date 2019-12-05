@@ -23,20 +23,15 @@ protocol SendDetail {
 }
 
 class HomeVC: UIViewController {
-    
+    var movieModel = [Movie]()
     var delegate: SendDetail?
     @IBOutlet weak var nowShowingButton: UIButton!
     private let disposeBag = DisposeBag()
-    var movieModel = [Movie]()
     @IBOutlet weak var movieCollectionView: UICollectionView!
     
     @IBOutlet weak var favoriteCollection: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-//        navigationController.hi
-        
-      
-        
         
     }
     
@@ -47,19 +42,20 @@ class HomeVC: UIViewController {
         setupCollectionView()
 
         MovieApi.shared.getMovies { (movie) in
+            
+            for index in movie!{
+                
+                print("iiddi \(index.id)")
+            }
             self.movieModel = movie!
+//            print("id \()")
             self.movieCollectionView.reloadData()
             self.favoriteCollection.reloadData()
         }
 
     }
     
-    func test() {
-        
-        nowShowingButton.rx.tap.asDriver().throttle(2).drive(onNext: { (text) in
-            print("what the hell \(text)")
-        }, onCompleted: nil).disposed(by: disposeBag)
-    }
+    
     
     func setupCollectionView(){
         movieCollectionView.delegate = self
@@ -112,7 +108,6 @@ extension HomeVC:UICollectionViewDelegate,UICollectionViewDataSource{
                 let data = movieModel[indexPath.row]
                 cell.configureCell(movie: data)
                 return cell
-
         }else{
 
             guard let cell1 = collectionView.dequeueReusableCell(withReuseIdentifier: "TrendingMoviesCell", for: indexPath) as? TrendingMoviesCell else {
@@ -120,9 +115,7 @@ extension HomeVC:UICollectionViewDelegate,UICollectionViewDataSource{
             }
 
             let data1 = movieModel[indexPath.row]
-
             cell1.configureCell(movie: data1)
-
             return cell1
         }
 
@@ -138,16 +131,11 @@ extension HomeVC:UICollectionViewDelegate,UICollectionViewDataSource{
 //            delegate?.sendData(id: movie.id, title: movie.title, slug: movie.slug, director: movie.director, cast: movie.cast, description: movie.description, image: movie.image, trailer: movie.trailer, durationMin: movie.durationMin, premiereAt: movie.premiereAt, imdbScore: movie.imdbScore)
             
             let storyboard  =  UIStoryboard(name: "Main", bundle: nil)
-//            if let movieDescription = storyboard.instantiateViewController(identifier: "toMovieDescription") as? VideoDescriptionVC {
-//                
-//                movieDescription.id = movie.id
-//                
-//            }
-//                let mainVC = storyboard.instantiateViewController(identifier: "toMovieDescription")
-            let mainVC = VideoViewController()
-                let slideVC =  ProfileVC()
-                 let slideMenuController  = SlideMenuController(mainViewController: mainVC, rightMenuViewController: slideVC)
-                navigationController?.pushViewController(slideMenuController, animated: true)
+                let mainVC = storyboard.instantiateViewController(identifier: "toMovieDescription") as! MovieDetailsVC
+            
+                    mainVC.id = movie.id
+                    
+                navigationController?.pushViewController(mainVC, animated: true)
                 
                 print("trailler:\(movie.trailer)")
                 

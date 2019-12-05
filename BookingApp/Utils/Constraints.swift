@@ -13,7 +13,7 @@ typealias CompletionHandler = (_ Success: Bool) -> ()
 
 let URL_BASE = "https://movie-tickets-vinid.herokuapp.com"
 
-let LIST_URL = URL_BASE+"/api/movies"
+let URL_MOVIE = URL_BASE+"/api/movies"
 
 
 
@@ -26,6 +26,8 @@ let TOKEN_KEY = "token"
 let LOGGED_IN_KEY = "loggedIn"
 let URL_THEARTER = URL_BASE+"/api/theaters"
 let URL_AUDITORIUM = "auditoriums"
+
+let URL_SCHEDULE = "/schedules"
 
 let HEADER = [
     "Content-Type": "application/json; charset=utf-8"
@@ -41,5 +43,5 @@ typealias MovieResponseCompletion = ([Movie]?) -> Void
 typealias TheaterReponseCompletion = (Theaters?)->Void
 typealias AuditoriumsreponseComletion = ([Auditorium]?)->Void
 
-
+typealias ScheduleResponseCompletion = ([Schedules]?)->Void
 

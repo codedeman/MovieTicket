@@ -15,7 +15,7 @@ class MovieApi{
 //
     func getMovies(completion:@escaping MovieResponseCompletion){
 
-        AF.request(LIST_URL).responseJSON { (response) in
+        AF.request(URL_MOVIE).responseJSON { (response) in
 
             if let error = response.error{
             
@@ -28,9 +28,6 @@ class MovieApi{
                 
                 let movie = ListMovie.parseData(data)
                 completion(movie)
-           
-
-            
 
         }
 
@@ -56,6 +53,41 @@ class MovieApi{
         
         
         
+    }
+    
+    func getSchedule(id:Int,completion:@escaping ScheduleResponseCompletion){
+        
+        AF.request(URL_MOVIE+"/\(id)"+URL_SCHEDULE,method: .get,encoding: JSONEncoding.default).responseJSON { (response) in
+            var arrSchedule = [Schedules]()
+            let url = URL_MOVIE+"/\(id)"+URL_SCHEDULE
+            print("url:\(url)")
+            if let error = response.error{
+                
+                debugPrint("Error \(error)")
+                completion(nil)
+            }
+            guard let data = response.data else {return}
+                
+            let json = try! JSON(data: data).arrayValue
+                for item in json{
+                    let schedule =  self.parseSchedule(json: item)
+                    arrSchedule.append(schedule)
+                    completion(arrSchedule)
+                    
+                }
+            
+        }
+        
+        
+    }
+    
+    
+    func parseSchedule(json:JSON)->Schedules{
+        let auditoriumId = json["auditoriumId"].intValue
+        let screeningTime = json["screeningTime"].stringValue
+        let schedule = Schedules(auditoriumId: auditoriumId, screeningTime: screeningTime)
+        
+        return schedule
     }
     
 

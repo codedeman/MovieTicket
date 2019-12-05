@@ -22,13 +22,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
 //        window = UIWindow(frame: UIScreen.main.bounds)
 //        let loginVC = ScheduleVC()
-//        window?.windowScene = winddowScreen
-//        
-////        let navigation = UINavigationController(rootViewController: loginVC)
-//        
 //        window?.rootViewController = loginVC
 //        window?.makeKeyAndVisible()
-        
+//        
         
         
     }

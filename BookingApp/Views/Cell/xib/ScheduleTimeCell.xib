@@ -16,40 +16,26 @@
                 <rect key="frame" x="0.0" y="0.0" width="200" height="179"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ha0-S6-CRc">
-                        <rect key="frame" x="0.0" y="0.0" width="200" height="179"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zli-5r-40M">
-                                <rect key="frame" x="0.0" y="79.5" width="200" height="20"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="fSY-uj-ZWL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.25098039220000001" green="0.20784313730000001" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Giv-4k-y0i">
+                        <rect key="frame" x="50" y="69" width="100" height="40"/>
                         <constraints>
-                            <constraint firstItem="Zli-5r-40M" firstAttribute="centerY" secondItem="ha0-S6-CRc" secondAttribute="centerY" id="dXH-WK-uA7"/>
-                            <constraint firstItem="Zli-5r-40M" firstAttribute="centerX" secondItem="ha0-S6-CRc" secondAttribute="centerX" id="qgT-9K-0U0"/>
+                            <constraint firstAttribute="height" constant="40" id="CQ5-TY-87p"/>
+                            <constraint firstAttribute="width" constant="100" id="DW0-FS-lgk"/>
                         </constraints>
-                    </view>
+                        <state key="normal" title="Button">
+                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                    </button>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="ha0-S6-CRc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="2DL-Ge-gU4"/>
-                <constraint firstAttribute="bottom" secondItem="ha0-S6-CRc" secondAttribute="bottom" id="JK9-EW-dbF"/>
-                <constraint firstItem="ha0-S6-CRc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="UZL-LB-NkD"/>
-                <constraint firstAttribute="trailing" secondItem="ha0-S6-CRc" secondAttribute="trailing" id="a1V-Q0-yib"/>
+                <constraint firstItem="Giv-4k-y0i" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="0I6-KY-SBb"/>
+                <constraint firstItem="Giv-4k-y0i" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" constant="25" id="Tga-3e-bER"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="200" height="179"/>
             <connections>
-                <outlet property="backgroundShowTime" destination="ha0-S6-CRc" id="ysu-eP-CAf"/>
-                <outlet property="backgroundView" destination="ha0-S6-CRc" id="bLk-19-soA"/>
-                <outlet property="showTimeLabel" destination="Zli-5r-40M" id="yLx-NS-pHj"/>
+                <outlet property="showtimeButton" destination="Giv-4k-y0i" id="adr-Hb-U5l"/>
             </connections>
             <point key="canvasLocation" x="28.985507246376812" y="104.79910714285714"/>
         </collectionViewCell>

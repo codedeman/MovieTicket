@@ -18,8 +18,6 @@
 		185918C1239820F400322BE6 /* Auditoriums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185918C0239820F400322BE6 /* Auditoriums.swift */; };
 		185918C323987EBC00322BE6 /* ScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185918C223987EBC00322BE6 /* ScheduleVC.swift */; };
 		185918C52398BAD500322BE6 /* SeatApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185918C42398BAD500322BE6 /* SeatApi.swift */; };
-		185918C82398ED1200322BE6 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185918C62398ED1200322BE6 /* VideoViewController.swift */; };
-		185918C92398ED1200322BE6 /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185918C72398ED1200322BE6 /* VideoViewController.xib */; };
 		18775E6E2377CA400031CFF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18775E6D2377CA400031CFF0 /* AppDelegate.swift */; };
 		18775E702377CA400031CFF0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18775E6F2377CA400031CFF0 /* SceneDelegate.swift */; };
 		18775E752377CA400031CFF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18775E732377CA400031CFF0 /* Main.storyboard */; };
@@ -37,7 +35,7 @@
 		18775EB723780CDC0031CFF0 /* DataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18775EB623780CDC0031CFF0 /* DataServices.swift */; };
 		18A10A6F237C486800F2B8EC /* TrendingMoviesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A10A6D237C486800F2B8EC /* TrendingMoviesCell.swift */; };
 		18A10A70237C486800F2B8EC /* TrendingMoviesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A10A6E237C486800F2B8EC /* TrendingMoviesCell.xib */; };
-		18A10A72237C70FC00F2B8EC /* VideoDescriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A10A71237C70FC00F2B8EC /* VideoDescriptionVC.swift */; };
+		18A10A72237C70FC00F2B8EC /* MovieDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A10A71237C70FC00F2B8EC /* MovieDetailsVC.swift */; };
 		18D10E57239752DE00EF5A53 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D10E56239752DE00EF5A53 /* AuthService.swift */; };
 		18DD6EE7238687E50050CA47 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD6EE6238687E50050CA47 /* GradientView.swift */; };
 		18DD6EE923868B400050CA47 /* CornerRadiusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD6EE823868B400050CA47 /* CornerRadiusView.swift */; };
@@ -45,7 +43,6 @@
 		18DD6EEF2387A3F20050CA47 /* SeatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD6EEE2387A3F20050CA47 /* SeatVC.swift */; };
 		18DD6EF12387A94D0050CA47 /* SeatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD6EF02387A94D0050CA47 /* SeatCell.swift */; };
 		18DD6EF62388DB0F0050CA47 /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD6EF42388DB0F0050CA47 /* ScheduleCell.swift */; };
-		18DD6EF72388DB0F0050CA47 /* ScheduleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DD6EF52388DB0F0050CA47 /* ScheduleCell.xib */; };
 		18DD6EFC238963880050CA47 /* ScheduleTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD6EFA238963880050CA47 /* ScheduleTimeCell.swift */; };
 		18DD6EFD238963880050CA47 /* ScheduleTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DD6EFB238963880050CA47 /* ScheduleTimeCell.xib */; };
 		18DD6EFF238A8E400050CA47 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18DD6EFE238A8E3F0050CA47 /* Authentication.storyboard */; };
@@ -89,8 +86,6 @@
 		185918C0239820F400322BE6 /* Auditoriums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auditoriums.swift; sourceTree = "<group>"; };
 		185918C223987EBC00322BE6 /* ScheduleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleVC.swift; sourceTree = "<group>"; };
 		185918C42398BAD500322BE6 /* SeatApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatApi.swift; sourceTree = "<group>"; };
-		185918C62398ED1200322BE6 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
-		185918C72398ED1200322BE6 /* VideoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoViewController.xib; sourceTree = "<group>"; };
 		18775E6A2377CA400031CFF0 /* BookingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18775E6D2377CA400031CFF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18775E6F2377CA400031CFF0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,7 +109,7 @@
 		18775EB623780CDC0031CFF0 /* DataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServices.swift; sourceTree = "<group>"; };
 		18A10A6D237C486800F2B8EC /* TrendingMoviesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMoviesCell.swift; sourceTree = "<group>"; };
 		18A10A6E237C486800F2B8EC /* TrendingMoviesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendingMoviesCell.xib; sourceTree = "<group>"; };
-		18A10A71237C70FC00F2B8EC /* VideoDescriptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDescriptionVC.swift; sourceTree = "<group>"; };
+		18A10A71237C70FC00F2B8EC /* MovieDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsVC.swift; sourceTree = "<group>"; };
 		18D10E56239752DE00EF5A53 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		18DD6EE6238687E50050CA47 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		18DD6EE823868B400050CA47 /* CornerRadiusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusView.swift; sourceTree = "<group>"; };
@@ -122,7 +117,6 @@
 		18DD6EEE2387A3F20050CA47 /* SeatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatVC.swift; sourceTree = "<group>"; };
 		18DD6EF02387A94D0050CA47 /* SeatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatCell.swift; sourceTree = "<group>"; };
 		18DD6EF42388DB0F0050CA47 /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
-		18DD6EF52388DB0F0050CA47 /* ScheduleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleCell.xib; sourceTree = "<group>"; };
 		18DD6EFA238963880050CA47 /* ScheduleTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTimeCell.swift; sourceTree = "<group>"; };
 		18DD6EFB238963880050CA47 /* ScheduleTimeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleTimeCell.xib; sourceTree = "<group>"; };
 		18DD6EFE238A8E3F0050CA47 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
@@ -323,7 +317,6 @@
 			children = (
 				18DD6EFB238963880050CA47 /* ScheduleTimeCell.xib */,
 				18775EAB2377FE2A0031CFF0 /* HomeCell.xib */,
-				18DD6EF52388DB0F0050CA47 /* ScheduleCell.xib */,
 				18A10A6E237C486800F2B8EC /* TrendingMoviesCell.xib */,
 			);
 			path = xib;
@@ -333,15 +326,13 @@
 			isa = PBXGroup;
 			children = (
 				18775EA52377FC790031CFF0 /* HomeVC.swift */,
-				18A10A71237C70FC00F2B8EC /* VideoDescriptionVC.swift */,
+				18A10A71237C70FC00F2B8EC /* MovieDetailsVC.swift */,
 				180E44D12386447100A44192 /* LoginVC.swift */,
 				18DD6EEE2387A3F20050CA47 /* SeatVC.swift */,
 				18DD6F00238A8EB50050CA47 /* RegisterVC.swift */,
 				185918BC2398053A00322BE6 /* ProfileVC.swift */,
 				185918BD2398053A00322BE6 /* ProfileVC.xib */,
 				185918C223987EBC00322BE6 /* ScheduleVC.swift */,
-				185918C62398ED1200322BE6 /* VideoViewController.swift */,
-				185918C72398ED1200322BE6 /* VideoViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -474,11 +465,9 @@
 				185918BF2398053A00322BE6 /* ProfileVC.xib in Resources */,
 				18775E7A2377CA470031CFF0 /* LaunchScreen.storyboard in Resources */,
 				18775E772377CA470031CFF0 /* Assets.xcassets in Resources */,
-				18DD6EF72388DB0F0050CA47 /* ScheduleCell.xib in Resources */,
 				18DD6EFD238963880050CA47 /* ScheduleTimeCell.xib in Resources */,
 				18775EAD2377FE2A0031CFF0 /* HomeCell.xib in Resources */,
 				18775E752377CA400031CFF0 /* Main.storyboard in Resources */,
-				185918C92398ED1200322BE6 /* VideoViewController.xib in Resources */,
 				18A10A70237C486800F2B8EC /* TrendingMoviesCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -576,9 +565,8 @@
 				18E965F12397890A00499058 /* AuditoriumsApi.swift in Sources */,
 				185918C1239820F400322BE6 /* Auditoriums.swift in Sources */,
 				18775EA62377FC790031CFF0 /* HomeVC.swift in Sources */,
-				185918C82398ED1200322BE6 /* VideoViewController.swift in Sources */,
 				185918BB2397FF9A00322BE6 /* SlideMenuController.swift in Sources */,
-				18A10A72237C70FC00F2B8EC /* VideoDescriptionVC.swift in Sources */,
+				18A10A72237C70FC00F2B8EC /* MovieDetailsVC.swift in Sources */,
 				185918BE2398053A00322BE6 /* ProfileVC.swift in Sources */,
 				18D10E57239752DE00EF5A53 /* AuthService.swift in Sources */,
 				180E44D22386447100A44192 /* LoginVC.swift in Sources */,

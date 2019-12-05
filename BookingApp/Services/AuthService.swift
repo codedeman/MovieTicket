@@ -56,7 +56,7 @@ class AuthService{
             }else{
                 
                 completion(false)
-                debugPrint("error \(repsonse.error)")
+                debugPrint("error \(String(describing: repsonse.error))")
             }
             
             

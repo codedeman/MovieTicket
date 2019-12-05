@@ -10,20 +10,18 @@ import UIKit
 import SnapKit
 class ScheduleVC: UIViewController {
 
-    
+    var arrSchedule = [Schedules]()
     let calenderView: CalenderView = {
-        
-        
           let v=CalenderView(theme: MyTheme.dark)
           v.translatesAutoresizingMaskIntoConstraints=false
           return v
       }()
     
+    var id:Int! = 0
     var showtimeCollectionView:
         UICollectionView!
     
     let cellLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-
     
     let contentView:UIView = {
         let viewcontent = UIView()
@@ -46,23 +44,12 @@ class ScheduleVC: UIViewController {
         label.textColor = .white
         return label
     }()
-    override func loadView() {
-    super.loadView()
-        
-        
-//        cellLayout.scrollDirection = .horizontal
-//        cellLayout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
-//        cellLayout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 185 + 80)
-        
-//
     
-    }
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        showtimeCollectionView = UICollectionView(frame: CGRect.init(x: 0, y: 0, width: 200, height: 2000))
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = CGSize.init(width: 100, height: 100)
         flowLayout.scrollDirection = .horizontal
@@ -70,11 +57,16 @@ class ScheduleVC: UIViewController {
     
         showtimeCollectionView.backgroundColor = #colorLiteral(red: 0.2470588235, green: 0.2078431373, blue: 0.2784313725, alpha: 1)
         
-//        showtimeCollectionView.delegate =  self
-//        showtimeCollectionView.dataSource = self
+        showtimeCollectionView.register(UINib(nibName: "ScheduleTimeCell", bundle: nil), forCellWithReuseIdentifier: "ScheduleTimeCell")
         
+        showtimeCollectionView.delegate = self
+        showtimeCollectionView.dataSource = self
         view.addSubview(contentView)
             setupView()
+        
+//        print("ididid \(id!)")
+        
+       
 
 
         // Do any additional setup after loading the view.
@@ -83,9 +75,30 @@ class ScheduleVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        MovieApi.shared.getSchedule(id: id) { (schedule) in
+                   self.arrSchedule = schedule!
+                   self.showtimeCollectionView.reloadData()
+            
+        
+            for items in schedule!{
+            
+                let str =  "2019-12-05T12:37:25.000+0000"
+                
+                let first =  str.firstIndex(of: "T")
+                
+                
+//                2019-12-05T12:37:25.000+0000
+                
+
+                print("item \(first)")
+                
+            }
+                
+        }
+        
         TheaterApi.shared.getTheater { (idTheater) in
             
-            print("id \(idTheater?.id)")
+//            print("id \(idTheater?.id)")
         }
 //        AuditoriumApi.shared.getMovies(id: <#T##Int#>, completion: <#T##AuditoriumsreponseComletion##AuditoriumsreponseComletion##([Auditorium]?) -> Void#>)
     }
@@ -138,6 +151,8 @@ class ScheduleVC: UIViewController {
             
         }
         
+        print("dit me \(arrSchedule.count)")
+        
         
         
 
@@ -157,26 +172,22 @@ class ScheduleVC: UIViewController {
 
 }
 
-//extension ScheduleVC:UICollectionViewDelegate,UICollectionViewDataSource{
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//
-//        return 2
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//
-//
-//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Celll", for: indexPath) as? ScheduleCell else {return ScheduleCell()}
-//
-//
-//        return cell
-//
-//
-//
-//
-//    }
-//
-//
-//
-//
-//}
+extension ScheduleVC:UICollectionViewDelegate,UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+
+        return arrSchedule.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ScheduleTimeCell", for: indexPath) as? ScheduleTimeCell else {return ScheduleTimeCell()}
+        
+        let schedule = arrSchedule[indexPath.row]
+        cell.showtimeButton.setTitle(schedule.screeningTime, for: .normal)
+
+        return cell
+
+    }
+
+}

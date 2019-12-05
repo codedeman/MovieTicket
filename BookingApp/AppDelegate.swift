@@ -7,7 +7,7 @@
 //
 
 import UIKit
-@available (IOS 13.0, *)
+//@available (IOS 13.0, *)
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -20,18 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             
         }else{
-            window = UIWindow(frame: UIScreen.main.bounds)
-            let loginVC = LoginVC()
-            
-            let navigation = UINavigationController(rootViewController: loginVC)
-            
-            window?.rootViewController = navigation
-            window?.makeKeyAndVisible()
-            
-          
-            
-            self.window?.makeKeyAndVisible()
+//            window = UIWindow(frame: UIScreen.main.bounds)
 //            
+//            let loginVC = ScheduleVC()
+//            window?.rootViewController = loginVC
+//            window?.makeKeyAndVisible()
+//
+
             
             
         }

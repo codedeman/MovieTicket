@@ -10,16 +10,20 @@ import UIKit
 
 class ScheduleTimeCell: UICollectionViewCell {
 
-    @IBOutlet weak var backgroundShowTime: UIView!
-    @IBOutlet weak var showTimeLabel: UILabel!
+    @IBOutlet weak var showtimeButton:UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        showTimeLabel.textColor = .white
-        backgroundShowTime.layer.cornerRadius = 10
-        showTimeLabel.backgroundColor = .white
-        backgroundShowTime.backgroundColor =  .white
+        showtimeButton.layer.cornerRadius = 5
+//        showtimeButton.layer.borderColor = UIColor.white as? CGColor
+//        showtimeButton.layer.borderWidth = 2
+        
+        
+//        showTimeLabel.textColor = .white
+//        backgroundShowTime.layer.cornerRadius = 10
+//        showTimeLabel.backgroundColor = .white
+//        backgroundShowTime.backgroundColor =  .white
 
         
         

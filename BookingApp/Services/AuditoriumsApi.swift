@@ -16,7 +16,7 @@ class AuditoriumApi{
 //
     func getMovies(id:Int,completion: @escaping AuditoriumsreponseComletion){
 
-        AF.request(LIST_URL+"\(id)"+URL_AUDITORIUM).responseJSON { (response) in
+        AF.request(URL_MOVIE+"\(id)"+URL_AUDITORIUM).responseJSON { (response) in
 
             if let error = response.error{
             
@@ -41,6 +41,8 @@ class AuditoriumApi{
         }
 
     }
+    
+    
     
     
 

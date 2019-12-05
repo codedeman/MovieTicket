@@ -20,3 +20,14 @@ class ResultAuditorium: Codable {
     let auditoriums:[Auditorium]
     
 }
+
+class Schedules:Codable {
+    let auditoriumId:Int
+    let screeningTime:String
+    
+    init(auditoriumId:Int,screeningTime:String) {
+        
+        self.auditoriumId = auditoriumId
+        self.screeningTime = screeningTime
+    }
+}

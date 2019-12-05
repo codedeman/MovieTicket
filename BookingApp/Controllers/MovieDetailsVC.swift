@@ -14,14 +14,13 @@ enum MyTheme {
     case dark
 }
 
-class VideoDescriptionVC: UIViewController,SendDetail {
+class MovieDetailsVC: UIViewController,SendDetail {
     func sendData(id: Int, title: String, slug: String, director: String, cast: String, description: String, image: String, trailer: String, durationMin: Int, premiereAt: String, imdbScore: Float) {
         print("bababa \(id)")
     }
     
     
     @IBOutlet weak var nameOfMovieLabel: UILabel!
-    
     @IBOutlet weak var nameofDirector: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel?
     @IBOutlet weak var activityData: UIActivityIndicatorView!
@@ -35,10 +34,6 @@ class VideoDescriptionVC: UIViewController,SendDetail {
         return v
     }()
     
-    
-    
-//    func initMovies(movie:Movie)
-    
     @IBAction func backBtnWasPressed(_ sender: Any) {
         
         let home = HomeVC()
@@ -48,17 +43,15 @@ class VideoDescriptionVC: UIViewController,SendDetail {
     }
     
     
-    
     @IBOutlet weak var playerVideo: YouTubePlayerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
 //        self.setupSlideMenuItem()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(openMenu))
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(openMenu))
 
-        print("Video description")
-        title = "Video Description"
+      
         self.activityData.startAnimating()
         TheaterApi.shared.getTheater { (theater) in
             
@@ -79,12 +72,7 @@ class VideoDescriptionVC: UIViewController,SendDetail {
         calenderView.heightAnchor.constraint(equalToConstant: 200).isActive=true
         self.view.backgroundColor = #colorLiteral(red: 0.1490196078, green: 0.1176470588, blue: 0.1764705882, alpha: 1)
         descriptionLabel?.textColor = .white
-    
-//        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 80))
-//        navBar.tintColor = #colorLiteral(red: 0.2470588235, green: 0.2078431373, blue: 0.2784313725, alpha: 1)
-//        navBar.backgroundColor  = #colorLiteral(red: 0.2470588235, green: 0.2078431373, blue: 0.2784313725, alpha: 1)
-//
-//        view.addSubview(navBar)
+
         nameOfMovieLabel.textColor = .white
         nameofDirector.textColor = .white
         
@@ -134,24 +122,15 @@ class VideoDescriptionVC: UIViewController,SendDetail {
                
         
     }
-    
-    
-    
     @IBAction func bookButtonWasPressed(_ sender: Any) {
         
-        
         let scheduleVC = ScheduleVC()
+            scheduleVC.id = id
         
-        present(scheduleVC, animated: true) {
-            
-            
-        }
+        present(scheduleVC, animated: true)
         
     }
     
-    
-   
-
    
 }
 
