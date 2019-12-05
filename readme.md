@@ -10,15 +10,23 @@ Developer :Kevin pham
 - IOS
 
 **General**
-![](https://github.com/codedeman/MovieTicket/blob/dev/images/moviebooking.jpg)
+<br>
+<img src="https://github.com/codedeman/MovieTicket/blob/dev/images/moviebooking.jpg"  width=40% />
+<br>
 
 **Home**
 
-
-
+<br>
+<img src="https://github.com/codedeman/MovieTicket/blob/dev/images/moviebooking.jpg"  width=40% />
+<br>
 
 **Detail**
+<br>
+<img src="https://github.com/codedeman/MovieTicket/blob/dev/images/screen4.png"  width=40% />
+<br>
 
+**Seat booking**
 
-
-
+<br>
+<img src="https://github.com/codedeman/MovieTicket/blob/dev/images/screen2.png"  width=40% />
+<br>
