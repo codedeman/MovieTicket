@@ -10,6 +10,7 @@
 
 ## Platform
 - IOS
+
 **General**
 <br>
 <img src="https://github.com/codedeman/MovieTicket/blob/dev/images/moviebooking.jpg"  width=80% />
