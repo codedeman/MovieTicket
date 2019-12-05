@@ -1,11 +1,7 @@
-Booking Movie
-Developer :Kevin pham 
-
-# Movie booking app online 
-
-## Idea
-- Ứng dụng đặt vé xem phim cho rạp chiếu phim.
-- Khách hàng mở ứng dụng -> chọn phim -> chọn lịch, địa điểm -> chọn ghế ngồi -> mua vé.
+#Bookde App 
+## Feature 
+-Movie booking app online 
+-User open application->choose  film-> select location,and schedule ->seat selection->buy ticket
 ## Platform
 - IOS
 
@@ -17,7 +13,7 @@ Developer :Kevin pham
 **Home**
 
 <br>
-<img src="https://github.com/codedeman/MovieTicket/blob/dev/images/moviebooking.jpg"  width=40% />
+<img src="https://github.com/codedeman/MovieTicket/blob/dev/images/home.png"  width=40% />
 <br>
 
 **Detail**
@@ -30,3 +26,5 @@ Developer :Kevin pham
 <br>
 <img src="https://github.com/codedeman/MovieTicket/blob/dev/images/screen2.png"  width=40% />
 <br>
+#Bookde App 
+Developer :Kevin pham 
