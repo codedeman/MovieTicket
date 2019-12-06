@@ -22,6 +22,14 @@
 
 - SnapKit <br>
 
+## Technical use
+- Image cache
+
+<br>
+
+- GCD  (Grand Central Dispatch) to handle mutithreading 
+
+<br>
 
 **General**
 <br>
