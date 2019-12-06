@@ -11,7 +11,7 @@
         <!--SeatVC-->
         <scene sceneID="eXy-1M-jjP">
             <objects>
-                <viewController id="gGT-5U-NXM" customClass="SeatVC" customModule="BookingApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SeatVC" id="gGT-5U-NXM" customClass="SeatVC" customModule="BookingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c0v-oP-rfk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

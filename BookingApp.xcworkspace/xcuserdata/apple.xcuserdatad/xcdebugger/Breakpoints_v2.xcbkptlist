@@ -14,29 +14,13 @@
             filePath = "BookingApp/Controllers/ScheduleVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2DAB8579-F7E5-45DC-A6FD-5F404165EB69"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BookingApp/Controllers/ScheduleVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "2DAB8579-F7E5-45DC-A6FD-5F404165EB69 - 68bb1eb6fbd006c5"
+                  uuid = "14630411-D17D-4469-97AF-9F2C37749760 - 68bb1eb6fbd006c5"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -46,12 +30,12 @@
                   urlString = "file:///Users/apple/Documents/BookingApp/BookingApp/Controllers/ScheduleVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "78"
-                  endingLineNumber = "78"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
                   offsetFromSymbolStart = "181">
                </Location>
                <Location
-                  uuid = "2DAB8579-F7E5-45DC-A6FD-5F404165EB69 - 1a2ec898b47e3237"
+                  uuid = "14630411-D17D-4469-97AF-9F2C37749760 - 1a2ec898b47e3237"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -61,9 +45,9 @@
                   urlString = "file:///Users/apple/Documents/BookingApp/BookingApp/Controllers/ScheduleVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "79"
-                  endingLineNumber = "79"
-                  offsetFromSymbolStart = "152">
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "87">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -78,10 +62,42 @@
             filePath = "BookingApp/Controllers/ScheduleVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E8B1CB22-CDBC-4DB1-85E4-0B328E364FC2 - 68bb1eb6fbd006c5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BookingApp.ScheduleVC.viewWillAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "BookingApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Documents/BookingApp/BookingApp/Controllers/ScheduleVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "181">
+               </Location>
+               <Location
+                  uuid = "E8B1CB22-CDBC-4DB1-85E4-0B328E364FC2 - 1a2ec898b47e3237"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;BookingApp.Schedules&gt;&gt;) -&gt; () in BookingApp.ScheduleVC.viewWillAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "BookingApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Documents/BookingApp/BookingApp/Controllers/ScheduleVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "87">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

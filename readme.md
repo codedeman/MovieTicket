@@ -11,6 +11,18 @@
 ## Platform
 - IOS
 
+## Library
+- Alamofire <br>
+
+- SwiftyJSON <br>
+
+- Kingfisher <br>
+
+- YouTubePlayer <br>
+
+- SnapKit <br>
+
+
 **General**
 <br>
 <img src="https://github.com/codedeman/MovieTicket/blob/dev/images/moviebooking.jpg"  width=80% />
@@ -32,5 +44,6 @@
 <br>
 <img src="https://github.com/codedeman/MovieTicket/blob/dev/images/screen2.png"  width=40% />
 <br>
-## Bookde App 
+
+ ## Bookde App 
 - Developer :Kevin pham 

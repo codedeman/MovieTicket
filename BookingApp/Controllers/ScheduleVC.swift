@@ -11,6 +11,7 @@ import SnapKit
 class ScheduleVC: UIViewController {
 
     var arrSchedule = [Schedules]()
+    var arrTheater = [Theaters]()
     let calenderView: CalenderView = {
           let v=CalenderView(theme: MyTheme.dark)
           v.translatesAutoresizingMaskIntoConstraints=false
@@ -30,6 +31,9 @@ class ScheduleVC: UIViewController {
         
     }()
     
+    
+    var theaterTableView:UITableView!
+    
     let underView:UIView = {
         let viewcontent = UIView()
         viewcontent.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
@@ -37,10 +41,19 @@ class ScheduleVC: UIViewController {
         
     }()
     
+    let theaterLabel:UILabel = {
+            
+        let label = UILabel()
+        label.text = "English sub"
+        label.textColor = .white
+        return label
+    
+    }()
+    
     let showtimeLabel:UILabel = {
         
         let label = UILabel()
-        label.text = "English sub"
+        label.text = "CGV"
         label.textColor = .white
         return label
     }()
@@ -57,19 +70,21 @@ class ScheduleVC: UIViewController {
     
         showtimeCollectionView.backgroundColor = #colorLiteral(red: 0.2470588235, green: 0.2078431373, blue: 0.2784313725, alpha: 1)
         
-        showtimeCollectionView.register(UINib(nibName: "ScheduleTimeCell", bundle: nil), forCellWithReuseIdentifier: "ScheduleTimeCell")
         
-        showtimeCollectionView.delegate = self
-        showtimeCollectionView.dataSource = self
+        self.theaterTableView = UITableView.init(frame: CGRect(x: 20, y: 10, width: 100, height: 100))
+        
+//        showtimeCollectionView.register(UINib(nibName: "ScheduleTimeCell", bundle: nil), forCellWithReuseIdentifier: "ScheduleTimeCell")
+        
+        
+        theaterTableView.register(UINib(nibName: "TheaterCell", bundle: nil), forCellReuseIdentifier: "TheaterCell")
+        theaterTableView.delegate = self
+        theaterTableView.dataSource = self
         view.addSubview(contentView)
             setupView()
         
-//        print("ididid \(id!)")
         
-       
+        
 
-
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -80,27 +95,19 @@ class ScheduleVC: UIViewController {
                    self.showtimeCollectionView.reloadData()
             
         
-            for items in schedule!{
-            
-                let str =  "2019-12-05T12:37:25.000+0000"
-                
-                let first =  str.firstIndex(of: "T")
-                
-                
-//                2019-12-05T12:37:25.000+0000
-                
-
-                print("item \(first)")
-                
-            }
+           
                 
         }
         
-        TheaterApi.shared.getTheater { (idTheater) in
+        TheaterApi.shared.getTheater { (arr) in
             
-//            print("id \(idTheater?.id)")
+            self.arrTheater = arr!
+            
+            self.theaterTableView.reloadData()
+            
+            
+            
         }
-//        AuditoriumApi.shared.getMovies(id: <#T##Int#>, completion: <#T##AuditoriumsreponseComletion##AuditoriumsreponseComletion##([Auditorium]?) -> Void#>)
     }
     
     func setupView(){
@@ -116,7 +123,7 @@ class ScheduleVC: UIViewController {
         contentView.addSubview(calenderView)
         contentView.addSubview(underView)
         contentView.addSubview(showtimeLabel)
-        contentView.addSubview(showtimeCollectionView)
+        contentView.addSubview(theaterTableView)
         
         calenderView.snp.makeConstraints { (make) in
             
@@ -142,16 +149,29 @@ class ScheduleVC: UIViewController {
             
         }
         
-        showtimeCollectionView.snp.makeConstraints { (make) in
+//        showtimeCollectionView.snp.makeConstraints { (make) in
+//            make.top.equalTo(showtimeLabel).inset(50)
+//            make.leading.equalTo(contentView).inset(30)
+//            make.trailing.equalTo(contentView).inset(30)
+//            make.height.equalTo(100)
+//
+//        }
+        
+        
+        theaterTableView.snp.makeConstraints { (make) in
             make.top.equalTo(showtimeLabel).inset(50)
             make.leading.equalTo(contentView).inset(30)
             make.trailing.equalTo(contentView).inset(30)
-            make.height.equalTo(100)
-            
+            make.height.equalTo(300)
             
         }
         
-        print("dit me \(arrSchedule.count)")
+//        theaterTableView.addSubview(theaterLabel)
+        
+        
+        
+        
+        
         
         
         
@@ -172,22 +192,31 @@ class ScheduleVC: UIViewController {
 
 }
 
-extension ScheduleVC:UICollectionViewDelegate,UICollectionViewDataSource{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
-        return arrSchedule.count
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
-
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ScheduleTimeCell", for: indexPath) as? ScheduleTimeCell else {return ScheduleTimeCell()}
+extension ScheduleVC:UITableViewDelegate,UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        let schedule = arrSchedule[indexPath.row]
-        cell.showtimeButton.setTitle(schedule.screeningTime, for: .normal)
-
-        return cell
-
+        return arrTheater.count
     }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TheaterCell") as? TheaterCell else {return TheaterCell()}
+        
+        
+        
+        return cell
+        
+        
+        
+        
+        
+        
+    }
+    
+
+
+
 
 }
+
