@@ -34,7 +34,7 @@ let BEARER_HEADER = [
     "Content-Type": "application/json; charset=utf-8"
 ]
 typealias MovieResponseCompletion = ([Movie]?) -> Void
-typealias TheaterReponseCompletion = ([Theaters]?)->Void
+typealias TheaterReponseCompletion = (Theaters?)->Void
 typealias AuditoriumsreponseComletion = ([Auditorium]?)->Void
 
 typealias ScheduleResponseCompletion = ([Schedules]?)->Void

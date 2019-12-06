@@ -14,10 +14,11 @@ class AuditoriumApi{
 
     static let shared = AuditoriumApi()
 //
-    func getMovies(id:Int,completion: @escaping AuditoriumsreponseComletion){
+    func getAuditorium(id:Int,completion: @escaping AuditoriumsreponseComletion){
 
-        AF.request(URL_MOVIE+"\(id)"+URL_AUDITORIUM).responseJSON { (response) in
+        AF.request(URL_THEARTER+"/\(id)/"+URL_AUDITORIUM).responseJSON { (response) in
 
+            print("url: \(URL_MOVIE+"\(id)"+URL_AUDITORIUM)")
             if let error = response.error{
             
                 debugPrint(error.localizedDescription)

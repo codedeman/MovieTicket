@@ -9,7 +9,7 @@
 import Foundation
 struct Auditorium:Codable{
     
-    let id:String
+    let id:Int
     let title:String
     
 }

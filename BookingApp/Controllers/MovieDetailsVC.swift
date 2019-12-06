@@ -55,7 +55,6 @@ class MovieDetailsVC: UIViewController,SendDetail {
         self.activityData.startAnimating()
         TheaterApi.shared.getTheater { (theater) in
             
-            print("theater  \(String(describing: theater?.coordinate))")
         }
         MovieApi.shared.getMovies { (movie) in
             

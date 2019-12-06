@@ -11,13 +11,21 @@ import UIKit
 class TheaterCell: UITableViewCell {
 
     var arrSchedule = [Schedules]()
+    var id:Int!
 
     @IBOutlet weak var showtimeCollectionView: UICollectionView!
     @IBOutlet weak var theaterLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        showtimeCollectionView.delegate = self
+        showtimeCollectionView.dataSource = self
         showtimeCollectionView.register(UINib(nibName: "ScheduleTimeCell", bundle: nil), forCellWithReuseIdentifier: "ScheduleTimeCell")
+        
+        MovieApi.shared.getSchedule(id: 2) { (schedule) in
+            
+            self.arrSchedule = schedule!
+            self.showtimeCollectionView.reloadData()
+        }
 
         // Initialization code
     }
@@ -59,8 +67,10 @@ extension TheaterCell:UICollectionViewDelegate,UICollectionViewDataSource{
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        
+        print("what the hell")
                 
-        print("fuck the what \(indexPath.row)")
         
     }
     

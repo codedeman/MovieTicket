@@ -15,7 +15,7 @@ class TheaterApi{
     static let shared = TheaterApi()
 //
     func getTheater(completion:@escaping TheaterReponseCompletion ){
-        var arrTheater:[Theaters]
+        var arrTheater = [Theaters]()
         print("TOKEN \(BEARER_HEADER)")
         AF.request(URL_THEARTER,method: .get, parameters:nil , encoding: JSONEncoding.default,headers: HTTPHeaders.init(BEARER_HEADER)).responseJSON { (reponse) in
             
@@ -32,8 +32,8 @@ class TheaterApi{
                     
                     let theater =  self.parseJson(json: item)
                     
-                    arrTheater.append(theater)
-                    completion(arrTheater)
+//                    arrTheater.append(theater)
+                    completion(theater)
                 }
                 
                 

@@ -28,6 +28,7 @@ class ScheduleTimeCell: UICollectionViewCell {
                       let mainVC = storyboard.instantiateViewController(identifier: "SeatVC") as! SeatVC
         
         
+        
                   
         
     }

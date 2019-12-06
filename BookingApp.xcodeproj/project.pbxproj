@@ -44,7 +44,6 @@
 		18DD6EEB23879B350050CA47 /* customUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD6EEA23879B350050CA47 /* customUITextField.swift */; };
 		18DD6EEF2387A3F20050CA47 /* SeatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD6EEE2387A3F20050CA47 /* SeatVC.swift */; };
 		18DD6EF12387A94D0050CA47 /* SeatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD6EF02387A94D0050CA47 /* SeatCell.swift */; };
-		18DD6EF62388DB0F0050CA47 /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD6EF42388DB0F0050CA47 /* ScheduleCell.swift */; };
 		18DD6EFC238963880050CA47 /* ScheduleTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD6EFA238963880050CA47 /* ScheduleTimeCell.swift */; };
 		18DD6EFD238963880050CA47 /* ScheduleTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DD6EFB238963880050CA47 /* ScheduleTimeCell.xib */; };
 		18DD6EFF238A8E400050CA47 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18DD6EFE238A8E3F0050CA47 /* Authentication.storyboard */; };
@@ -120,7 +119,6 @@
 		18DD6EEA23879B350050CA47 /* customUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customUITextField.swift; sourceTree = "<group>"; };
 		18DD6EEE2387A3F20050CA47 /* SeatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatVC.swift; sourceTree = "<group>"; };
 		18DD6EF02387A94D0050CA47 /* SeatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatCell.swift; sourceTree = "<group>"; };
-		18DD6EF42388DB0F0050CA47 /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
 		18DD6EFA238963880050CA47 /* ScheduleTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTimeCell.swift; sourceTree = "<group>"; };
 		18DD6EFB238963880050CA47 /* ScheduleTimeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleTimeCell.xib; sourceTree = "<group>"; };
 		18DD6EFE238A8E3F0050CA47 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
@@ -168,10 +166,8 @@
 				18775EAA2377FE2A0031CFF0 /* HomeCell.swift */,
 				18A10A6D237C486800F2B8EC /* TrendingMoviesCell.swift */,
 				18DD6EF02387A94D0050CA47 /* SeatCell.swift */,
-				18DD6EF42388DB0F0050CA47 /* ScheduleCell.swift */,
-				18DD6EEC2387A07E0050CA47 /* xib */,
 				18BDDAFF239A414000D3F524 /* TheaterCell.swift */,
-				18BDDB00239A414000D3F524 /* TheaterCell.xib */,
+				18DD6EEC2387A07E0050CA47 /* xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -322,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				18DD6EFB238963880050CA47 /* ScheduleTimeCell.xib */,
+				18BDDB00239A414000D3F524 /* TheaterCell.xib */,
 				18775EAB2377FE2A0031CFF0 /* HomeCell.xib */,
 				18A10A6E237C486800F2B8EC /* TrendingMoviesCell.xib */,
 			);
@@ -561,7 +558,6 @@
 				18DD6EE7238687E50050CA47 /* GradientView.swift in Sources */,
 				18775EB423780A400031CFF0 /* MovieViewModel.swift in Sources */,
 				18775EA92377FD6B0031CFF0 /* UPCarouselFlowLayout.swift in Sources */,
-				18DD6EF62388DB0F0050CA47 /* ScheduleCell.swift in Sources */,
 				18DD6EEF2387A3F20050CA47 /* SeatVC.swift in Sources */,
 				18775E702377CA400031CFF0 /* SceneDelegate.swift in Sources */,
 				180E44902384E3AD00A44192 /* Extension.swift in Sources */,
