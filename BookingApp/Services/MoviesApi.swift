@@ -34,26 +34,7 @@ class MovieApi{
 
     }
     
-//    func getAllFeedMessages(handler: @escaping (_ messages: [Message]) -> ()) {
 
-    func getAllMovies(completion: @escaping(_ user:[User]) ->()){
-        var userArr = [User]()
-        AF.request(URL2).response { (reponse) in
-            
-            if let error  = reponse.error{
-                
-                debugPrint(error.localizedDescription)
-                
-            }
-            guard let data = reponse.data else {return}
-            userArr = ResultObject.parseData(data)
-            completion(userArr)
-            
-        }
-        
-        
-        
-    }
     
     func getSchedule(id:Int,completion:@escaping ScheduleResponseCompletion){
         

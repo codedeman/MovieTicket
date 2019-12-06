@@ -67,6 +67,11 @@ extension UIView{
    
 }
 
+extension Notification.Name{
+    
+    static let movieNotification  = Notification.Name("movie")
+    
+}
 
 //extension UIViewController {
 //    func setupSlideMenuItem() {

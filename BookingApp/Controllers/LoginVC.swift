@@ -101,8 +101,6 @@ class LoginVC: UIViewController {
     let registerButton:UIButton = {
 
         let register = UIButton()
-//        register.backgroundColor = .blue
-        register.tintColor = .blue
         
         register.setTitle("Don't have an acount? Sign Up", for: .normal)
         return register

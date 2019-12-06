@@ -133,11 +133,12 @@ extension HomeVC:UICollectionViewDelegate,UICollectionViewDataSource{
             let storyboard  =  UIStoryboard(name: "Main", bundle: nil)
                 let mainVC = storyboard.instantiateViewController(identifier: "toMovieDescription") as! MovieDetailsVC
             
-                    mainVC.id = movie.id
                     
-                navigationController?.pushViewController(mainVC, animated: true)
-                
-                print("trailler:\(movie.trailer)")
+            let arrDic = ["id":movie.id,"title":movie.title,"slug":movie.slug,"director":movie.director,"durationMin":movie.durationMin,"premiereAt": movie.premiereAt, "imdbScore": movie.imdbScore] as [String : Any]
+            let test = ["title":1876]
+            
+                NotificationCenter.default.post(name: .movieNotification, object: nil, userInfo: test)
+            navigationController?.pushViewController(mainVC, animated: true)
                 
             
             

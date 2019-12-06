@@ -14,7 +14,7 @@ enum MyTheme {
     case dark
 }
 
-class MovieDetailsVC: UIViewController,SendDetail {
+class MovieDetailsVC: UIViewController {
     func sendData(id: Int, title: String, slug: String, director: String, cast: String, description: String, image: String, trailer: String, durationMin: Int, premiereAt: String, imdbScore: Float) {
         print("bababa \(id)")
     }
@@ -37,7 +37,6 @@ class MovieDetailsVC: UIViewController,SendDetail {
     @IBAction func backBtnWasPressed(_ sender: Any) {
         
         let home = HomeVC()
-        home.delegate = self
         
         navigationController?.popViewController(animated: true)
     }
@@ -48,20 +47,21 @@ class MovieDetailsVC: UIViewController,SendDetail {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.setupSlideMenuItem()
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(openMenu))
+        self.activityData.startAnimating()
+
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: .movieNotification, object: nil)
+
+        
 
       
-        self.activityData.startAnimating()
         TheaterApi.shared.getTheater { (theater) in
             
         }
         MovieApi.shared.getMovies { (movie) in
             
-            for index in movie!{
-                self.setupView(movie: index)
             
-            }
         }
         
         view.addSubview(calenderView)
@@ -78,22 +78,27 @@ class MovieDetailsVC: UIViewController,SendDetail {
 
     }
     
-    @objc func openMenu(){
-        self.slideMenuController()?.openRight()
+
+    
+    
+    @objc func updateUI(notification:Notification){
+        
+        
+        print("what the hell \(String(describing: notification.userInfo?["title"]))")
+        
+//        DispatchQueue.main.async {
+//            self.activityData.stopAnimating()
+//            self.nameOfMovieLabel.text  = notification.userInfo?["title"] as? String
+//            self.descriptionLabel?.text = notification.userInfo?["slug"] as? String
+//            self.premiereAtLabel.text = notification.userInfo?["premiereAt"] as? String
+//            self.runtimeLabel.text = notification.userInfo?["durationMin"] as? String
+//
+//        }
+    
+    
     }
     
-    func setupView(movie:Movie)  {
-        nameOfMovieLabel.text  = movie.title
-//        nameofDirector.text = movie.director
-        descriptionLabel?.text = movie.description
-        premiereAtLabel.text = movie.premiereAt
-        runtimeLabel.text = String(movie.durationMin)
-        
-        let originurl = "https://www.youtube.com/watch?v"
-        
-        loadVideo()
-        
-    }
+    
     
     @IBAction func menuButtonWasPressed(_ sender: Any) {
         

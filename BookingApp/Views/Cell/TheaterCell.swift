@@ -21,11 +21,13 @@ class TheaterCell: UITableViewCell {
         showtimeCollectionView.dataSource = self
         showtimeCollectionView.register(UINib(nibName: "ScheduleTimeCell", bundle: nil), forCellWithReuseIdentifier: "ScheduleTimeCell")
         
-        MovieApi.shared.getSchedule(id: 2) { (schedule) in
-            
-            self.arrSchedule = schedule!
-            self.showtimeCollectionView.reloadData()
-        }
+        
+//        NotificationCenter.default.addObserver(forName: , object: <#T##Any?#>, queue: <#T##OperationQueue?#>, using: <#T##(Notification) -> Void#>)
+//        MovieApi.shared.getSchedule(id: 2) { (schedule) in
+//
+//            self.arrSchedule = schedule!
+//            self.showtimeCollectionView.reloadData()
+//        }
 
         // Initialization code
     }
