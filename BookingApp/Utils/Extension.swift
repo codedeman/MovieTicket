@@ -69,21 +69,7 @@ extension UIView{
 
 extension Notification.Name{
     
-    static let movieNotification  = Notification.Name("movie")
+    static let movieNotification  = NSNotification.Name("movie222")
     
 }
-
-//extension UIViewController {
-//    func setupSlideMenuItem() {
-////        self.addLeftBarButtonWithImage(UIImage(named: "ic_menu")!)
-//        self.addRightBarButtonWithImage(UIImage(named: "menu")!)
-//        self.slideMenuController()?.removeLeftGestures()
-//        self.slideMenuController()?.addLeftGestures()
-//    }
-//
-//    func removeSlideMenuItem(){
-//        self.navigationItem.leftBarButtonItem = nil
-//        self.slideMenuController()?.removeLeftGestures()
-//    }
-//}
 

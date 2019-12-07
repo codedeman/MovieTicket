@@ -113,7 +113,7 @@ class ScheduleVC: UIViewController {
         TheaterApi.shared.getTheater { (theater) in
             
             
-            print("id \(theater?.id)")
+            print("id \(String(describing: theater?.id))")
             AuditoriumApi.shared.getAuditorium(id: 7) { (auditorium) in
             
                 

@@ -63,8 +63,66 @@ class AuthService{
         }
     }
     
+//    func registerUser(email: String, password: String, completion: @escaping CompletionHandler) {
+
+    
+    func registerUser(email:String,firstName:String,lastname:String,password:String,completion: @escaping CompletionHandler){
+        
+        
+        let body = ["email":email,
+                    "firstName":firstName,
+                    "lastName":lastname,
+                    "password":password
+        
+                ]
+        
+        AF.request(URL_REGISTER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            
+            if let error = response.error{
+                debugPrint("error:\(error)")
+                completion(false)
+            }
+            guard let data = response.data else {return}
+            
+            let json =  try! JSON(data: data)
+            
+            completion(true)
+            
+        }
+    
+    }
+    
+    func getProfile(completion: @escaping UserResponseCompletion){
+        
+        
+        AF.request(URL_PROFILE, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: HTTPHeaders.init(BEARER_HEADER)).responseJSON { (response) in
+            
+            if response.error == nil{
+                guard let data = response.data else {return}
+                
+                let jsonDecoder = JSONDecoder()
+                
+                do {
+                    let user = try jsonDecoder.decode(User.self, from: data)
+                    completion(user)
+                } catch {
+                    debugPrint(error.localizedDescription)
+                    completion(nil)
+                }
+                
+            
+            }
+        }
     
     
+    
+    }
+    
+    
+//    "email": "kevinpham@gmail.com",
+//    "firstName": "Kevin",
+//    "lastName": "Pham",
+//    "password": "1234"
     
     
 }

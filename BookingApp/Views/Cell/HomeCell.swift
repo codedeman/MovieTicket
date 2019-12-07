@@ -22,7 +22,6 @@ class HomeCell: UICollectionViewCell {
     
     }
     
-    @IBOutlet weak var orderNumber: UILabel!
     func configureCell(movie:Movie){
         
         movieImage.loadImageUsingCache(withUrl: movie.image)

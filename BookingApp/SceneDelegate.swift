@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let slideVC = ProfileVC()
         
         let slideVCMenu = SlideMenuController(mainViewController: navigation, rightMenuViewController: slideVC)
-        
+//        let registerVC = RegisterVC()
         window?.rootViewController = slideVCMenu
         window?.makeKeyAndVisible()
         

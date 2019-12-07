@@ -15,9 +15,9 @@ enum MyTheme {
 }
 
 class MovieDetailsVC: UIViewController {
-    func sendData(id: Int, title: String, slug: String, director: String, cast: String, description: String, image: String, trailer: String, durationMin: Int, premiereAt: String, imdbScore: Float) {
-        print("bababa \(id)")
-    }
+//    func sendData(id: Int, title: String, slug: String, director: String, cast: String, description: String, image: String, trailer: String, durationMin: Int, premiereAt: String, imdbScore: Float) {
+//        print("bababa \(id)")
+//    }
     
     
     @IBOutlet weak var nameOfMovieLabel: UILabel!
@@ -28,6 +28,7 @@ class MovieDetailsVC: UIViewController {
     @IBOutlet weak var premiereAtLabel: UILabel!
     @IBOutlet weak var runtimeLabel: UILabel!
     var id:Int = 0
+    var movieURl = ""
     let calenderView: CalenderView = {
         let v=CalenderView(theme: MyTheme.dark)
         v.translatesAutoresizingMaskIntoConstraints=false
@@ -36,7 +37,6 @@ class MovieDetailsVC: UIViewController {
     
     @IBAction func backBtnWasPressed(_ sender: Any) {
         
-        let home = HomeVC()
         
         navigationController?.popViewController(animated: true)
     }
@@ -46,23 +46,15 @@ class MovieDetailsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let url = movieURl.replacingOccurrences(of: "embed/", with: "watch?v=")
+        
+        
+        loadVideo(url:url)
         
         self.activityData.startAnimating()
-
         
+        NotificationCenter.default.addObserver(self, selector: #selector(abc(_:)), name: .movieNotification, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: .movieNotification, object: nil)
-
-        
-
-      
-        TheaterApi.shared.getTheater { (theater) in
-            
-        }
-        MovieApi.shared.getMovies { (movie) in
-            
-            
-        }
         
         view.addSubview(calenderView)
         calenderView.topAnchor.constraint(equalTo: premiereAtLabel!.topAnchor, constant: 100).isActive=true
@@ -71,29 +63,30 @@ class MovieDetailsVC: UIViewController {
         calenderView.heightAnchor.constraint(equalToConstant: 200).isActive=true
         self.view.backgroundColor = #colorLiteral(red: 0.1490196078, green: 0.1176470588, blue: 0.1764705882, alpha: 1)
         descriptionLabel?.textColor = .white
-
         nameOfMovieLabel.textColor = .white
         nameofDirector.textColor = .white
         
 
     }
     
+    @objc func abc(_ noti: NSNotification) {
+        print("dm \(noti)")
+    }
+    
 
     
     
     @objc func updateUI(notification:Notification){
+//        print("what the hell \(String(describing: notification.userInfo?["title"]))")
         
-        
-        print("what the hell \(String(describing: notification.userInfo?["title"]))")
-        
-//        DispatchQueue.main.async {
-//            self.activityData.stopAnimating()
-//            self.nameOfMovieLabel.text  = notification.userInfo?["title"] as? String
-//            self.descriptionLabel?.text = notification.userInfo?["slug"] as? String
-//            self.premiereAtLabel.text = notification.userInfo?["premiereAt"] as? String
-//            self.runtimeLabel.text = notification.userInfo?["durationMin"] as? String
-//
-//        }
+        DispatchQueue.main.async {
+            self.activityData.stopAnimating()
+            self.nameOfMovieLabel.text  = notification.userInfo?["title"] as? String
+            self.descriptionLabel?.text = notification.userInfo?["slug"] as? String
+            self.premiereAtLabel.text = notification.userInfo?["premiereAt"] as? String
+            self.runtimeLabel.text = notification.userInfo?["durationMin"] as? String
+
+        }
     
     
     }
@@ -107,10 +100,10 @@ class MovieDetailsVC: UIViewController {
         
 
     }
-    func loadVideo()
+    func loadVideo(url:String)
     {
             DispatchQueue.global(qos: .background).async {
-                guard let videoURl = URL(string: "https://www.youtube.com/watch?v=e82JHkkPw54") else {return}
+                guard let videoURl = URL(string: url) else {return}
                 DispatchQueue.main.asyncAfter(deadline: .now()+2) {
                     self.playerVideo.loadVideoURL(videoURl)
                     self.activityData.stopAnimating()

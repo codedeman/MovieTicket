@@ -9,7 +9,6 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
-
 class TheaterApi{
 
     static let shared = TheaterApi()
@@ -44,17 +43,7 @@ class TheaterApi{
                     completion(nil)
                 
             }
-//            let jsonDecoder = JSONDecoder()
-//
-//                do {
-//                    let theater = try jsonDecoder.decode(Theaters.self, from: data)
-//
-//                    completion(theater)
-//                } catch {
-//                    debugPrint(error.localizedDescription)
-//                    completion(nil)
-//                }
-//
+
             
         }
 

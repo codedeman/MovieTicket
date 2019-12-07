@@ -33,6 +33,7 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,19 +44,12 @@ class HomeVC: UIViewController {
 
         MovieApi.shared.getMovies { (movie) in
             
-            for index in movie!{
-                
-                print("iiddi \(index.id)")
-            }
             self.movieModel = movie!
-//            print("id \()")
             self.movieCollectionView.reloadData()
             self.favoriteCollection.reloadData()
         }
 
     }
-    
-    
     
     func setupCollectionView(){
         movieCollectionView.delegate = self
@@ -75,27 +69,19 @@ class HomeVC: UIViewController {
         favoriteCollection.register(UINib(nibName: "TrendingMoviesCell", bundle: nil), forCellWithReuseIdentifier: "TrendingMoviesCell")
         
     }
-    
-    func setupBindings()  {
-        
-        
-    }
-    
+   
     
 
 }
 
 extension HomeVC:UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
         if collectionView == favoriteCollection{
             return movieModel.count
 
         }
         return movieModel.count
     }
-
-
 
 
 
@@ -122,33 +108,25 @@ extension HomeVC:UICollectionViewDelegate,UICollectionViewDataSource{
 
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
         
         if  let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCell", for: indexPath) as? HomeCell {
             
             let movie = movieModel[indexPath.row]
             
-//            delegate?.sendData(id: movie.id, title: movie.title, slug: movie.slug, director: movie.director, cast: movie.cast, description: movie.description, image: movie.image, trailer: movie.trailer, durationMin: movie.durationMin, premiereAt: movie.premiereAt, imdbScore: movie.imdbScore)
-            
             let storyboard  =  UIStoryboard(name: "Main", bundle: nil)
-                let mainVC = storyboard.instantiateViewController(identifier: "toMovieDescription") as! MovieDetailsVC
+            let mainVC = storyboard.instantiateViewController(identifier: "toMovieDescription") as! MovieDetailsVC
             
-                    
             let arrDic = ["id":movie.id,"title":movie.title,"slug":movie.slug,"director":movie.director,"durationMin":movie.durationMin,"premiereAt": movie.premiereAt, "imdbScore": movie.imdbScore] as [String : Any]
-            let test = ["title":1876]
             
-                NotificationCenter.default.post(name: .movieNotification, object: nil, userInfo: test)
+            
+            
+            mainVC.movieURl = movie.trailer
+            
+            NotificationCenter.default.post(name: .movieNotification, object: nil, userInfo: arrDic)
             navigationController?.pushViewController(mainVC, animated: true)
-                
-            
-            
         }
         
-        
-        
- 
-
-      }
+    }
 
 
 

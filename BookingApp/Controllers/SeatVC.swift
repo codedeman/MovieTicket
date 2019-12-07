@@ -17,10 +17,8 @@ class SeatVC: UIViewController{
     @IBOutlet weak var checkoutButton: UIButton? = {
     
         let button = UIButton()
-        
         button.backgroundColor = #colorLiteral(red: 0.8235294118, green: 0.3098039216, blue: 0.3294117647, alpha: 1)
         button.tintColor = .white
-        
         return button
         
         
@@ -67,8 +65,6 @@ extension SeatVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollectio
     
         return (seatLayout[classTitle[section]]?.count)!
     }
-    
-    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "seatCell", for: indexPath) as! SeatCell

@@ -19,19 +19,11 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CiW-vJ-yvf">
                         <rect key="frame" x="0.0" y="0.0" width="235" height="239"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hhd-Se-Z2N">
-                        <rect key="frame" x="30" y="188" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Hhd-Se-Z2N" secondAttribute="bottom" constant="30" id="GWg-u6-ncc"/>
                 <constraint firstItem="CiW-vJ-yvf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="HZs-8N-Vt3"/>
                 <constraint firstAttribute="bottom" secondItem="CiW-vJ-yvf" secondAttribute="bottom" id="SHG-5o-ggf"/>
-                <constraint firstItem="Hhd-Se-Z2N" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="30" id="cqZ-hv-ktz"/>
                 <constraint firstItem="CiW-vJ-yvf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="lTh-V1-NnB"/>
                 <constraint firstAttribute="trailing" secondItem="CiW-vJ-yvf" secondAttribute="trailing" id="vk4-3U-uvy"/>
             </constraints>
@@ -39,7 +31,6 @@
             <size key="customSize" width="235" height="239"/>
             <connections>
                 <outlet property="movieImage" destination="CiW-vJ-yvf" id="cAD-fH-Bqs"/>
-                <outlet property="orderNumber" destination="Hhd-Se-Z2N" id="tGc-eA-rUm"/>
             </connections>
             <point key="canvasLocation" x="270.28985507246381" y="215.95982142857142"/>
         </collectionViewCell>

@@ -102,6 +102,7 @@ class LoginVC: UIViewController {
 
         let register = UIButton()
         
+        register.setTitleColor(.blue, for: .normal)
         register.setTitle("Don't have an acount? Sign Up", for: .normal)
         return register
 
@@ -112,6 +113,8 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        registerButton.addTarget(self, action: #selector(registerBtnWasPressed), for: .allTouchEvents)
         self.view.addSubview(containerView)
         containerView.addSubview(usernameField)
         containerView.addSubview(usernameLabel)
@@ -123,7 +126,7 @@ class LoginVC: UIViewController {
         setupToHideKeyboardOnTapOnView()
         containerView.addSubview(registerButton)
         layoutLoginForm()
-        usernameField.text = "gnortpro@gmail.com"
+//        usernameField.text = "gnortpro@gmail.com"
 //        passwordField.text = "abcxyz12"
         
         loginButton.addTarget(self, action: #selector(loginButtonWasPressed), for: .allTouchEvents)
@@ -138,25 +141,28 @@ class LoginVC: UIViewController {
         
     }
     
+    @objc func registerBtnWasPressed()
+    {
+        let registerVC = RegisterVC()
+        present(registerVC, animated: true, completion: nil)
+    
+    }
+    
     @objc func loginButtonWasPressed(){
         
-//
         guard let email = usernameField.text , usernameField.text != ""  else {return}
         guard let password =  passwordField.text, passwordField.text != "" else {return}
         AuthService.instance.loginUser(email: email , password: password) { (sucess) in
             
             if sucess{
                 
-                TheaterApi.shared.getTheater { (theater) in
-                    
-//                    MovieApi.shared.getMovies { (<#[Movie]?#>) in
-//                        <#code#>
-//                    }
-                    
-                }
-                
+                self.navigationController?.popViewController(animated: true)
+//                self.dismiss(animated: true, completion: nil)
+//                UserApi.instance.getProfile { (user) in
+//
+//                    print("user \(user?.avatar)")
+//                }
             }else{
-                
                 print("Dang nhap that bai")
             }
         }
@@ -164,10 +170,7 @@ class LoginVC: UIViewController {
     }
     
     func layoutLoginForm()  {
-        
-        
         containerView.snp.makeConstraints { (make) in
-            
             make.leading.equalTo(view).offset(0)
             make.trailing.equalTo(view).offset(0)
             make.bottom.equalTo(view).offset(0)
@@ -250,29 +253,16 @@ class LoginVC: UIViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(
             target: self,
             action: #selector(dismissKeyboard))
-
+        
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
-
+    
     @objc func dismissKeyboard()
     {
         view.endEditing(true)
     }
     
-    
-    
-    
 }
 
-extension UIView{
-    
-    func anchor(top:NSLayoutXAxisAnchor,leading:NSLayoutXAxisAnchor,bottom:NSLayoutXAxisAnchor,tralling:NSLayoutXAxisAnchor){
-        
-        
-        
-        translatesAutoresizingMaskIntoConstraints = false
-        
-    }
-    
-}
+

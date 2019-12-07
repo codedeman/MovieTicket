@@ -13,49 +13,42 @@ import SnapKit
 class RegisterVC: UIViewController {
 
     let titleLabel:UILabel = {
-    
         let title = UILabel()
-        
         title.translatesAutoresizingMaskIntoConstraints = false
         title.text = "Sign up to get started"
         title.textColor = .gray
         title.font = .boldSystemFont(ofSize: 28)
-        
-        
         return title
-    
+        
     }()
     
     let avatarImage:UIImageView = {
-    
+        
         let avatar = UIImageView()
-    
+        
         avatar.image = UIImage(named: "terminator.jpg")
         
         avatar.frame.size = CGSize(width: 100, height: 100)
         return avatar
-    
+        
         
     }()
     
-    let usernameLabel:UILabel = {
+    let emailLabel:UILabel = {
         
         let username = UILabel()
         
-        username.text = "User name"
-//        username.tintColor = .gray
+        username.text = "Email"
         username.textColor = .gray
         return username
         
     }()
-    let passwordLabel:UILabel = {
-        
-        let password = UILabel()
-        password.translatesAutoresizingMaskIntoConstraints = false
-        password.textColor = .gray
-        password.text = "Pass word"
-        return password
-        
+    
+    let firstNameLabel:UILabel = {
+        let username = UILabel()
+        username.text = "First Name"
+        username.textColor = .gray
+        return username
         
     }()
     
@@ -66,87 +59,114 @@ class RegisterVC: UIViewController {
         view.backgroundColor = .white
         
         return view
-    
+        
     }()
     
-      var usernameField:UITextField = {
-            
-            let usename = UITextField()
-            usename.placeholder = "@gmail.com"
-            usename.borderStyle = .none
-//        usename.backgroundColor = .
-    
-            //        usename.background = UIColor.white
-            return usename
-            
-        }()
-        let passwordField:UITextField = {
-            
-            var  pasword = UITextField()
-    //        pasword = customUITextField()
-            pasword.placeholder = "123456"
-            pasword.borderStyle = .none
-            pasword.isSecureTextEntry = true
-            
-            //        usename.background = UIColor.white
-            return pasword
-        }()
-    
-    
-    var confirmLabel:UILabel = {
-    
+    let emailTxt:UITextField = {
         
+        let usename = UITextField()
+        usename.placeholder = "@gmail.com"
+        usename.borderStyle = .none
+        
+        return usename
+        
+    }()
+    
+    
+    let fullnameTxt:UITextField = {
+        
+        let usename = UITextField()
+        usename.placeholder = "@gmail.com"
+        usename.borderStyle = .none
+        
+        return usename
+        
+    }()
+    
+    let firstNameTxt:UITextField = {
+        var  firstname = UITextField()
+        firstname.placeholder = "Kevin"
+        firstname.borderStyle = .none
+        return firstname
+    }()
+    
+    
+    var lastNameLabel:UILabel = {
         let confirm = UILabel()
         confirm.translatesAutoresizingMaskIntoConstraints = false
         confirm.textColor = .gray
-        confirm.text = "Confirm passworld"
+        confirm.text = "Last name"
         return confirm
         
     }()
     
-    var confirmField:UITextField = {
-        
+    var lastNameTxt:UITextField = {
         
         var  confirm = UITextField()
-        //        pasword = customUITextField()
-        confirm.placeholder = "123456"
-//        confirm.borderStyle = .roundedRect
-        confirm.isSecureTextEntry = true
-        
-        //        usename.background = UIColor.white
+        confirm.placeholder = "Pham"
         return confirm
         
     }()
     
-//    let al
+    var fullNameLabel:UILabel = {
+        let confirm = UILabel()
+        confirm.translatesAutoresizingMaskIntoConstraints = false
+        confirm.textColor = .gray
+        confirm.text = "Full name"
+        return confirm
+        
+    }()
+    
+    var fullNameTxt:UITextField = {
+        
+        var  confirm = UITextField()
+        confirm.placeholder = "Kevin Pham"
+        return confirm
+        
+    }()
+    
+    
+    var passwordLabel:UILabel = {
+        let confirm = UILabel()
+        confirm.translatesAutoresizingMaskIntoConstraints = false
+        confirm.textColor = .gray
+        confirm.text = "password"
+        return confirm
+        
+    }()
+    
+    var passwordTxt:UITextField = {
+        
+        var  confirm = UITextField()
+        confirm.placeholder = "*****"
+        confirm.isSecureTextEntry = true
+        return confirm
+        
+    }()
+    
     
     
     let registerButton:UIButton = {
-        
-       
-        
         let register = UIButton()
-        register.backgroundColor = #colorLiteral(red: 0.8039215686, green: 0.2274509804, blue: 0.231372549, alpha: 1)
+//        register.backgroundColor = #colorLiteral(red: 0.8039215686, green: 0.2274509804, blue: 0.231372549, alpha: 1)
+        register.setTitleColor(#colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1), for: .highlighted)
         register.tintColor = .white
         register.layer.cornerRadius = 10
-        register.setTitle("Register", for: .normal)
+        register.setTitle("Register", for: .highlighted)
         return register
         
     }()
     
     let acountButton:UIButton = {
     
-    
         let acount = UIButton()
-        
-        acount.setTitle("Sign in", for: .normal)
-//        acount.tintColor = .black
-        acount.setTitleColor(#colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1), for: .normal)
+        acount.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+        acount.setTitle("Sign in", for: .highlighted)
+        acount.setTitleColor(#colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1), for: .highlighted)
         return acount
     }()
     
     let acountLabel:UILabel = {
-    
     
         let acount = UILabel()
         acount.textColor = .gray
@@ -157,15 +177,9 @@ class RegisterVC: UIViewController {
     
     let orangeView:UIView = {
     
-    
         var view = UIView()
         view.backgroundColor = #colorLiteral(red: 0.9960784314, green: 0.662745098, blue: 0.4823529412, alpha: 1)
-        
-//        view.cicileView()
-        
         view.frame.size = CGSize(width: 350, height: 350)
-        
-        
         return view
         
     }()
@@ -186,32 +200,62 @@ class RegisterVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        self.view.backgroundColor = .white
+        setupToHideKeyboardOnTapOnView()
+        registerButton.addTarget(self, action: #selector(registerBtnWasPressed), for: .allTouchEvents)
+        acountButton.addTarget(self, action: #selector(signInBtnWasPressed), for: .allTouchEvents)
         setupRegisterForm()
-//        avatarImage.cỉcleImage()
         
-        usernameField.setup()
-        
+        emailTxt.setup()
         avatarImage.layer.borderWidth = 1
         avatarImage.layer.masksToBounds = false
         avatarImage.layer.borderColor = UIColor.black.cgColor
         avatarImage.layer.cornerRadius = avatarImage.frame.height/2
         avatarImage.clipsToBounds = true
-        
-        
-        registerButton.addTarget(self, action: #selector(register), for: .touchUpInside)
-        
-        
-//        containView.addSubview(titleLabel)
-//        containView.addSubview(avatarImage)
+        registerButton.addTarget(self, action: #selector(registerBtnWasPressed), for: .touchUpInside)
 
-        // Do any additional setup after loading the view.
     }
-    @objc func register(){
+    @objc func signInBtnWasPressed(){
         
         
+        dismiss(animated: true, completion: nil)
+    
+    }
+    @objc func registerBtnWasPressed(){
         
+        guard let email = emailTxt.text , emailTxt.text != "" else { return }
+
+        guard let firstname = firstNameTxt.text , emailTxt.text != "" else { return }
+
+        guard let lastname = lastNameTxt.text , emailTxt.text != "" else { return }
+
+        guard let password = passwordTxt.text , emailTxt.text != "" else { return }
+
+        AuthService.instance.registerUser(email: email, firstName: firstname, lastname: lastname, password: password) { (sucess) in
+            
+            if sucess{
+                self.dismiss(animated: true, completion: nil)
+                
+            }
+            
+        }
+        
+        
+    }
+    
+    
+    func setupToHideKeyboardOnTapOnView()
+    {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissKeyboard))
+        
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard()
+    {
+        view.endEditing(true)
     }
     
     func setupRegisterForm()  {
@@ -219,41 +263,46 @@ class RegisterVC: UIViewController {
         self.view.addSubview(containView)
         containView.addSubview(titleLabel)
         containView.addSubview(avatarImage)
-        
-        containView.addSubview(usernameLabel)
-        containView.addSubview(usernameField)
+        containView.addSubview(emailLabel)
+        containView.addSubview(emailTxt)
         containView.addSubview(passwordLabel)
-        containView.addSubview(passwordField)
-        containView.addSubview(confirmLabel)
-        containView.addSubview(confirmField)
+        containView.addSubview(firstNameTxt)
+        containView.addSubview(lastNameLabel)
+        containView.addSubview(lastNameTxt)
+        containView.addSubview(fullNameLabel)
+        containView.addSubview(fullNameTxt)
+        containView.addSubview(passwordLabel)
+        containView.addSubview(passwordTxt)
         containView.addSubview(registerButton)
-        
         containView.addSubview(acountLabel)
         containView.addSubview(acountButton)
-        containView.addSubview(orangeView)
-        containView.addSubview(pinkView)
+//        containView.addSubview(orangeView)
+//        containView.addSubview(pinkView)
+//
+        containView.addSubview(firstNameLabel)
+        containView.addSubview(lastNameLabel)
         orangeView.cicileView()
         pinkView.cicileView()
         
         
         
-        orangeView.snp.makeConstraints { (make) in
-            
-            make.top.equalTo(containView).offset(-200)
-            make.leading.equalTo(containView).offset(-50)
-//            make.trailing.equalTo(containView).offset(-300)
-            make.height.equalTo(350)
-            make.width.equalTo(350)
-        }
-        
-        pinkView.snp.makeConstraints { (make) in
-            
-            make.top.equalTo(containView).offset(-150)
-            make.trailing.equalTo(containView).offset(150)
-            make.height.equalTo(400)
-            make.width.equalTo(400)
-        }
-        
+//        orangeView.snp.makeConstraints { (make) in
+//
+//            make.top.equalTo(containView).offset(-200)
+//            make.leading.equalTo(containView).offset(-50)
+////            make.trailing.equalTo(containView).offset(-300)
+//            make.height.equalTo(350)
+//            make.width.equalTo(350)
+//        }
+//
+//        pinkView.snp.makeConstraints { (make) in
+//
+//            make.top.equalTo(containView).offset(-150)
+//            make.trailing.equalTo(containView).offset(150)
+//            make.height.equalTo(400)
+//            make.width.equalTo(400)
+//        }
+//
         
         
         
@@ -267,40 +316,80 @@ class RegisterVC: UIViewController {
         }
         
         titleLabel.snp.makeConstraints { (make) in
-            make.bottom.equalTo(pinkView).inset(400)
-            make.leading.equalTo(pinkView).offset(50)
+            make.bottom.equalTo(containView).inset(100)
+            make.leading.equalTo(containView).offset(50)
             make.trailing.equalTo(containView).offset(-50)
             make.height.equalTo(30)
             
         }
-//        
-//        
         avatarImage.snp.makeConstraints { (make) in
 
-            make.top.equalTo(containView).offset(300)
+            make.top.equalTo(containView).offset(50)
             make.centerX.equalTo(containView)
-
             make.size.equalTo(CGSize(width: 100, height: 100))
 
         }
-        
-        
-        usernameLabel.snp.makeConstraints { (make) in
+        emailLabel.snp.makeConstraints { (make) in
             
-            
-            make.bottom.equalTo(avatarImage).offset(30)
+            make.bottom.equalTo(avatarImage).offset(50)
             make.leading.equalTo(containView).offset(30)
             make.trailing.equalTo(containView).offset(-30)
 //            make.height.equalTo(30)
             
+        }
+        
+        emailTxt.snp.makeConstraints { (make) in
+            make.top.equalTo(emailLabel).offset(30)
+            make.leading.equalTo(emailLabel).offset(0)
+            make.trailing.equalTo(containView).offset(-30)
+            make.height.equalTo(30)
+        }
+        
+        
+        firstNameLabel.snp.makeConstraints { (make) in
+            
+            
+            make.top.equalTo(emailTxt).offset(30)
+            make.leading.equalTo(containView).offset(30)
+            make.trailing.equalTo(containView).offset(-30)
+            make.height.equalTo(30)
             
         }
         
-        usernameField.snp.makeConstraints { (make) in
+        firstNameTxt.snp.makeConstraints { (make) in
             
+            make.top.equalTo(firstNameLabel).offset(30)
+            make.leading.equalTo(firstNameLabel).offset(0)
+            make.trailing.equalTo(containView).offset(-30)
+            make.height.equalTo(30)
             
-            make.top.equalTo(usernameLabel).offset(30)
-            make.leading.equalTo(usernameLabel).offset(0)
+        }
+        
+        
+        lastNameLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(firstNameTxt).offset(30)
+            make.leading.equalTo(firstNameTxt).offset(0)
+            make.trailing.equalTo(containView).offset(-30)
+            make.height.equalTo(30)
+            
+        }
+        
+        lastNameTxt.snp.makeConstraints { (make) in
+            make.top.equalTo(lastNameLabel).offset(30)
+            make.leading.equalTo(lastNameLabel).offset(0)
+            make.trailing.equalTo(containView).offset(-30)
+            make.height.equalTo(30)
+            
+        }
+        fullNameLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(lastNameTxt).offset(30)
+            make.leading.equalTo(lastNameTxt).offset(0)
+            make.trailing.equalTo(containView).offset(-30)
+            make.height.equalTo(30)
+        }
+        fullNameTxt.snp.makeConstraints { (make) in
+            make.top.equalTo(fullNameLabel).offset(30)
+            make.leading.equalTo(fullNameLabel).offset(0)
             make.trailing.equalTo(containView).offset(-30)
             make.height.equalTo(30)
             
@@ -308,48 +397,23 @@ class RegisterVC: UIViewController {
         
         
         passwordLabel.snp.makeConstraints { (make) in
-            
-            
-            make.top.equalTo(usernameField).offset(30)
-            make.leading.equalTo(containView).offset(30)
+            make.top.equalTo(fullNameTxt).offset(30)
+            make.leading.equalTo(fullNameTxt).offset(0)
             make.trailing.equalTo(containView).offset(-30)
             make.height.equalTo(30)
             
         }
         
-        passwordField.snp.makeConstraints { (make) in
-            
+        passwordTxt.snp.makeConstraints { (make) in
             make.top.equalTo(passwordLabel).offset(30)
             make.leading.equalTo(passwordLabel).offset(0)
-            make.trailing.equalTo(containView).offset(-30)
-            make.height.equalTo(30)
-            
-        }
-        
-        
-        confirmLabel.snp.makeConstraints { (make) in
-            
-            
-            make.top.equalTo(passwordField).offset(30)
-            make.leading.equalTo(passwordField).offset(0)
-            make.trailing.equalTo(containView).offset(-30)
-            make.height.equalTo(30)
-            
-        }
-        
-        confirmField.snp.makeConstraints { (make) in
-            
-            
-            make.top.equalTo(confirmLabel).offset(30)
-            make.leading.equalTo(confirmLabel).offset(0)
-            make.trailing.equalTo(containView).offset(-30)
+            make.trailing.equalTo(passwordLabel).offset(-30)
             make.height.equalTo(30)
             
         }
         
         registerButton.snp.makeConstraints { (make) in
-            
-            make.top.equalTo(confirmField).offset(50)
+            make.top.equalTo(passwordTxt).offset(50)
             make.leading.equalTo(containView).offset(30)
             make.trailing.equalTo(containView).offset(-30)
             make.height.equalTo(50)
@@ -357,14 +421,10 @@ class RegisterVC: UIViewController {
         }
         
         acountLabel.snp.makeConstraints { (make) in
-            
-            
             make.top.equalTo(registerButton).offset(50)
             make.leading.equalTo(containView).offset(80)
 //            make.trailing.equalTo(containView).offset(-0)
             make.height.equalTo(50)
-            
-            
             
         }
         acountButton.snp.makeConstraints { (make) in
@@ -372,24 +432,8 @@ class RegisterVC: UIViewController {
             make.leading.equalTo(registerButton).offset(230)
             make.height.equalTo(50)
 
-
-            
         }
-        
-        
-        
         
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
