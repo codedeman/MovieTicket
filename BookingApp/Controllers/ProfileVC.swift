@@ -21,18 +21,26 @@ class ProfileVC: UIViewController {
         super.viewDidLoad()
             
         
-        let token = AuthService.instance.authToken
+//        guard  let token = AuthService.instance.authToken as? String else {
+//
+//            loginBtn.setTitle("Log out", for: .normal)
+//            return
+//
+//        }
         
-        if token == nil{
-        
-            loginBtn.setTitle("Login", for: .normal)
-        }else{
-            loginBtn.setTitle("Log out", for: .normal)
-        
-        }
+//        if token != nil{
+//
+//            loginBtn.setTitle("Login", for: .normal)
+//        }else{
+//            loginBtn.setTitle("Log out", for: .normal)
+//
+//        }
         UserApi.instance.getProfile { (user) in
             
-            self.setupProfile(user: user!)
+            
+            self.nameLabel.text = user?.fullName
+            let nonUser = User(id: 1, email: "", firstName: "", lastName: "", avatar: "", password: "", fullName: "", role: "")
+            self.setupProfile(user: user ?? nonUser)
                    
         }
         

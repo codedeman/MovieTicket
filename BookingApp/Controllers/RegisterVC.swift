@@ -12,15 +12,15 @@ import SnapKit
 
 class RegisterVC: UIViewController {
 
-    let titleLabel:UILabel = {
-        let title = UILabel()
-        title.translatesAutoresizingMaskIntoConstraints = false
-        title.text = "Sign up to get started"
-        title.textColor = .gray
-        title.font = .boldSystemFont(ofSize: 28)
-        return title
-        
-    }()
+//    let titleLabel:UILabel = {
+//        let title = UILabel()
+//        title.translatesAutoresizingMaskIntoConstraints = false
+//        title.text = "Sign up to get started"
+//        title.textColor = .gray
+//        title.font = .boldSystemFont(ofSize: 28)
+//        return title
+//
+//    }()
     
     let avatarImage:UIImageView = {
         
@@ -148,9 +148,9 @@ class RegisterVC: UIViewController {
     
     let registerButton:UIButton = {
         let register = UIButton()
-//        register.backgroundColor = #colorLiteral(red: 0.8039215686, green: 0.2274509804, blue: 0.231372549, alpha: 1)
-        register.setTitleColor(#colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1), for: .highlighted)
-        register.tintColor = .white
+        register.backgroundColor = #colorLiteral(red: 0.8039215686, green: 0.2274509804, blue: 0.231372549, alpha: 1)
+        register.setTitleColor(.white, for: .normal)
+//        register.se
         register.layer.cornerRadius = 10
         register.setTitle("Register", for: .highlighted)
         return register
@@ -160,9 +160,8 @@ class RegisterVC: UIViewController {
     let acountButton:UIButton = {
     
         let acount = UIButton()
-        acount.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
-        acount.setTitle("Sign in", for: .highlighted)
-        acount.setTitleColor(#colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1), for: .highlighted)
+        acount.setTitle("Sign in", for: .normal)
+        acount.setTitleColor(#colorLiteral(red: 0.3098039329, green: 0.01568627544, blue: 0.1294117719, alpha: 1), for: .highlighted)
         return acount
     }()
     
@@ -176,7 +175,6 @@ class RegisterVC: UIViewController {
     }()
     
     let orangeView:UIView = {
-    
         var view = UIView()
         view.backgroundColor = #colorLiteral(red: 0.9960784314, green: 0.662745098, blue: 0.4823529412, alpha: 1)
         view.frame.size = CGSize(width: 350, height: 350)
@@ -188,12 +186,7 @@ class RegisterVC: UIViewController {
     
         var view = UIView()
         view.backgroundColor = #colorLiteral(red: 0.937254902, green: 0.3607843137, blue: 0.5176470588, alpha: 1)
-        
-        //        view.cicileView()
-        
         view.frame.size = CGSize(width: 400, height: 400)
-        
-        
         return view
         
     }()
@@ -204,7 +197,6 @@ class RegisterVC: UIViewController {
         registerButton.addTarget(self, action: #selector(registerBtnWasPressed), for: .allTouchEvents)
         acountButton.addTarget(self, action: #selector(signInBtnWasPressed), for: .allTouchEvents)
         setupRegisterForm()
-        
         emailTxt.setup()
         avatarImage.layer.borderWidth = 1
         avatarImage.layer.masksToBounds = false
@@ -261,7 +253,6 @@ class RegisterVC: UIViewController {
     func setupRegisterForm()  {
         
         self.view.addSubview(containView)
-        containView.addSubview(titleLabel)
         containView.addSubview(avatarImage)
         containView.addSubview(emailLabel)
         containView.addSubview(emailTxt)
@@ -315,13 +306,13 @@ class RegisterVC: UIViewController {
             make.bottom.equalTo(view).inset(0)
         }
         
-        titleLabel.snp.makeConstraints { (make) in
-            make.bottom.equalTo(containView).inset(100)
-            make.leading.equalTo(containView).offset(50)
-            make.trailing.equalTo(containView).offset(-50)
-            make.height.equalTo(30)
-            
-        }
+//        titleLabel.snp.makeConstraints { (make) in
+//            make.bottom.equalTo(containView).inset(100)
+//            make.leading.equalTo(containView).offset(50)
+//            make.trailing.equalTo(containView).offset(-50)
+//            make.height.equalTo(30)
+//
+//        }
         avatarImage.snp.makeConstraints { (make) in
 
             make.top.equalTo(containView).offset(50)

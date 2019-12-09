@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 public enum UPCarouselFlowLayoutSpacingMode {
     case fixed(spacing: CGFloat)
     case overlap(visibleOffset: CGFloat)
@@ -16,7 +15,6 @@ public enum UPCarouselFlowLayoutSpacingMode {
 
 
 open class UPCarouselFlowLayout: UICollectionViewFlowLayout {
-    
     fileprivate struct LayoutState {
         var size: CGSize
         var direction: UICollectionView.ScrollDirection

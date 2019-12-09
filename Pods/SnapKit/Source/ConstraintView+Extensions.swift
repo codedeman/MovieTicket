@@ -101,7 +101,7 @@ public extension ConstraintView {
     
     @available(iOS, deprecated:3.0, message:"Use newer snp.* syntax.")
     @available(iOS 8.0, *)
-    public var snp_centerYWithinMargins: ConstraintItem { return self.snp.centerYWithinMargins }
+    var snp_centerYWithinMargins: ConstraintItem { return self.snp.centerYWithinMargins }
     
     @available(*, deprecated:3.0, message:"Use newer snp.* syntax.")
     public var snp_edges: ConstraintItem { return self.snp.edges }

@@ -21,15 +21,26 @@ class TheaterCell: UITableViewCell {
         showtimeCollectionView.dataSource = self
         showtimeCollectionView.register(UINib(nibName: "ScheduleTimeCell", bundle: nil), forCellWithReuseIdentifier: "ScheduleTimeCell")
         
+       
+    }
+    
+    func configureCell(auditorium:Auditorium,id:Int)  {
+    
+        self.theaterLabel.text = auditorium.title
         
-//        NotificationCenter.default.addObserver(forName: , object: <#T##Any?#>, queue: <#T##OperationQueue?#>, using: <#T##(Notification) -> Void#>)
-//        MovieApi.shared.getSchedule(id: 2) { (schedule) in
-//
-//            self.arrSchedule = schedule!
-//            self.showtimeCollectionView.reloadData()
-//        }
-
-        // Initialization code
+        MovieApi.shared.getSchedule(id: id) { (schedule) in
+            
+            self.arrSchedule = schedule!
+            self.showtimeCollectionView.reloadData()
+            
+            for items in schedule!{
+                
+                print("id schedule \(items.auditoriumId)")
+            
+            }
+                   
+        }
+            
     }
     
     func setCollectionViewDataSourceDelegate(dataSourceDelegate: UICollectionViewDataSource & UICollectionViewDelegate, forRow row: Int) {
@@ -42,7 +53,6 @@ class TheaterCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
 }
@@ -71,23 +81,9 @@ extension TheaterCell:UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         
-        print("what the hell")
-                
         
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//
-//        if  let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ScheduleTimeCell", for: indexPath) as? ScheduleTimeCell {
-//
-//            let storyboard  =  UIStoryboard(name: "Main", bundle: nil)
-//                      let mainVC = storyboard.instantiateViewController(identifier: "SeatVC") as! SeatVC
-//
-//            present(mainVC, animated: true, completion: nil)
-//
-//
-//        }
-//
-//    }
+
 
 }

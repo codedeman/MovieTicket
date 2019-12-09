@@ -11,20 +11,13 @@ import RxCocoa
 import RxSwift
 
 
-protocol SendDetail {
+protocol MovieDelegate:class {
     
-    func sendData(id:Int,title:String,
-    slug:String,
-    director:String,
-    cast:String,
-    description:String,
-    image:String,
-    trailer:String,durationMin:Int,premiereAt:String,imdbScore:Float)
+    func sendData(movie:Movie)
 }
 
 class HomeVC: UIViewController {
-    var movieModel = [Movie]()
-    var delegate: SendDetail?
+    
     @IBOutlet weak var nowShowingButton: UIButton!
     private let disposeBag = DisposeBag()
     @IBOutlet weak var movieCollectionView: UICollectionView!
@@ -33,8 +26,11 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
     }
+    
+    var movieModel = [Movie]()
+    var delegate: MovieDelegate?
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -43,6 +39,13 @@ class HomeVC: UIViewController {
         setupCollectionView()
 
         MovieApi.shared.getMovies { (movie) in
+            
+//            self.movieModel = movie!
+            if movie!.isEmpty{
+            
+                print("lỗi hệ thống")
+            
+            }
             
             self.movieModel = movie!
             self.movieCollectionView.reloadData()
@@ -113,16 +116,25 @@ extension HomeVC:UICollectionViewDelegate,UICollectionViewDataSource{
             
             let movie = movieModel[indexPath.row]
             
+            
             let storyboard  =  UIStoryboard(name: "Main", bundle: nil)
             let mainVC = storyboard.instantiateViewController(identifier: "toMovieDescription") as! MovieDetailsVC
             
-            let arrDic = ["id":movie.id,"title":movie.title,"slug":movie.slug,"director":movie.director,"durationMin":movie.durationMin,"premiereAt": movie.premiereAt, "imdbScore": movie.imdbScore] as [String : Any]
+//            let arrDic = ["id":movie.id,"title":movie.title,"slug":movie.slug,"director":movie.director,"durationMin":movie.durationMin,"premiereAt": movie.premiereAt, "imdbScore": movie.imdbScore] as [String : Any]
             
+//            delegate?.sendData(id: <#T##Int#>, title: <#T##String#>, slug: <#T##String#>, director: <#T##String#>, cast: <#T##String#>, description: <#T##String#>, image: <#T##String#>, trailer: <#T##String#>, durationMin: Int, premiereAt: <#T##String#>, imdbScore: <#T##Float#>)
             
-            
+            mainVC.didTapMovie?(movie)
+        
             mainVC.movieURl = movie.trailer
             
-            NotificationCenter.default.post(name: .movieNotification, object: nil, userInfo: arrDic)
+            mainVC.movieData  = movie
+            
+            delegate?.sendData(movie: movie)
+            
+            
+            
+//            NotificationCenter.default.post(name: .movieNotification, object: nil, userInfo: arrDic)
             navigationController?.pushViewController(mainVC, animated: true)
         }
         

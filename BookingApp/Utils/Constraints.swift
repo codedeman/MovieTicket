@@ -34,3 +34,4 @@ typealias AuditoriumsreponseComletion = ([Auditorium]?)->Void
 typealias ScheduleResponseCompletion = ([Schedules]?)->Void
 typealias UserResponseCompletion = (User?)->Void
 
+typealias SeatResponseCompletion = (Seat?) ->Void

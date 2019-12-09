@@ -13,13 +13,11 @@ enum MyTheme {
     case light
     case dark
 }
+var didTapMovie:((Movie)->Void)?
 
 class MovieDetailsVC: UIViewController {
-//    func sendData(id: Int, title: String, slug: String, director: String, cast: String, description: String, image: String, trailer: String, durationMin: Int, premiereAt: String, imdbScore: Float) {
-//        print("bababa \(id)")
-//    }
-    
-    
+    var didTapMovie:((Movie)->Void)?
+
     @IBOutlet weak var nameOfMovieLabel: UILabel!
     @IBOutlet weak var nameofDirector: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel?
@@ -29,6 +27,11 @@ class MovieDetailsVC: UIViewController {
     @IBOutlet weak var runtimeLabel: UILabel!
     var id:Int = 0
     var movieURl = ""
+    var descriptionSt = ""
+    
+    var movieData:Movie!
+
+    
     let calenderView: CalenderView = {
         let v=CalenderView(theme: MyTheme.dark)
         v.translatesAutoresizingMaskIntoConstraints=false
@@ -37,7 +40,8 @@ class MovieDetailsVC: UIViewController {
     
     @IBAction func backBtnWasPressed(_ sender: Any) {
         
-        
+        let vc = HomeVC()
+        vc.delegate = self
         navigationController?.popViewController(animated: true)
     }
     
@@ -46,14 +50,17 @@ class MovieDetailsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let url = movieURl.replacingOccurrences(of: "embed/", with: "watch?v=")
+        updateUI(movie: movieData)
         
-        
-        loadVideo(url:url)
+        print("id movie \(movieData.id)")
+//        didTapMovie.g
+//        let url = movieURl.replacingOccurrences(of: "embed/", with: "watch?v=")
+//        nameOfMovieLabel.text = movieData.slug
+//        loadVideo(url:url)
         
         self.activityData.startAnimating()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(abc(_:)), name: .movieNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(abc(_:)), name: .movieNotification, object: nil)
         
         
         view.addSubview(calenderView)
@@ -69,25 +76,24 @@ class MovieDetailsVC: UIViewController {
 
     }
     
-    @objc func abc(_ noti: NSNotification) {
-        print("dm \(noti)")
-    }
+   
+
     
 
     
     
-    @objc func updateUI(notification:Notification){
-//        print("what the hell \(String(describing: notification.userInfo?["title"]))")
-        
-        DispatchQueue.main.async {
-            self.activityData.stopAnimating()
-            self.nameOfMovieLabel.text  = notification.userInfo?["title"] as? String
-            self.descriptionLabel?.text = notification.userInfo?["slug"] as? String
-            self.premiereAtLabel.text = notification.userInfo?["premiereAt"] as? String
-            self.runtimeLabel.text = notification.userInfo?["durationMin"] as? String
-
-        }
+    func updateUI(movie:Movie){
     
+        let url = movie.trailer.replacingOccurrences(of: "embed/", with: "watch?v=")
+        self.activityData.stopAnimating()
+        self.nameOfMovieLabel.text  = movie.title
+        self.descriptionLabel?.text = movie.description
+        self.nameofDirector.text = movie.director
+        self.premiereAtLabel.text = movie.premiereAt
+        self.runtimeLabel.text = String(movie.durationMin)
+        loadVideo(url:url)
+
+       //
     
     }
     
@@ -122,12 +128,22 @@ class MovieDetailsVC: UIViewController {
     @IBAction func bookButtonWasPressed(_ sender: Any) {
         
         let scheduleVC = ScheduleVC()
-            scheduleVC.id = id
+        scheduleVC.id = movieData.id
         
         present(scheduleVC, animated: true)
         
     }
     
    
+}
+
+extension MovieDetailsVC:MovieDelegate{
+    func sendData(movie: Movie) {
+        
+        print(" description: \(movie.description)")
+    }
+    
+
+
 }
 

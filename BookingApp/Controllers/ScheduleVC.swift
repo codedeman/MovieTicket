@@ -31,13 +31,8 @@ class ScheduleVC: UIViewController {
         return viewcontent
         
     }()
-    
-    
     var theaterTableView:UITableView = {
-        
-       
         let tableview = UITableView()
-        
         tableview.backgroundColor = #colorLiteral(red: 0.2470588235, green: 0.2078431373, blue: 0.2784313725, alpha: 1)
         return tableview
         
@@ -62,7 +57,7 @@ class ScheduleVC: UIViewController {
     let showtimeLabel:UILabel = {
         
         let label = UILabel()
-        label.text = "CGV"
+        label.text = "Rap chiếu phim"
         label.textColor = .white
         return label
     }()
@@ -77,16 +72,10 @@ class ScheduleVC: UIViewController {
         flowLayout.scrollDirection = .horizontal
         self.showtimeCollectionView = UICollectionView.init(frame: self.view.frame, collectionViewLayout: flowLayout)
         
-//        theaterTableView.rowHeight = UITableView.automaticDimension
-
-        
+        theaterTableView.backgroundColor = #colorLiteral(red: 0.2470588235, green: 0.2078431373, blue: 0.2784313725, alpha: 1)
         theaterTableView.contentSize  = CGSize(width: self.view.bounds.width, height: 2000)
-//        theaterTableView.rowHeight = 100
-//        theaterTableView.backgroundColor = #colorLiteral(red: 0.2470588235, green: 0.2078431373, blue: 0.2784313725, alpha: 1)
-        
         self.theaterTableView = UITableView.init(frame: CGRect(x: 20, y: 10, width: 100, height: 300))
         
-//        showtimeCollectionView.register(UINib(nibName: "ScheduleTimeCell", bundle: nil), forCellWithReuseIdentifier: "ScheduleTimeCell")
         
         
         theaterTableView.register(UINib(nibName: "TheaterCell", bundle: nil), forCellReuseIdentifier: "TheaterCell")
@@ -104,23 +93,22 @@ class ScheduleVC: UIViewController {
         super.viewWillAppear(animated)
         
         MovieApi.shared.getSchedule(id: id) { (schedule) in
-//                   self.arrSchedule = schedule
-//                   self.showtimeCollectionView.reloadData()
+            self.arrSchedule = schedule!
+            self.showtimeCollectionView.reloadData()
+            
+            for items in schedule!{
+                print("id auditoriumId \(items.auditoriumId)")
+            
+            }
 
-                
         }
         
         TheaterApi.shared.getTheater { (theater) in
             
-            
-            print("id \(String(describing: theater?.id))")
-            AuditoriumApi.shared.getAuditorium(id: 7) { (auditorium) in
-            
-                
-                
+            print("id theater \(String(describing: theater?.id))")
+            AuditoriumApi.shared.getAuditorium(id: theater!.id) { (auditorium) in
                 self.arrAuditorium = auditorium!
                 self.theaterTableView.reloadData()
-                
             }
             
         }
@@ -165,15 +153,6 @@ class ScheduleVC: UIViewController {
             
         }
         
-//        showtimeCollectionView.snp.makeConstraints { (make) in
-//            make.top.equalTo(showtimeLabel).inset(50)
-//            make.leading.equalTo(contentView).inset(30)
-//            make.trailing.equalTo(contentView).inset(30)
-//            make.height.equalTo(100)
-//
-//        }
-        
-        
         theaterTableView.snp.makeConstraints { (make) in
             make.top.equalTo(showtimeLabel).inset(50)
             make.leading.equalTo(contentView).inset(30)
@@ -182,29 +161,11 @@ class ScheduleVC: UIViewController {
             
         }
         
-//        theaterTableView.addSubview(theaterLabel)
-        
-        
-        
-        
-        
-        
-        
-        
-
-        
+ 
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
 
 }
 
@@ -219,18 +180,22 @@ extension ScheduleVC:UITableViewDelegate,UITableViewDataSource{
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TheaterCell") as? TheaterCell else {return TheaterCell()}
         
-        
         let data = arrAuditorium[indexPath.row]
         
-        cell.theaterLabel.text = data.title
-        cell.id = id
+        cell.configureCell(auditorium: data, id: id)
+        
         return cell
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        print("i'm here")
+    }
+    
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 80
     }
 
 

@@ -156,8 +156,8 @@ class LoginVC: UIViewController {
             
             if sucess{
                 
-                self.navigationController?.popViewController(animated: true)
-//                self.dismiss(animated: true, completion: nil)
+//                self.navigationController?.popViewController(animated: true)
+                self.dismiss(animated: true, completion: nil)
 //                UserApi.instance.getProfile { (user) in
 //
 //                    print("user \(user?.avatar)")

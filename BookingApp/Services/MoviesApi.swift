@@ -34,8 +34,6 @@ class MovieApi{
 
     }
     
-
-    
     func getSchedule(id:Int,completion:@escaping ScheduleResponseCompletion){
         
         AF.request(URL_MOVIE+"/\(id)"+URL_SCHEDULE,method: .get,encoding: JSONEncoding.default).responseJSON { (response) in

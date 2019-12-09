@@ -31,3 +31,9 @@ class Schedules:Codable {
         self.screeningTime = screeningTime
     }
 }
+
+struct Seat {
+    let line:[String]
+    let isReserved:[Int]
+
+}

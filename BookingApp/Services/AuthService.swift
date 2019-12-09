@@ -28,7 +28,7 @@ class AuthService{
        }
     var authToken: String {
         get {
-            return defaults.value(forKey: TOKEN_KEY) as! String
+            return defaults.value(forKey: TOKEN_KEY) as? String ?? ""
         }
         set {
             defaults.set(newValue, forKey: TOKEN_KEY)
@@ -84,7 +84,7 @@ class AuthService{
             }
             guard let data = response.data else {return}
             
-            let json =  try! JSON(data: data)
+            _ =  try! JSON(data: data)
             
             completion(true)
             
