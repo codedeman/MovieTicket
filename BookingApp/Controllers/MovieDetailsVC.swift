@@ -63,15 +63,15 @@ class MovieDetailsVC: UIViewController {
 //        NotificationCenter.default.addObserver(self, selector: #selector(abc(_:)), name: .movieNotification, object: nil)
         
         
-        view.addSubview(calenderView)
-        calenderView.topAnchor.constraint(equalTo: premiereAtLabel!.topAnchor, constant: 100).isActive=true
-        calenderView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -12).isActive=true
-        calenderView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 12).isActive=true
-        calenderView.heightAnchor.constraint(equalToConstant: 200).isActive=true
-        self.view.backgroundColor = #colorLiteral(red: 0.1490196078, green: 0.1176470588, blue: 0.1764705882, alpha: 1)
-        descriptionLabel?.textColor = .white
-        nameOfMovieLabel.textColor = .white
-        nameofDirector.textColor = .white
+//        view.addSubview(calenderView)
+//        calenderView.topAnchor.constraint(equalTo: premiereAtLabel!.topAnchor, constant: 100).isActive=true
+//        calenderView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -12).isActive=true
+//        calenderView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 12).isActive=true
+//        calenderView.heightAnchor.constraint(equalToConstant: 200).isActive=true
+//        self.view.backgroundColor = #colorLiteral(red: 0.1490196078, green: 0.1176470588, blue: 0.1764705882, alpha: 1)
+//        descriptionLabel?.textColor = .white
+//        nameOfMovieLabel.textColor = .white
+//        nameofDirector.textColor = .white
         
 
     }
@@ -93,7 +93,6 @@ class MovieDetailsVC: UIViewController {
         self.runtimeLabel.text = String(movie.durationMin)
         loadVideo(url:url)
 
-       //
     
     }
     
@@ -127,12 +126,18 @@ class MovieDetailsVC: UIViewController {
     }
     @IBAction func bookButtonWasPressed(_ sender: Any) {
         
-        let scheduleVC = ScheduleVC()
-        scheduleVC.id = movieData.id
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                  let mainVC = storyboard.instantiateViewController(identifier: "BookingVC") as! BookingVC
         
-        present(scheduleVC, animated: true)
+        mainVC.movieId = movieData.id
+        navigationController?.pushViewController(mainVC, animated: true)
+//        scheduleVC.id = movieData.id
+        
+//        present(scheduleVC, animated: true)
         
     }
+    
+ 
     
    
 }

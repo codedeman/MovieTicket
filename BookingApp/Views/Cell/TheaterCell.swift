@@ -8,10 +8,17 @@
 
 import UIKit
 
-class TheaterCell: UITableViewCell {
+protocol TheaterDelegate {
+    
+    func sendDataBack(schedule:Schedules)
+}
 
+class TheaterCell: UITableViewCell,ScheduleCellDelegate{
+    
     var arrSchedule = [Schedules]()
     var id:Int!
+    
+    var delegate:TheaterDelegate!
 
     @IBOutlet weak var showtimeCollectionView: UICollectionView!
     @IBOutlet weak var theaterLabel: UILabel!
@@ -20,23 +27,22 @@ class TheaterCell: UITableViewCell {
         showtimeCollectionView.delegate = self
         showtimeCollectionView.dataSource = self
         showtimeCollectionView.register(UINib(nibName: "ScheduleTimeCell", bundle: nil), forCellWithReuseIdentifier: "ScheduleTimeCell")
-        
-       
+    }
+    
+    func didTapShowTime(time: Schedules) {
+        delegate.sendDataBack(schedule: time)
+
     }
     
     func configureCell(auditorium:Auditorium,id:Int)  {
-    
         self.theaterLabel.text = auditorium.title
         
         MovieApi.shared.getSchedule(id: id) { (schedule) in
             
             self.arrSchedule = schedule!
             self.showtimeCollectionView.reloadData()
-            
-            for items in schedule!{
-                
-                print("id schedule \(items.auditoriumId)")
-            
+            for _ in schedule!{
+//                print("id schedule \(items.auditoriumId)")
             }
                    
         }
@@ -56,8 +62,6 @@ class TheaterCell: UITableViewCell {
     }
     
 }
-
-
 extension TheaterCell:UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
@@ -71,19 +75,28 @@ extension TheaterCell:UICollectionViewDelegate,UICollectionViewDataSource{
         
         let schedule = arrSchedule[indexPath.row]
         cell.configureCell(schedule: schedule)
+        cell.timeCellDelegate = self
 
         return cell
 
     }
     
-    
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let schedule = arrSchedule[indexPath.row]
+
+        delegate.sendDataBack(schedule: schedule)
         
         
     }
+}
+
+//extension TheaterCell:ScheduleCellDelegate{
+    
+//    func didTapShowTime(time: Schedules) {
+//
+//        delegate.sendDataBack(schedule: time)
+//
+//    }
     
 
-
-}
+//}

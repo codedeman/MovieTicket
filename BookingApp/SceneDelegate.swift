@@ -19,14 +19,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let winddowScreen = (scene as? UIWindowScene) else { return }
         
-//        let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "HomeVC")
-//        let navigation = UINavigationController(rootViewController: mainVC)
-//        let slideVC = ProfileVC()
-//        
-//        let slideVCMenu = SlideMenuController(mainViewController: navigation, rightMenuViewController: slideVC)
-////        let registerVC = RegisterVC()
-//        window?.rootViewController = slideVCMenu
-//        window?.makeKeyAndVisible()
+        let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "HomeVC")
+        let navigation = UINavigationController(rootViewController: mainVC)
+        let slideVC = ProfileVC()
+        
+        let slideVCMenu = SlideMenuController(mainViewController: navigation, rightMenuViewController: slideVC)
+//        let registerVC = RegisterVC()
+        window?.rootViewController = slideVCMenu
+        window?.makeKeyAndVisible()
         
         
 

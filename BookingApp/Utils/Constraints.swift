@@ -28,6 +28,7 @@ let BEARER_HEADER = [
     "Authorization":"\(AuthService.instance.authToken)",
     "Content-Type": "application/json; charset=utf-8"
 ]
+let WEBURL = "https://movie.trongggg.com/user/movie/"
 typealias MovieResponseCompletion = ([Movie]?) -> Void
 typealias TheaterReponseCompletion = (Theaters?)->Void
 typealias AuditoriumsreponseComletion = ([Auditorium]?)->Void

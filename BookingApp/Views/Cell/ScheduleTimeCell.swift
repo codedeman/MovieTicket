@@ -18,20 +18,15 @@ class ScheduleTimeCell: UICollectionViewCell {
     var schedule:Schedules?
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         showtimeButton.layer.cornerRadius = 5
         showtimeButton.backgroundColor = #colorLiteral(red: 0.2, green: 0.1568627451, blue: 0.2431372549, alpha: 1)
-        
         
     }
     
     @IBAction func showtimeBtnWasPressed(_ sender: Any) {
         
        guard let unwrappedSchedule = schedule  else { return }
-
         timeCellDelegate?.didTapShowTime(time: unwrappedSchedule)
-        
-        
     }
     
 
@@ -48,12 +43,10 @@ class ScheduleTimeCell: UICollectionViewCell {
     
                
         let indexStartOfText = dateString.index(dateString.startIndex, offsetBy: 11)
-        
-        var  substring1 = dateString[indexStartOfText...]  // "Hello>>>"
+        let  substring1 = dateString[indexStartOfText...]
         let string1 = String(substring1)
         
         let indexEndOfText = string1.index(string1.endIndex, offsetBy: -13)
-//
         let substring2 = string1[...indexEndOfText]
         
         

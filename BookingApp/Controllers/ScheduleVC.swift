@@ -183,6 +183,8 @@ extension ScheduleVC:UITableViewDelegate,UITableViewDataSource{
         let data = arrAuditorium[indexPath.row]
         
         cell.configureCell(auditorium: data, id: id)
+        cell.delegate = self
+//        cell.delegate = self as! ScheduleCellDelegate as! TheaterDelegate
         
         return cell
         
@@ -201,3 +203,22 @@ extension ScheduleVC:UITableViewDelegate,UITableViewDataSource{
 
 }
 
+extension ScheduleVC:TheaterDelegate{
+    func sendDataBack(schedule: Schedules) {
+        print("here here")
+    }
+    
+//    func didTapShowTime(time: Schedules) {
+//        print("aAA")
+//    }
+//
+//    func sendDataBack(schedule: Schedules) {
+//
+//        print("what the fuck\(schedule.auditoriumId)")
+//    }
+    
+   
+    
+
+
+}

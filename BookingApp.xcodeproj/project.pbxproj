@@ -12,6 +12,7 @@
 		181308B42383F35A00BE4F79 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181308B32383F35A00BE4F79 /* Album.swift */; };
 		181308B62383F63900BE4F79 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181308B52383F63900BE4F79 /* HomeViewModel.swift */; };
 		181F42CF2396507D00621AC8 /* Theaters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F42CE2396507D00621AC8 /* Theaters.swift */; };
+		183DD97A239F341E0005CB61 /* BookingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183DD979239F341E0005CB61 /* BookingVC.swift */; };
 		185918BB2397FF9A00322BE6 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185918BA2397FF9A00322BE6 /* SlideMenuController.swift */; };
 		185918BE2398053A00322BE6 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185918BC2398053A00322BE6 /* ProfileVC.swift */; };
 		185918BF2398053A00322BE6 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185918BD2398053A00322BE6 /* ProfileVC.xib */; };
@@ -83,6 +84,7 @@
 		181308B32383F35A00BE4F79 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		181308B52383F63900BE4F79 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		181F42CE2396507D00621AC8 /* Theaters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theaters.swift; sourceTree = "<group>"; };
+		183DD979239F341E0005CB61 /* BookingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingVC.swift; sourceTree = "<group>"; };
 		185918BA2397FF9A00322BE6 /* SlideMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
 		185918BC2398053A00322BE6 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		185918BD2398053A00322BE6 /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 				185918BC2398053A00322BE6 /* ProfileVC.swift */,
 				185918BD2398053A00322BE6 /* ProfileVC.xib */,
 				185918C223987EBC00322BE6 /* ScheduleVC.swift */,
+				183DD979239F341E0005CB61 /* BookingVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 				180E44902384E3AD00A44192 /* Extension.swift in Sources */,
 				18DD6EEB23879B350050CA47 /* customUITextField.swift in Sources */,
 				18BDDB04239AC46A00D3F524 /* User.swift in Sources */,
+				183DD97A239F341E0005CB61 /* BookingVC.swift in Sources */,
 				18FAC3862395E07F0099C1FF /* WeekdaysView.swift in Sources */,
 				18DD6EF12387A94D0050CA47 /* SeatCell.swift in Sources */,
 				18775EB723780CDC0031CFF0 /* DataServices.swift in Sources */,
